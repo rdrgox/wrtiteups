@@ -1,0 +1,6 @@
+site_name: writeups
+theme:
+  name: material
+
+nav:
+  - Inicio: index.md
