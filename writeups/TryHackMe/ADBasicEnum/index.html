@@ -1,0 +1,985 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../alfred/">
+      
+      
+        <link rel="next" href="../anthem/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>AD Basic Enumeration - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ad-basic-enumeration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AD Basic Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rpcclient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ad-basic-enumeration">AD Basic Enumeration<a class="headerlink" href="#ad-basic-enumeration" title="Permanent link">&para;</a></h1>
+<p>Windows</p>
+<p><img alt="alt text" src="img/image.png" /></p>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>-oG<span class="w"> </span>allPorts2
+
+PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE
+<span class="m">22</span>/tcp<span class="w">    </span>open<span class="w">  </span>ssh
+<span class="m">53</span>/tcp<span class="w">    </span>open<span class="w">  </span>domain
+<span class="m">88</span>/tcp<span class="w">    </span>open<span class="w">  </span>kerberos-sec
+<span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc
+<span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn
+<span class="m">389</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldap
+<span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>microsoft-ds
+<span class="m">464</span>/tcp<span class="w">   </span>open<span class="w">  </span>kpasswd5
+<span class="m">593</span>/tcp<span class="w">   </span>open<span class="w">  </span>http-rpc-epmap
+<span class="m">636</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldapssl
+<span class="m">3268</span>/tcp<span class="w">  </span>open<span class="w">  </span>globalcatLDAP
+<span class="m">3269</span>/tcp<span class="w">  </span>open<span class="w">  </span>globalcatLDAPssl
+<span class="m">3389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ms-wbt-server
+<span class="m">5985</span>/tcp<span class="w">  </span>open<span class="w">  </span>wsman
+<span class="m">9389</span>/tcp<span class="w">  </span>open<span class="w">  </span>adws
+<span class="m">47001</span>/tcp<span class="w"> </span>open<span class="w">  </span>winrm
+<span class="m">49664</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49665</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49666</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49667</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49669</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49672</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49676</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49677</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49678</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49681</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49696</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49708</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-O<span class="w"> </span><span class="m">22</span>,135,139,445,3389,5985,47001,49664,49665,49666,49667,49668,49669,49670,49677,50095<span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>-oN<span class="w"> </span>target2.txt
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">           </span>OpenSSH<span class="w"> </span>for_Windows_7.7<span class="w"> </span><span class="o">(</span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">57</span>:d9:ac:9e:bc:f9:27:c9:8a:7f:01:28:72:9f:05:7a<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>bc:21:8a:c6:9f:71:dc:8f:b7:e9:6b:71:71:cd:eb:ef<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="m">76</span>:ba:01:61:c4:69:5b:c4:d6:8a:dd:8d:c7:32:7b:f3<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+
+<span class="m">53</span>/tcp<span class="w">   </span>open<span class="w">  </span>domain<span class="w">        </span>Simple<span class="w"> </span>DNS<span class="w"> </span>Plus
+<span class="m">88</span>/tcp<span class="w">   </span>open<span class="w">  </span>kerberos-sec<span class="w">  </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Kerberos<span class="w"> </span><span class="o">(</span>server<span class="w"> </span>time:<span class="w"> </span><span class="m">2025</span>-09-11<span class="w"> </span><span class="m">07</span>:43:04Z<span class="o">)</span>
+
+<span class="m">135</span>/tcp<span class="w">  </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">139</span>/tcp<span class="w">  </span>open<span class="w">  </span>netbios-ssn<span class="w">   </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+
+<span class="m">389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>tryhackme.loc0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+
+<span class="m">445</span>/tcp<span class="w">  </span>open<span class="w">  </span>microsoft-ds<span class="w">  </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Datacenter<span class="w"> </span><span class="m">17763</span><span class="w"> </span>microsoft-ds<span class="w"> </span><span class="o">(</span>workgroup:<span class="w"> </span>TRYHACKME<span class="o">)</span>
+
+<span class="m">464</span>/tcp<span class="w">  </span>open<span class="w">  </span>kpasswd5?
+<span class="m">593</span>/tcp<span class="w">  </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+<span class="m">636</span>/tcp<span class="w">  </span>open<span class="w">  </span>tcpwrapped
+<span class="m">3268</span>/tcp<span class="w"> </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>tryhackme.loc0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="m">3269</span>/tcp<span class="w"> </span>open<span class="w">  </span>tcpwrapped
+<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">  </span>ms-wbt-server<span class="w"> </span>Microsoft<span class="w"> </span>Terminal<span class="w"> </span>Services
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2025</span>-09-11T07:43:44+00:00<span class="p">;</span><span class="w"> </span>-1s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="p">|</span><span class="w"> </span>rdp-ntlm-info:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>Target_Name:<span class="w"> </span>TRYHACKME
+<span class="p">|</span><span class="w">   </span>NetBIOS_Domain_Name:<span class="w"> </span>TRYHACKME
+<span class="p">|</span><span class="w">   </span>NetBIOS_Computer_Name:<span class="w"> </span>DC
+<span class="p">|</span><span class="w">   </span>DNS_Domain_Name:<span class="w"> </span>tryhackme.loc
+<span class="p">|</span><span class="w">   </span>DNS_Computer_Name:<span class="w"> </span>DC.tryhackme.loc
+<span class="p">|</span><span class="w">   </span>DNS_Tree_Name:<span class="w"> </span>tryhackme.loc
+<span class="p">|</span><span class="w">   </span>Product_Version:<span class="w"> </span><span class="m">10</span>.0.17763
+<span class="p">|</span>_<span class="w">  </span>System_Time:<span class="w"> </span><span class="m">2025</span>-09-11T07:43:30+00:00
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>DC.tryhackme.loc
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2025</span>-09-09T03:13:04
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2026</span>-03-11T03:13:04
+<span class="m">5985</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+<span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+No<span class="w"> </span>exact<span class="w"> </span>OS<span class="w"> </span>matches<span class="w"> </span><span class="k">for</span><span class="w"> </span>host<span class="w"> </span><span class="o">(</span>If<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>what<span class="w"> </span>OS<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>it,<span class="w"> </span>see<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span><span class="o">)</span>.
+TCP/IP<span class="w"> </span>fingerprint:
+OS:SCAN<span class="o">(</span><span class="nv">V</span><span class="o">=</span><span class="m">7</span>.95%E<span class="o">=</span><span class="m">4</span>%D<span class="o">=</span><span class="m">9</span>/11%OT<span class="o">=</span><span class="m">22</span>%CT<span class="o">=</span><span class="m">1</span>%CU<span class="o">=</span><span class="m">33826</span>%PV<span class="o">=</span>Y%DS<span class="o">=</span><span class="m">2</span>%DC<span class="o">=</span>I%G<span class="o">=</span>Y%TM<span class="o">=</span>68C27DB
+OS:8%P<span class="o">=</span>x86_64-pc-linux-gnu<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">101</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">104</span>%TI<span class="o">=</span>I%CI<span class="o">=</span>I%II<span class="o">=</span>I%SS<span class="o">=</span>S%TS<span class="o">=</span>
+OS:U<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">102</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">108</span>%TI<span class="o">=</span>I%CI<span class="o">=</span>I%II<span class="o">=</span>I%SS<span class="o">=</span>S%TS<span class="o">=</span>U<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">104</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR
+OS:<span class="o">=</span>10A%TI<span class="o">=</span>I%CI<span class="o">=</span>I%II<span class="o">=</span>I%SS<span class="o">=</span>S%TS<span class="o">=</span>U<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">105</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">108</span>%TI<span class="o">=</span>I%CI<span class="o">=</span>I%II<span class="o">=</span>I%SS
+OS:<span class="o">=</span>S%TS<span class="o">=</span>U<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span>FD%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span>10D%TI<span class="o">=</span>I%CI<span class="o">=</span>I%II<span class="o">=</span>I%SS<span class="o">=</span>S%TS<span class="o">=</span>U<span class="o">)</span>OPS<span class="o">(</span><span class="nv">O1</span><span class="o">=</span>M509NW8N
+OS:NS%O2<span class="o">=</span>M509NW8NNS%O3<span class="o">=</span>M509NW8%O4<span class="o">=</span>M509NW8NNS%O5<span class="o">=</span>M509NW8NNS%O6<span class="o">=</span>M509NNS<span class="o">)</span>WIN<span class="o">(</span>W
+OS:1<span class="o">=</span>FFFF%W2<span class="o">=</span>FFFF%W3<span class="o">=</span>FFFF%W4<span class="o">=</span>FFFF%W5<span class="o">=</span>FFFF%W6<span class="o">=</span>FF70<span class="o">)</span>ECN<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span>FFFF%
+OS:O<span class="o">=</span>M509NW8NNS%CC<span class="o">=</span>Y%Q<span class="o">=)</span>T1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%S<span class="o">=</span>O%A<span class="o">=</span>S+%F<span class="o">=</span>AS%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T2<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%
+OS:T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T3<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>O%F<span class="o">=</span>AR%O<span class="o">=</span>%RD
+OS:<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T4<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A%A<span class="o">=</span>O%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T5<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span><span class="m">0</span>%S
+OS:<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T6<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A%A<span class="o">=</span>O%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T7<span class="o">(</span>R
+OS:<span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">80</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>U1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>N%T<span class="o">=</span><span class="m">80</span>%IPL<span class="o">=</span><span class="m">164</span>%UN<span class="o">=</span><span class="m">0</span>%
+OS:RIPL<span class="o">=</span>G%RID<span class="o">=</span>G%RIPCK<span class="o">=</span>G%RUCK<span class="o">=</span>G%RUD<span class="o">=</span>G<span class="o">)</span>IE<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DFI<span class="o">=</span>N%T<span class="o">=</span><span class="m">80</span>%CD<span class="o">=</span>Z<span class="o">)</span>
+
+Network<span class="w"> </span>Distance:<span class="w"> </span><span class="m">2</span><span class="w"> </span>hops
+Service<span class="w"> </span>Info:<span class="w"> </span>Host:<span class="w"> </span>DC<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span><span class="w"> </span>smb-security-mode:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>account_used:<span class="w"> </span>guest
+<span class="p">|</span><span class="w">   </span>authentication_level:<span class="w"> </span>user
+<span class="p">|</span><span class="w">   </span>challenge_response:<span class="w"> </span>supported
+<span class="p">|</span>_<span class="w">  </span>message_signing:<span class="w"> </span>required
+<span class="p">|</span><span class="w"> </span>smb2-security-mode:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">3</span>:1:1:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>and<span class="w"> </span>required
+<span class="p">|</span>_clock-skew:<span class="w"> </span>mean:<span class="w"> </span>0s,<span class="w"> </span>deviation:<span class="w"> </span>1s,<span class="w"> </span>median:<span class="w"> </span>-1s
+<span class="p">|</span><span class="w"> </span>smb-os-discovery:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>OS:<span class="w"> </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Datacenter<span class="w"> </span><span class="m">17763</span><span class="w"> </span><span class="o">(</span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Datacenter<span class="w"> </span><span class="m">6</span>.3<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span>Computer<span class="w"> </span>name:<span class="w"> </span>DC
+<span class="p">|</span><span class="w">   </span>NetBIOS<span class="w"> </span>computer<span class="w"> </span>name:<span class="w"> </span>DC<span class="se">\x</span><span class="m">00</span>
+<span class="p">|</span><span class="w">   </span>Domain<span class="w"> </span>name:<span class="w"> </span>tryhackme.loc
+<span class="p">|</span><span class="w">   </span>Forest<span class="w"> </span>name:<span class="w"> </span>tryhackme.loc
+<span class="p">|</span><span class="w">   </span>FQDN:<span class="w"> </span>DC.tryhackme.loc
+<span class="p">|</span>_<span class="w">  </span>System<span class="w"> </span>time:<span class="w"> </span><span class="m">2025</span>-09-11T07:43:32+00:00
+<span class="p">|</span><span class="w"> </span>smb2-time:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2025</span>-09-11T07:43:30
+<span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+
+OS<span class="w"> </span>and<span class="w"> </span>Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">114</span>.38<span class="w"> </span>seconds
+</code></pre></div>
+<h3 id="smb">SMB<a class="headerlink" href="#smb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--shares<span class="w">                                                                                       </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:DC<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:tryhackme.loc<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span><span class="w"> </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>tryhackme.loc<span class="se">\:</span><span class="w"> </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Enumerated<span class="w"> </span>shares
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>Share<span class="w">           </span>Permissions<span class="w">     </span>Remark
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>-----<span class="w">           </span>-----------<span class="w">     </span>------
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>ADMIN$<span class="w">                          </span>Remote<span class="w"> </span>Admin
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>AnonShare<span class="w">       </span>READ,WRITE<span class="w">      </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>C$<span class="w">                              </span>Default<span class="w"> </span>share
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>IPC$<span class="w">                            </span>Remote<span class="w"> </span>IPC
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>NETLOGON<span class="w">                        </span>Logon<span class="w"> </span>server<span class="w"> </span>share<span class="w"> </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>SharedFiles<span class="w">     </span>READ,WRITE<span class="w">      </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>SYSVOL<span class="w">                          </span>Logon<span class="w"> </span>server<span class="w"> </span>share<span class="w"> </span>
+SMB<span class="w">         </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>UserBackups<span class="w">     </span>READ,WRITE<span class="w">      </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>//10.211.11.10/SharedFiles<span class="w"> </span>-N<span class="w">   </span>
+Anonymous<span class="w"> </span>login<span class="w"> </span>successful
+Try<span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>possible<span class="w"> </span>commands.
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>dir
+<span class="w">  </span>.<span class="w">                                   </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">04</span>:45:34<span class="w"> </span><span class="m">2025</span>
+<span class="w">  </span>..<span class="w">                                  </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">04</span>:45:34<span class="w"> </span><span class="m">2025</span>
+<span class="w">  </span>Mouse_and_Malware.txt<span class="w">               </span>A<span class="w">     </span><span class="m">1141</span><span class="w">  </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">05</span>:40:19<span class="w"> </span><span class="m">2025</span>
+
+<span class="w">        </span><span class="m">7863807</span><span class="w"> </span>blocks<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">4096</span>.<span class="w"> </span><span class="m">3470130</span><span class="w"> </span>blocks<span class="w"> </span>available
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>
+
+<span class="c1"># nos conectamos en la sigueinte ruta</span>
+smbclient<span class="w"> </span>//10.211.11.10/UserBackups<span class="w"> </span>-N<span class="w">   </span>
+Anonymous<span class="w"> </span>login<span class="w"> </span>successful
+Try<span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>possible<span class="w"> </span>commands.
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>dir
+<span class="w">  </span>.<span class="w">                                   </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">04</span>:45:41<span class="w"> </span><span class="m">2025</span>
+<span class="w">  </span>..<span class="w">                                  </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">04</span>:45:41<span class="w"> </span><span class="m">2025</span>
+<span class="w">  </span>flag.txt<span class="w">                            </span>A<span class="w">       </span><span class="m">14</span><span class="w">  </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">05</span>:34:33<span class="w"> </span><span class="m">2025</span>
+<span class="w">  </span>story.txt<span class="w">                           </span>A<span class="w">      </span><span class="m">953</span><span class="w">  </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">05</span>:37:57<span class="w"> </span><span class="m">2025</span>
+
+<span class="w">        </span><span class="m">7863807</span><span class="w"> </span>blocks<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">4096</span>.<span class="w"> </span><span class="m">3470129</span><span class="w"> </span>blocks<span class="w"> </span>available
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>get<span class="w"> </span>flag.txt
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\f</span>lag.txt<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">14</span><span class="w"> </span>as<span class="w"> </span>flag.txt<span class="w"> </span><span class="o">(</span><span class="m">0</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>get<span class="w"> </span>story.txt<span class="w"> </span>
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\s</span>tory.txt<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">953</span><span class="w"> </span>as<span class="w"> </span>story.txt<span class="w"> </span><span class="o">(</span><span class="m">1</span>.0<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>
+</code></pre></div>
+<p>Flag
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>flag.txt<span class="w">             </span>
+THM<span class="o">{</span>88_SMB_88<span class="o">}</span><span class="w">   </span>
+</code></pre></div></p>
+<h3 id="rpcclient">rpcclient<a class="headerlink" href="#rpcclient" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>rpcclient<span class="w"> </span>-U<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>-N<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;enumdomusers&#39;</span>
+user:<span class="o">[</span>Administrator<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x1f4<span class="o">]</span>
+user:<span class="o">[</span>Guest<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x1f5<span class="o">]</span>
+user:<span class="o">[</span>krbtgt<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x1f6<span class="o">]</span>
+user:<span class="o">[</span>sshd<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x649<span class="o">]</span>
+user:<span class="o">[</span>gerald.burgess<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x650<span class="o">]</span>
+user:<span class="o">[</span>nigel.parsons<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x651<span class="o">]</span>
+user:<span class="o">[</span>guy.smith<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x652<span class="o">]</span>
+user:<span class="o">[</span>jeremy.booth<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x653<span class="o">]</span>
+user:<span class="o">[</span>barbara.jones<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x654<span class="o">]</span>
+user:<span class="o">[</span>marion.kay<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x655<span class="o">]</span>
+user:<span class="o">[</span>kathryn.williams<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x656<span class="o">]</span>
+user:<span class="o">[</span>danny.baker<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x657<span class="o">]</span>
+user:<span class="o">[</span>gary.clarke<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x658<span class="o">]</span>
+user:<span class="o">[</span>daniel.turner<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x659<span class="o">]</span>
+user:<span class="o">[</span>debra.yates<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x65a<span class="o">]</span>
+user:<span class="o">[</span>jeffrey.thompson<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x65b<span class="o">]</span>
+user:<span class="o">[</span>martin.riley<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x65c<span class="o">]</span>
+user:<span class="o">[</span>danielle.lee<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x65d<span class="o">]</span>
+user:<span class="o">[</span>douglas.roberts<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x65e<span class="o">]</span>
+user:<span class="o">[</span>dawn.bolton<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x65f<span class="o">]</span>
+user:<span class="o">[</span>danielle.ali<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x660<span class="o">]</span>
+user:<span class="o">[</span>michelle.palmer<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x661<span class="o">]</span>
+user:<span class="o">[</span>katie.thomas<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x662<span class="o">]</span>
+user:<span class="o">[</span>jennifer.harding<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x663<span class="o">]</span>
+user:<span class="o">[</span>strategos<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x664<span class="o">]</span>
+user:<span class="o">[</span>empanadal0v3r<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x665<span class="o">]</span>
+user:<span class="o">[</span>drgonz0<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x666<span class="o">]</span>
+user:<span class="o">[</span>strate905<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x667<span class="o">]</span>
+user:<span class="o">[</span>krbtgtsvc<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x668<span class="o">]</span>
+user:<span class="o">[</span>asrepuser1<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x669<span class="o">]</span>
+user:<span class="o">[</span>rduke<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0xa31<span class="o">]</span>
+user:<span class="o">[</span>user<span class="o">]</span><span class="w"> </span>rid:<span class="o">[</span>0x1201<span class="o">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>rpcclient<span class="w"> </span>-U<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>-N<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;enumdomusers&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;\[.*?\]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;0x&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;[]&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>users.txt
+Administrator
+Guest
+krbtgt
+sshd
+gerald.burgess
+nigel.parsons
+guy.smith
+jeremy.booth
+barbara.jones
+marion.kay
+kathryn.williams
+danny.baker
+gary.clarke
+daniel.turner
+debra.yates
+jeffrey.thompson
+martin.riley
+danielle.lee
+douglas.roberts
+dawn.bolton
+danielle.ali
+michelle.palmer
+katie.thomas
+jennifer.harding
+strategos
+empanadal0v3r
+drgonz0
+strate905
+krbtgtsvc
+asrepuser1
+rduke
+user
+</code></pre></div>
+<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>enum4linux<span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>&gt;<span class="w"> </span>DomianEnum.txt
+</code></pre></div>
+<p>Convertiur decimal a HEX
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%x\n&quot;</span><span class="w"> </span><span class="m">1634</span><span class="w">                                                                       </span>
+<span class="m">662</span>
+</code></pre></div></p>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<p>Es posible mirar las politicas de las contraseñas</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>--pass-pol
+</code></pre></div>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<p>Lista de passwords:</p>
+<div class="highlight"><pre><span></span><code>Password!
+Password1
+Password1!
+P@ssword
+Pa55word1
+</code></pre></div>
+<p>Con los usuarios encontrados en el dominio, probamos con ls lista de contraseñas entregada</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.211.11.10<span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span>passwords.txt<span class="w"> </span>--continue-on-success
+SMB<span class="w">                      </span><span class="m">10</span>.211.11.10<span class="w">    </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>tryhackme.loc<span class="se">\r</span>duke:Password1!<span class="w"> </span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "toc.integrate", "content.code.copy", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
