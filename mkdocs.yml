@@ -28,6 +28,6 @@ markdown_extensions:
 nav:
   - Inicio: index.md
   - Writeups:
-      - HackTheBox: writeups/hackthebox/index.md
+      - HackTheBox: writeups/HackTheBox/index.md
       - TryHackme:
-        - Alfred: writeups/tryhackme/alfred/alfred.md
+        - Alfred: writeups/TryHackMe/alfred/index.md
