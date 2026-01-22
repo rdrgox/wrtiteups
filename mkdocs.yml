@@ -31,3 +31,5 @@ nav:
       - HackTheBox: writeups/HackTheBox/index.md
       - TryHackme:
         - Alfred: writeups/TryHackMe/alfred/index.md
+        - AD Basic Enumeration: writeups/TryHackMe/ADBasicEnum/index.md
+        

