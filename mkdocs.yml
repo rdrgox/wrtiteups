@@ -32,4 +32,5 @@ nav:
       - TryHackme:
         - Alfred: writeups/TryHackMe/alfred/index.md
         - AD Basic Enumeration: writeups/TryHackMe/ADBasicEnum/index.md
+        - Anthem: writeups/TryHackMe/anthem/index.md
         

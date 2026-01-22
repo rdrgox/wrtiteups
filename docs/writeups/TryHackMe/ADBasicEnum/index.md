@@ -2,7 +2,7 @@
 
 Windows
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 ## Enumeration
 
@@ -270,7 +270,7 @@ printf "%x\n" 1634
 662
 ```
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 
 Es posible mirar las politicas de las contraseñas
@@ -279,7 +279,7 @@ Es posible mirar las politicas de las contraseñas
 nxc smb 10.211.11.10 --pass-pol
 ```
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 Lista de passwords:
 
@@ -299,4 +299,4 @@ nxc smb 10.211.11.10 -u users.txt -p passwords.txt --continue-on-success
 SMB                      10.211.11.10    445    DC               [+] tryhackme.loc\rduke:Password1! 
 ```
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)

