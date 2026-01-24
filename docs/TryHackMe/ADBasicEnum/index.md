@@ -1,6 +1,8 @@
-# AD Basic Enumeration
+---
+tags: [tryhackme, windows, active-directory]
+---
 
-Windows
+# AD Basic Enumeration
 
 ![alt text](img/image.png)
 

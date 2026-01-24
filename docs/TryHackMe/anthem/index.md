@@ -1,6 +1,10 @@
-# anthem
+---
+tags: 
+    - tryhackme
+    - windows
+---
 
-Windows
+# anthem
 
 ## Enumeration
 

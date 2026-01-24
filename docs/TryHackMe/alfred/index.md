@@ -1,6 +1,8 @@
-# Alfred
+---
+tags: [tryhackme, windows, jenkins, privesc]
+---
 
-Windows
+# Alfred
 
 ## Enumeration
 
