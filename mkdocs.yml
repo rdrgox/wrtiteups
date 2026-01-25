@@ -11,7 +11,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.path
-    - toc.integrate
+ ##   - toc.integrate
     - content.code.copy
     - search.highlight
 plugins:
@@ -35,4 +35,5 @@ nav:
         - Alfred: TryHackMe/alfred/index.md
         - AD Basic Enumeration: TryHackMe/ADBasicEnum/index.md
         - Anthem: TryHackMe/anthem/index.md
+        - Atlas: TryHackMe/atlas/index.md
   - Tags: tags.md

