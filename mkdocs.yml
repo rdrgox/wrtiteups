@@ -36,4 +36,5 @@ nav:
         - AD Basic Enumeration: TryHackMe/ADBasicEnum/index.md
         - Anthem: TryHackMe/anthem/index.md
         - Atlas: TryHackMe/atlas/index.md
+        - Attacking kerberos: TryHackMe/attackingkerberos/index.md
   - Tags: tags.md

