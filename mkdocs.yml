@@ -37,4 +37,5 @@ nav:
         - Anthem: TryHackMe/anthem/index.md
         - Atlas: TryHackMe/atlas/index.md
         - Attacking kerberos: TryHackMe/attackingkerberos/index.md
+        - Attacktive Directory: TryHackMe/attacktivedirectory/index.md
   - Tags: tags.md
