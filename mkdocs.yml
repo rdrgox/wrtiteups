@@ -38,4 +38,5 @@ nav:
         - Atlas: TryHackMe/atlas/index.md
         - Attacking kerberos: TryHackMe/attackingkerberos/index.md
         - Attacktive Directory: TryHackMe/attacktivedirectory/index.md
+        - Basic Pentesting: TryHackMe/basicpentesting/index.md
   - Tags: tags.md
