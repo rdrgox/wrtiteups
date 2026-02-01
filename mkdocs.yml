@@ -41,4 +41,5 @@ nav:
         - Basic Pentesting: TryHackMe/basicpentesting/index.md
         - Blaster: TryHackMe/blaster/index.md
         - Blog: TryHackMe/blog/index.md
+        - Blue: TryHackMe/blue/index.md
   - Tags: tags.md
