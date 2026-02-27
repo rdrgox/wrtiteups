@@ -44,4 +44,5 @@ nav:
         - Blue: TryHackMe/blue/index.md
         - Blueprint: TryHackMe/blueprint/index.md
         - Bolt: TryHackMe/bolt/index.md
+        - Brainpan: TryHackMe/brainpan/index.md
   - Tags: tags.md
