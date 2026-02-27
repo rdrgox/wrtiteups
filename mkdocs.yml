@@ -45,4 +45,6 @@ nav:
         - Blueprint: TryHackMe/blueprint/index.md
         - Bolt: TryHackMe/bolt/index.md
         - Brainpan: TryHackMe/brainpan/index.md
+        - Brainstorm: TryHackMe/brainstorm/index.md
+        - Chill Hack: TryHackMe/chillhack/index.md
   - Tags: tags.md
