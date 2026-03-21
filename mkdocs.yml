@@ -50,4 +50,5 @@ nav:
         - ColddBox Easy: TryHackMe/colddboxeasy/index.md
         - CyberHeroes: TryHackMe/cyberheroes/index.md
         - Daily Bugle: TryHackMe/dailybugle/index.md
+        - DOM-Based Attacks: TryHackMe/dombasedattacks/index.md
   - Tags: tags.md
