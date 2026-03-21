@@ -51,4 +51,5 @@ nav:
         - CyberHeroes: TryHackMe/cyberheroes/index.md
         - Daily Bugle: TryHackMe/dailybugle/index.md
         - DOM-Based Attacks: TryHackMe/dombasedattacks/index.md
+        - El Bandito: TryHackMe/elbandito/index.md
   - Tags: tags.md
