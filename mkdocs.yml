@@ -16,6 +16,7 @@ theme:
     - search.highlight
 plugins:
   - search
+  - glightbox
   - tags:
       tags_file: tags.md
 
@@ -30,6 +31,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Writeups:
+      - Local: 
+        - TOAoT: Local/toaot/index.md
       - HackTheBox: HackTheBox/index.md
       - TryHackme:
         - Alfred: TryHackMe/alfred/index.md
